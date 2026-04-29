@@ -1,0 +1,4295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="description" content="Guia exclusivo Concierge Redoma para os convidados do BRM New York 2026 — restaurantes, galerias e museus curados em Nova York durante a Brazil Week.">
+<meta name="theme-color" content="#081B45">
+<meta property="og:title" content="BRM New York 2026 — Guia Concierge Redoma">
+<meta property="og:description" content="Curadoria exclusiva de gastronomia e cultura em Nova York para os convidados do Brazilian Regional Markets, durante a Brazil Week.">
+<meta property="og:type" content="website">
+<title>BRM New York 2026 — Guia Concierge Redoma</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy-deep: #081B45;
+    --navy: #0F2456;
+    --navy-light: #1A3068;
+    --navy-card: #102A5C;
+    --royal: #1250C8;
+    --royal-bright: #4A90D9;
+    --white: #FFFFFF;
+    --white-soft: #F4F6FA;
+    --white-dim: rgba(255, 255, 255, 0.72);
+    --white-faint: rgba(255, 255, 255, 0.16);
+    --white-line: rgba(255, 255, 255, 0.08);
+    --gold: #C8A961;
+    --gold-pale: rgba(200, 169, 97, 0.12);
+    --border: rgba(255, 255, 255, 0.10);
+    --border-strong: rgba(255, 255, 255, 0.22);
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Manrope', system-ui, -apple-system, sans-serif;
+    --maxw: 1280px;
+    --pad: clamp(20px, 4vw, 56px);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: var(--sans);
+    background: var(--navy-deep);
+    color: var(--white);
+    line-height: 1.6;
+    font-size: 15px;
+    font-weight: 400;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image:
+      radial-gradient(circle at 15% 20%, rgba(74, 144, 217, 0.08) 0%, transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(18, 80, 200, 0.06) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: 0;
+  }
+  img { max-width: 100%; height: auto; display: block; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+  input, select, textarea { font: inherit; color: inherit; }
+  :focus-visible {
+    outline: 2px solid var(--royal-bright);
+    outline-offset: 3px;
+  }
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { background: var(--navy-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--navy-light); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--royal); }
+  main { position: relative; z-index: 1; }
+
+  /* ============================================================
+     TOP BAR — Hierarquia compacta sempre visível
+     ============================================================ */
+  .top-bar {
+    background: #000;
+    border-bottom: 1px solid var(--white-line);
+    position: relative;
+    z-index: 10;
+  }
+  .top-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 14px var(--pad);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .brand-hierarchy {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .brand-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand-mark {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .brand-name {
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white);
+    font-weight: 600;
+  }
+  .brand-step.redoma .brand-name { color: var(--white); }
+  .brand-step.brm .brand-name { color: var(--white-dim); }
+  .brand-step.apex .brand-name { color: var(--white-dim); }
+  .brand-arrow {
+    color: var(--gold);
+    opacity: 0.6;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+  /* Redoma logo (preto + diamante branco) */
+  .redoma-icon {
+    width: 22px;
+    height: 22px;
+    background: #000;
+    border: 1px solid var(--white);
+    position: relative;
+  }
+  .redoma-diamond {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    width: 9px;
+    height: 9px;
+    background: var(--white);
+  }
+  /* BRM (grid 3x3 pixels) */
+  .brm-pixels {
+    width: 22px; height: 22px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1px;
+  }
+  .brm-pixels span {
+    background: var(--royal-bright);
+  }
+  .brm-pixels span:nth-child(2),
+  .brm-pixels span:nth-child(4),
+  .brm-pixels span:nth-child(6),
+  .brm-pixels span:nth-child(8) {
+    background: var(--royal);
+  }
+  /* APEX (diamante azul) */
+  .apex-icon {
+    width: 16px;
+    height: 16px;
+    background: var(--royal);
+    transform: rotate(45deg);
+  }
+
+  /* ============================================================
+     NAV PRINCIPAL
+     ============================================================ */
+  nav.main-nav {
+    background: var(--navy-deep);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 9;
+    backdrop-filter: blur(8px);
+  }
+  .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-link {
+    padding: 18px 22px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--white-dim);
+    white-space: nowrap;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s ease;
+    font-weight: 500;
+  }
+  .nav-link:hover { color: var(--white); }
+  .nav-link.active {
+    color: var(--white);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ============================================================
+     PAGES
+     ============================================================ */
+  .page {
+    display: none;
+    animation: pageIn 0.5s ease both;
+  }
+  .page.active { display: block; }
+  @keyframes pageIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ============================================================
+     HOME
+     ============================================================ */
+  .hero {
+    padding: clamp(48px, 9vw, 110px) var(--pad) clamp(36px, 6vw, 72px);
+    max-width: var(--maxw);
+    margin: 0 auto;
+    text-align: left;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    font-weight: 500;
+  }
+  .hero-title {
+    font-family: var(--serif);
+    font-size: clamp(56px, 12vw, 132px);
+    font-weight: 500;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin-bottom: 28px;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .hero-sub {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--white-dim);
+    max-width: 620px;
+    line-height: 1.55;
+    margin-bottom: 36px;
+    font-weight: 300;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px 44px;
+    padding: 26px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 36px;
+  }
+  .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .hero-meta-label {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hero-meta-value {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--white);
+    font-weight: 500;
+  }
+  .hero-desc {
+    font-size: 14.5px;
+    line-height: 1.75;
+    color: var(--white-dim);
+    max-width: 720px;
+    margin-bottom: 56px;
+  }
+
+  /* Bloco hierarquia destacado na home */
+  .hierarchy-block {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad) 48px;
+  }
+  .hierarchy-inner {
+    background: linear-gradient(135deg, var(--navy-card) 0%, var(--navy-light) 100%);
+    border: 1px solid var(--gold-pale);
+    padding: clamp(28px, 4vw, 44px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  @media (min-width: 720px) {
+    .hierarchy-inner { grid-template-columns: 1fr 1fr 1fr; gap: 36px; align-items: center; }
+  }
+  .hierarchy-step {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+    padding: 8px 0;
+    border-left: 2px solid var(--gold);
+    padding-left: 18px;
+  }
+  .hierarchy-tag {
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .hierarchy-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .hierarchy-brand .brand-name {
+    font-size: 14px;
+    letter-spacing: 0.18em;
+  }
+  .hierarchy-brand .redoma-icon { width: 28px; height: 28px; }
+  .hierarchy-brand .redoma-diamond { width: 11px; height: 11px; }
+  .hierarchy-brand .brm-pixels { width: 28px; height: 28px; }
+  .hierarchy-brand .apex-icon { width: 20px; height: 20px; }
+  .hierarchy-note {
+    font-size: 12px;
+    color: var(--white-dim);
+    line-height: 1.55;
+  }
+
+  /* CTA cards */
+  .cta-grid {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 var(--pad) 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  @media (min-width: 720px) {
+    .cta-grid { grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+  }
+  .cta-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    padding: 32px 28px;
+    transition: all 0.3s ease;
+    min-height: 200px;
+  }
+  .cta-card:hover {
+    border-color: var(--gold);
+    background: var(--navy-light);
+    transform: translateY(-2px);
+  }
+  .cta-card-num {
+    font-family: var(--serif);
+    font-size: 13px;
+    color: var(--gold);
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .cta-card-title {
+    font-family: var(--serif);
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin-bottom: 10px;
+    color: var(--white);
+  }
+  .cta-card-desc {
+    font-size: 13px;
+    color: var(--white-dim);
+    line-height: 1.6;
+    margin-bottom: 22px;
+    flex: 1;
+  }
+  .cta-card-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: gap 0.3s ease;
+  }
+  .cta-card:hover .cta-card-arrow { gap: 16px; }
+  .cta-card-arrow svg { width: 14px; height: 14px; }
+
+  /* ============================================================
+     PÁGINAS INTERNAS — Header e Voltar
+     ============================================================ */
+  .page-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--white-dim);
+    text-transform: uppercase;
+    padding: 12px 0;
+    margin-bottom: 18px;
+    transition: color 0.2s ease;
+    font-weight: 500;
+  }
+  .page-back:hover { color: var(--gold); }
+  .page-back svg { width: 14px; height: 14px; }
+
+  .page-header {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px var(--pad) 24px;
+  }
+  .page-eyebrow {
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(40px, 7vw, 72px);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .page-desc {
+    font-size: 14.5px;
+    color: var(--white-dim);
+    max-width: 720px;
+    line-height: 1.7;
+  }
+
+  /* ============================================================
+     CONTROLS — Filtros e busca
+     ============================================================ */
+  .controls {
+    position: sticky;
+    top: 56px;
+    z-index: 8;
+    background: var(--navy-deep);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 16px var(--pad);
+    margin-bottom: 8px;
+  }
+  .controls-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .controls-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+  .search-box {
+    flex: 1;
+    min-width: 220px;
+    position: relative;
+  }
+  .search-box svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 14px;
+    height: 14px;
+    color: var(--white-dim);
+  }
+  .search-box input {
+    width: 100%;
+    padding: 12px 16px 12px 38px;
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+  }
+  .search-box input::placeholder { color: var(--white-dim); }
+  .search-box input:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+  .select-wrap select {
+    padding: 12px 36px 12px 14px;
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-size: 13px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23C8A961' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    min-width: 180px;
+  }
+  .results-count {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--white-dim);
+    text-transform: uppercase;
+    margin-left: auto;
+  }
+  .results-count strong { color: var(--gold); font-weight: 600; }
+
+  /* Chips */
+  .chips-row {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 14px var(--pad) 0;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .chip {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    color: var(--white-dim);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: all 0.2s ease;
+    font-weight: 500;
+    background: transparent;
+  }
+  .chip:hover {
+    color: var(--white);
+    border-color: var(--white-faint);
+  }
+  .chip.active {
+    background: var(--gold);
+    color: var(--navy-deep);
+    border-color: var(--gold);
+    font-weight: 600;
+  }
+
+  /* ============================================================
+     GRID & CARDS
+     ============================================================ */
+  .grid {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px var(--pad) 80px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+  @media (min-width: 720px) {
+    .grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+  }
+  @media (min-width: 1080px) {
+    .grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .card {
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    border-color: var(--white-faint);
+    transform: translateY(-2px);
+  }
+  .card.hidden { display: none; }
+
+  .card-image {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: var(--navy-deep);
+  }
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .card:hover .card-image img { transform: scale(1.04); }
+  .card-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(8, 27, 69, 0.35) 100%);
+    pointer-events: none;
+  }
+  .image-fallback {
+    position: absolute;
+    inset: 0;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--serif);
+    font-size: 96px;
+    color: var(--gold);
+    background: var(--navy-deep);
+    display: none;
+  }
+  .card.no-img .image-fallback { display: flex; }
+
+  .card-body {
+    padding: 22px 22px 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  .card-cat {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+  .card-title {
+    font-family: var(--serif);
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    color: var(--white);
+  }
+  .card-subtitle {
+    font-size: 13px;
+    color: var(--white-dim);
+    margin-bottom: 14px;
+    font-style: italic;
+    line-height: 1.45;
+  }
+  .card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+  .meta-pill {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    border: 1px solid var(--white-faint);
+    color: var(--white-dim);
+    text-transform: uppercase;
+  }
+  .meta-pill.neighborhood {
+    color: var(--royal-bright);
+    border-color: rgba(74, 144, 217, 0.3);
+  }
+  .meta-pill.brm {
+    color: var(--gold);
+    border-color: var(--gold-pale);
+    background: var(--gold-pale);
+  }
+  .card-desc {
+    font-size: 13.5px;
+    color: var(--white-dim);
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+
+  .why-block {
+    background: var(--navy-deep);
+    border-left: 2px solid var(--gold);
+    padding: 12px 14px;
+    margin-bottom: 16px;
+  }
+  .why-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    font-weight: 600;
+  }
+  .why-list {
+    list-style: none;
+    font-size: 12px;
+    color: var(--white-dim);
+    line-height: 1.55;
+  }
+  .why-list li {
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 4px;
+  }
+  .why-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+  }
+
+  .card-info {
+    margin-bottom: 16px;
+    font-size: 12px;
+    line-height: 1.7;
+  }
+  .info-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .info-key {
+    color: var(--white-dim);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    flex: 0 0 80px;
+    padding-top: 2px;
+  }
+  .info-val {
+    color: var(--white);
+    flex: 1;
+  }
+
+  /* Mini-roteiro */
+  .roteiro-block {
+    background: var(--navy-deep);
+    border: 1px solid var(--border);
+    padding: 14px 16px;
+    margin-bottom: 18px;
+  }
+  .roteiro-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .roteiro-head svg {
+    color: var(--gold);
+    flex-shrink: 0;
+  }
+  .roteiro-title {
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .roteiro-list {
+    list-style: none;
+    font-size: 12px;
+    color: var(--white-dim);
+    line-height: 1.65;
+  }
+  .roteiro-list li {
+    padding-left: 14px;
+    position: relative;
+    margin-bottom: 5px;
+  }
+  .roteiro-list li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--royal-bright);
+  }
+
+  .card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 6px;
+    margin-top: auto;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+  }
+  .action-btn {
+    padding: 12px 8px;
+    border: 1px solid var(--border);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.2s ease;
+    color: var(--white-dim);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 44px;
+  }
+  .action-btn:hover {
+    color: var(--white);
+    border-color: var(--white-faint);
+  }
+  .action-btn.action-map {
+    color: var(--gold);
+    border-color: var(--gold-pale);
+    background: var(--gold-pale);
+  }
+  .action-btn.action-map:hover {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+  .action-btn.action-reserve {
+    color: var(--royal-bright);
+    border-color: rgba(74, 144, 217, 0.25);
+    background: rgba(74, 144, 217, 0.08);
+  }
+  .action-btn.action-reserve:hover {
+    background: rgba(74, 144, 217, 0.18);
+  }
+  .action-btn.disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  /* Empty state */
+  .empty {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--white-dim);
+  }
+  .empty-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    color: var(--white);
+    margin-bottom: 12px;
+    font-style: italic;
+  }
+  .empty-desc {
+    font-size: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     PÁGINA DE LINKS
+     ============================================================ */
+  .links-grid {
+    max-width: 920px;
+    margin: 0 auto;
+    padding: 32px var(--pad) 80px;
+    display: grid;
+    gap: 14px;
+  }
+  .link-card {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 24px 28px;
+    background: var(--navy-card);
+    border: 1px solid var(--border);
+    transition: all 0.3s ease;
+    min-height: 92px;
+  }
+  .link-card:hover {
+    border-color: var(--gold);
+    background: var(--navy-light);
+    transform: translateX(4px);
+  }
+  .link-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: var(--navy-deep);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+  }
+  .link-icon svg { width: 22px; height: 22px; }
+  .link-text { flex: 1; min-width: 0; }
+  .link-name {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--white);
+    margin-bottom: 4px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .link-desc {
+    font-size: 12px;
+    color: var(--white-dim);
+    line-height: 1.45;
+  }
+  .link-arrow {
+    flex-shrink: 0;
+    color: var(--gold);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: all 0.3s ease;
+  }
+  .link-card:hover .link-arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .link-arrow svg { width: 18px; height: 18px; }
+  .link-section-title {
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+    font-weight: 600;
+    padding-bottom: 8px;
+    margin-top: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  .link-section-title:first-child { margin-top: 0; }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  footer {
+    background: #000;
+    border-top: 1px solid var(--white-line);
+    padding: 56px var(--pad) 32px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
+  }
+  .footer-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+  }
+  .footer-hierarchy {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    align-items: flex-start;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--white-line);
+    margin-bottom: 28px;
+  }
+  .footer-brand {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-brand-tag {
+    font-size: 9px;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+  .footer-brand-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .footer-brand-block .brand-name { font-size: 13px; }
+  .footer-brand-block .redoma-icon { width: 28px; height: 28px; }
+  .footer-brand-block .redoma-diamond { width: 11px; height: 11px; }
+  .footer-brand-block .brm-pixels { width: 28px; height: 28px; }
+  .footer-brand-block .apex-icon { width: 20px; height: 20px; }
+  .footer-bottom {
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--white-dim);
+    text-transform: uppercase;
+    line-height: 1.8;
+  }
+  .footer-bottom strong {
+    color: var(--gold);
+    letter-spacing: 0.32em;
+  }
+
+  /* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width: 768px) {
+    .top-inner { padding: 12px var(--pad); }
+    .brand-hierarchy { gap: 14px; }
+    .brand-name { font-size: 10px; letter-spacing: 0.18em; }
+    .nav-link { padding: 16px 14px; font-size: 10px; letter-spacing: 0.18em; }
+    .controls { top: 50px; padding: 12px var(--pad); }
+    .controls-row { gap: 8px; }
+    .search-box input, .select-wrap select { font-size: 12.5px; padding-top: 11px; padding-bottom: 11px; }
+    .select-wrap select { min-width: 0; flex: 1; }
+    .results-count { width: 100%; text-align: right; margin-left: 0; }
+    .grid { gap: 18px; padding: 18px var(--pad) 60px; }
+    .card-actions { grid-template-columns: 1fr; }
+    .action-btn { min-height: 48px; }
+    .hero { padding: 36px var(--pad) 28px; }
+    .hero-meta { gap: 18px 28px; padding: 20px 0; margin-bottom: 24px; }
+    .hero-meta-value { font-size: 18px; }
+    .link-card { padding: 18px 18px; gap: 14px; min-height: 80px; }
+    .link-name { font-size: 18px; }
+    .footer-hierarchy { flex-direction: column; gap: 22px; }
+  }
+
+  @media (max-width: 420px) {
+    .top-inner { padding: 10px 16px; }
+    .brand-hierarchy { gap: 8px; }
+    .brand-arrow { display: none; }
+    .brand-name { font-size: 9px; }
+  }
+
+  /* Acessibilidade — preferência por movimento reduzido */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Toast */
+  .toast {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--navy-card);
+    border: 1px solid var(--gold);
+    color: var(--white);
+    padding: 14px 22px;
+    font-size: 13px;
+    z-index: 300;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    max-width: 90vw;
+    text-align: center;
+    pointer-events: none;
+  }
+  .toast.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- ====================================================================
+     TOP BAR — Hierarquia compacta sempre visível
+     ==================================================================== -->
+<header class="top-bar" role="banner">
+  <div class="top-inner">
+    <div class="brand-hierarchy" aria-label="Redoma apresenta no contexto do BRM com realização Apex">
+      <div class="brand-step redoma">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="redoma-icon"><span class="redoma-diamond"></span></span>
+        </span>
+        <span class="brand-name">Redoma</span>
+      </div>
+      <span class="brand-arrow" aria-hidden="true">apresenta</span>
+      <div class="brand-step brm">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="brm-pixels"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+        </span>
+        <span class="brand-name">BRM</span>
+      </div>
+      <span class="brand-arrow" aria-hidden="true">realização</span>
+      <div class="brand-step apex">
+        <span class="brand-mark" aria-hidden="true">
+          <span class="apex-icon"></span>
+        </span>
+        <span class="brand-name">Apex</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ====================================================================
+     NAV PRINCIPAL
+     ==================================================================== -->
+<nav class="main-nav" role="navigation" aria-label="Navegação principal">
+  <div class="nav-inner">
+    <a href="#/home" class="nav-link" data-route="home">Início</a>
+    <a href="#/gastronomia" class="nav-link" data-route="gastronomia">Gastronomia</a>
+    <a href="#/cultura" class="nav-link" data-route="cultura">Cultura</a>
+    <a href="#/links" class="nav-link" data-route="links">Links</a>
+  </div>
+</nav>
+
+<main id="main-content">
+
+  <!-- ============================================
+       HOME
+       ============================================ -->
+  <section class="page" id="page-home" aria-labelledby="home-title">
+    <div class="hero">
+      <p class="hero-eyebrow">Concierge Redoma — Guia exclusivo</p>
+      <h1 class="hero-title" id="home-title">New York<br><em>2026</em></h1>
+      <p class="hero-sub">Curadoria de gastronomia e cultura para os convidados do Brazilian Regional Markets, durante a Brazil Week.</p>
+
+      <div class="hero-meta">
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Edição</span>
+          <span class="hero-meta-value">BRM New York 2026</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Período</span>
+          <span class="hero-meta-value">11 a 13 de maio</span>
+        </div>
+        <div class="hero-meta-item">
+          <span class="hero-meta-label">Local oficial</span>
+          <span class="hero-meta-value">Harvard Club of New York</span>
+        </div>
+      </div>
+
+      <p class="hero-desc">
+        Os melhores endereços de Manhattan e arredores para ocupar com inteligência os intervalos da agenda BRM.
+        Gastronomia que define a cena novaiorquina contemporânea, instituições culturais com programação relevante
+        para maio de 2026 e mini-roteiros pensados para otimizar deslocamentos entre o Harvard Club e os principais bairros.
+      </p>
+    </div>
+
+    <!-- Bloco hierarquia destacado -->
+    <div class="hierarchy-block">
+      <div class="hierarchy-inner" aria-label="Hierarquia institucional do guia">
+        <div class="hierarchy-step">
+          <span class="hierarchy-tag">Apresenta</span>
+          <div class="hierarchy-brand">
+            <span class="redoma-icon" aria-hidden="true"><span class="redoma-diamond"></span></span>
+            <span class="brand-name">Redoma</span>
+          </div>
+          <p class="hierarchy-note">Curadoria exclusiva do multi family office para os convidados do evento.</p>
+        </div>
+        <div class="hierarchy-step">
+          <span class="hierarchy-tag">No contexto do</span>
+          <div class="hierarchy-brand">
+            <span class="brm-pixels" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+            <span class="brand-name">BRM</span>
+          </div>
+          <p class="hierarchy-note">Brazilian Regional Markets, edição internacional durante a Brazil Week.</p>
+        </div>
+        <div class="hierarchy-step">
+          <span class="hierarchy-tag">Realização</span>
+          <div class="hierarchy-brand">
+            <span class="apex-icon" aria-hidden="true"></span>
+            <span class="brand-name">Apex Partners</span>
+          </div>
+          <p class="hierarchy-note">Plataforma original do BRM, agora em sua edição internacional em Nova York.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-grid">
+      <a href="#/gastronomia" class="cta-card">
+        <span class="cta-card-num">01</span>
+        <h2 class="cta-card-title">Gastronomia</h2>
+        <p class="cta-card-desc">Italianos clássicos, omakase com Michelin, bistrôs franceses, jazz clubs e a cena hyped de 2026.</p>
+        <span class="cta-card-arrow">
+          Ver curadoria
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </span>
+      </a>
+      <a href="#/cultura" class="cta-card">
+        <span class="cta-card-num">02</span>
+        <h2 class="cta-card-title">Cultura</h2>
+        <p class="cta-card-desc">Museus enciclopédicos, galerias de Chelsea e Tribeca, exposições verificadas para o período do evento.</p>
+        <span class="cta-card-arrow">
+          Ver curadoria
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </span>
+      </a>
+      <a href="#/links" class="cta-card">
+        <span class="cta-card-num">03</span>
+        <h2 class="cta-card-title">Links institucionais</h2>
+        <p class="cta-card-desc">Acesso direto aos canais oficiais Redoma, BRM e Apex.</p>
+        <span class="cta-card-arrow">
+          Ver canais
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14m-7-7l7 7-7 7"/></svg>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       GASTRONOMIA
+       ============================================ -->
+  <section class="page" id="page-gastronomia" aria-labelledby="gastro-title">
+    <header class="page-header">
+      <a href="#/home" class="page-back" aria-label="Voltar para a página inicial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+        Voltar para a página inicial
+      </a>
+      <p class="page-eyebrow">Curadoria 01 — Concierge Redoma</p>
+      <h1 class="page-title" id="gastro-title">Gastronomia</h1>
+      <p class="page-desc">
+        Endereços verificados de Manhattan e Brooklyn, com mini-roteiros que otimizam o deslocamento entre o Harvard Club
+        e os principais bairros gastronômicos da cidade.
+      </p>
+    </header>
+
+    <div class="controls">
+      <div class="controls-inner">
+        <div class="controls-row">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" id="searchGastro" placeholder="Buscar restaurante, bairro, estilo..." aria-label="Buscar gastronomia">
+          </div>
+          <div class="select-wrap">
+            <select id="filterNeighGastro" aria-label="Filtrar por bairro">
+              <option value="">Todos os bairros</option>
+              <option value="midtown">Midtown</option>
+              <option value="upper-east-side">Upper East Side</option>
+              <option value="greenwich-village">Greenwich Village</option>
+              <option value="west-village">West Village</option>
+              <option value="east-village">East Village</option>
+              <option value="lower-east-side">Lower East Side</option>
+              <option value="noho">NoHo</option>
+              <option value="nolita">NoLita</option>
+              <option value="soho">SoHo</option>
+              <option value="tribeca">Tribeca</option>
+              <option value="chelsea">Chelsea</option>
+              <option value="flatiron">Flatiron</option>
+              <option value="meatpacking">Meatpacking District</option>
+              <option value="brooklyn">Brooklyn</option>
+            </select>
+          </div>
+          <span class="results-count"><strong id="countGastro">0</strong> sugestões</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chips-row" id="chipsGastro" role="tablist" aria-label="Categorias de gastronomia">
+      <button class="chip active" data-cat="" role="tab">Todas</button>
+      <button class="chip" data-cat="italiano" role="tab">Italianos</button>
+      <button class="chip" data-cat="frances" role="tab">Franceses</button>
+      <button class="chip" data-cat="americano" role="tab">Americanos</button>
+      <button class="chip" data-cat="japones" role="tab">Japoneses</button>
+      <button class="chip" data-cat="coreano" role="tab">Coreano</button>
+      <button class="chip" data-cat="bar" role="tab">Bares</button>
+      <button class="chip" data-cat="jazz" role="tab">Jazz</button>
+    </div>
+
+    <div class="grid" id="gridGastro" role="region" aria-live="polite"></div>
+  </section>
+
+  <!-- ============================================
+       CULTURA
+       ============================================ -->
+  <section class="page" id="page-cultura" aria-labelledby="cultura-title">
+    <header class="page-header">
+      <a href="#/home" class="page-back" aria-label="Voltar para a página inicial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+        Voltar para a página inicial
+      </a>
+      <p class="page-eyebrow">Curadoria 02 — Concierge Redoma</p>
+      <h1 class="page-title" id="cultura-title">Cultura</h1>
+      <p class="page-desc">
+        Museus enciclopédicos, galerias de referência em Chelsea e Tribeca, exposições verificadas para o período de 11 a 15 de maio
+        e instituições com agenda oficial dentro do BRM NY 2026.
+      </p>
+    </header>
+
+    <div class="controls">
+      <div class="controls-inner">
+        <div class="controls-row">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="text" id="searchCultura" placeholder="Buscar museu, galeria, artista..." aria-label="Buscar cultura">
+          </div>
+          <div class="select-wrap">
+            <select id="filterNeighCultura" aria-label="Filtrar por bairro">
+              <option value="">Todos os bairros</option>
+              <option value="midtown">Midtown</option>
+              <option value="upper-east-side">Upper East Side</option>
+              <option value="chelsea">Chelsea</option>
+              <option value="tribeca">Tribeca</option>
+              <option value="queens">Queens</option>
+            </select>
+          </div>
+          <span class="results-count"><strong id="countCultura">0</strong> sugestões</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="chips-row" id="chipsCultura" role="tablist" aria-label="Categorias culturais">
+      <button class="chip active" data-cat="" role="tab">Todas</button>
+      <button class="chip" data-cat="museu" role="tab">Museus</button>
+      <button class="chip" data-cat="galeria" role="tab">Galerias</button>
+      <button class="chip" data-cat="feira" role="tab">Feiras</button>
+    </div>
+
+    <div class="grid" id="gridCultura" role="region" aria-live="polite"></div>
+  </section>
+
+  <!-- ============================================
+       LINKS OFICIAIS
+       ============================================ -->
+  <section class="page" id="page-links" aria-labelledby="links-title">
+    <header class="page-header">
+      <a href="#/home" class="page-back" aria-label="Voltar para a página inicial">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M19 12H5m7 7l-7-7 7-7"/></svg>
+        Voltar para a página inicial
+      </a>
+      <p class="page-eyebrow">Canais oficiais</p>
+      <h1 class="page-title" id="links-title">Links</h1>
+      <p class="page-desc">
+        Acesso direto aos canais institucionais Redoma, BRM e Apex.
+      </p>
+    </header>
+
+    <div class="links-grid">
+
+      <p class="link-section-title">Brazilian Regional Markets</p>
+
+      <a class="link-card" href="https://brazilianregionalmarkets.com.br/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Site oficial BRM</span>
+          <span class="link-desc">brazilianregionalmarkets.com.br</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+      <a class="link-card" href="https://www.instagram.com/brazilianregionalmarkets/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Instagram BRM</span>
+          <span class="link-desc">@brazilianregionalmarkets</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+      <a class="link-card" href="https://www.instagram.com/brmpodcasts/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Instagram BRM Podcasts</span>
+          <span class="link-desc">@brmpodcasts</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+      <p class="link-section-title">Apex Partners</p>
+
+      <a class="link-card" href="https://apexpartners.com.br/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20M12 2a15 15 0 000 20"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Site oficial Apex</span>
+          <span class="link-desc">apexpartners.com.br</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+      <a class="link-card" href="https://www.apexnews.com.br/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v16H4z"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Apex News</span>
+          <span class="link-desc">apexnews.com.br</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+      <a class="link-card" href="https://www.instagram.com/apex.partners/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Instagram Apex</span>
+          <span class="link-desc">@apex.partners</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+      <p class="link-section-title">Redoma</p>
+
+      <a class="link-card" href="https://www.instagram.com/redomacapital/" target="_blank" rel="noopener noreferrer">
+        <span class="link-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+        </span>
+        <span class="link-text">
+          <span class="link-name">Instagram Redoma</span>
+          <span class="link-desc">@redomacapital</span>
+        </span>
+        <span class="link-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M7 7h10v10"/></svg></span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+<!-- ====================================================================
+     FOOTER
+     ==================================================================== -->
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-hierarchy">
+      <div class="footer-brand">
+        <span class="footer-brand-tag">Apresenta</span>
+        <div class="footer-brand-block">
+          <span class="redoma-icon" aria-hidden="true"><span class="redoma-diamond"></span></span>
+          <span class="brand-name">Redoma</span>
+        </div>
+      </div>
+      <div class="footer-brand">
+        <span class="footer-brand-tag">No contexto do</span>
+        <div class="footer-brand-block">
+          <span class="brm-pixels" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span>
+          <span class="brand-name">BRM — Brazilian Regional Markets</span>
+        </div>
+      </div>
+      <div class="footer-brand">
+        <span class="footer-brand-tag">Realização</span>
+        <div class="footer-brand-block">
+          <span class="apex-icon" aria-hidden="true"></span>
+          <span class="brand-name">Apex Partners</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <strong>BRM New York 2026</strong> · Edição internacional durante a Brazil Week<br>
+      11 a 13 de maio · Harvard Club of New York City
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<!-- ====================================================================
+     DADOS DA CURADORIA + LÓGICA SPA
+     ==================================================================== -->
+<script>
+/* ============================================================================
+   BRM NEW YORK 2026 — Guia Concierge Redoma
+   Dataset de Curadoria — Gastronomia + Cultura
+   ============================================================================ */
+
+const DATA = {
+
+  /* ──────────────────────────────────────────────────────────────────────
+     GASTRONOMIA
+     ────────────────────────────────────────────────────────────────────── */
+  gastronomia: [
+
+    /* ITALIANOS ──────────────────────────────────────────────────────── */
+    {
+      id: "carbone",
+      cat: "italiano",
+      name: "Carbone",
+      subtitle: "Italiano-americano de meados do século XX",
+      neighborhood: "Greenwich Village",
+      neighborhoodKey: "greenwich-village",
+      duration: "2-3h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["icônico", "michelin-bib", "celebridades", "downtown"],
+      description: "Templo do italiano-americano dos anos 50, eternizado por celebridades e por um rigatoni ao molho de vodka que entrou para o folclore gastronômico da cidade. Garçons de paletó vermelho, mesas com toalha branca, jukebox tocando Sinatra.",
+      whyVisit: [
+        "Reserva é uma das mais disputadas de Manhattan — abre 30 dias antes",
+        "Experiência teatral: o tableside do Caesar Salad é um clássico"
+      ],
+      practical: "Reserva via site oficial, abre 30 dias antes do dia desejado às 10h. Smart casual obrigatório.",
+      address: "181 Thompson St, New York, NY 10012",
+      hours: "Seg 17h–23h30 | Ter–Dom almoço 11h30–14h + jantar 17h–23h30",
+      image: "https://images.unsplash.com/photo-1579684947550-22e945225d9a?w=1200&q=80",
+      imageSource: "https://www.carbonenewyork.com",
+      officialSite: "https://www.carbonenewyork.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/carbone?date=2026-05-15&seats=2",
+      mapsLink: "https://maps.google.com/?q=Carbone+181+Thompson+St+New+York",
+      miniRoteiro: {
+        title: "Roteiro Greenwich Village à noite",
+        steps: [
+          "18h30 — Drink no Bemelmans Bar (uptown, 25min de táxi) ou caminhada por Washington Square",
+          "20h — Jantar no Carbone (reserva firme)",
+          "23h — Drink final no Bar Pisellino (Via Carota), a 4 quarteirões"
+        ]
+      }
+    },
+    {
+      id: "il-leone",
+      cat: "italiano",
+      name: "Il Leone",
+      subtitle: "Pizza napolitana com fermentação natural de 72h",
+      neighborhood: "Park Slope (Brooklyn)",
+      neighborhoodKey: "brooklyn",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "casual",
+      tags: ["pizza", "vinho-natural", "brooklyn", "novo"],
+      description: "Originalmente em Peaks Island, no Maine, o Il Leone abriu em Park Slope com forno a lenha, ingredientes importados da Itália e fermentação natural de 72h. A pizza Isola, com lagosta e fra diavolo, virou destaque imediato.",
+      whyVisit: [
+        "Massa de 72h faz diferença real — uma das melhores napolitanas do momento",
+        "Vinho natural curado, ambiente discreto, fila frequente"
+      ],
+      practical: "Reservas pelo site (poucas mesas) ou walk-in chegando às 17h. Fechado seg–ter.",
+      address: "158 7th Ave, Brooklyn, NY 11215",
+      hours: "Qua–Dom 17h–22h | Seg–Ter fechado",
+      image: "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=1200&q=80",
+      imageSource: "https://illeone.me",
+      officialSite: "https://illeone.me",
+      reservationSite: "https://illeone.me",
+      mapsLink: "https://maps.google.com/?q=Il+Leone+158+7th+Ave+Brooklyn",
+      miniRoteiro: {
+        title: "Brooklyn descontraído",
+        steps: [
+          "17h — Walk-in Il Leone (chegar cedo evita espera)",
+          "19h30 — Caminhada por Prospect Park ou drink no Sunken Harbor Club",
+          "21h — Atravessar para Manhattan via Brooklyn Bridge ao entardecer"
+        ]
+      }
+    },
+    {
+      id: "via-carota",
+      cat: "italiano",
+      name: "Via Carota",
+      subtitle: "Trattoria italiana clássica e atemporal",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "2h",
+      bestTime: "almoço-jantar",
+      formality: "smart",
+      tags: ["clássico", "atemporal", "downtown"],
+      description: "A trattoria mais cobiçada do West Village. Atendimento sem reservas (apenas walk-in), fila quase sempre presente. Cardápio italiano sazonal impecável: insalata verde, svizzerina, cacio e pepe.",
+      whyVisit: [
+        "Insalata verde virou referência mundial em saladas",
+        "Decoração rústica-elegante, mesas pequenas, atmosfera íntima"
+      ],
+      practical: "Reservas via Resy abertas com antecedência. Walk-in possível chegando às 17h ou após 21h30.",
+      address: "51 Grove St, New York, NY 10014",
+      hours: "Diariamente 10h–meia-noite",
+      image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=1200&q=80",
+      imageSource: "https://www.viacarota.com",
+      officialSite: "https://www.viacarota.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/via-carota?date=2026-04-29&seats=2",
+      mapsLink: "https://maps.google.com/?q=Via+Carota+51+Grove+St+New+York",
+      miniRoteiro: {
+        title: "West Village clássico",
+        steps: [
+          "17h — Walk-in no Via Carota (jantar antecipado)",
+          "19h30 — Aperitivo no Bar Pisellino (mesma esquina, mesmo grupo)",
+          "21h — Caminhada pelas ruas históricas do West Village (Perry, Bedford, Christopher)"
+        ]
+      }
+    },
+    {
+      id: "don-angie",
+      cat: "italiano",
+      name: "Don Angie",
+      subtitle: "Italiano-americano contemporâneo refinado",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["contemporâneo", "instagramável", "downtown"],
+      description: "Um dos restaurantes mais fotografados de NY. Lasanha enrolada em forma de pinwheel virou ícone, ambiente Art Deco com cetim verde-esmeralda. Cozinha italiana-americana releitura sofisticada.",
+      whyVisit: [
+        "Reserva difícil — abre 28 dias antes às 9h",
+        "Lasagna for two é o prato mais cobiçado"
+      ],
+      practical: "Reserva firme via site oficial, abertura 28 dias antes às 9h.",
+      address: "103 Greenwich Ave, New York, NY 10014",
+      hours: "Diariamente 17h30–23h",
+      image: "https://images.unsplash.com/photo-1481833761820-0509d3217039?w=1200&q=80",
+      imageSource: "https://www.donangie.com",
+      officialSite: "https://www.donangie.com",
+      reservationSite: "https://www.opentable.com/booking/restref/availability?lang=en-US&correlationId=10ba5b4d-5cc9-48f3-9f7b-58f6f28abebb&restRef=994474&otSource=Restaurant%20website",
+      mapsLink: "https://maps.google.com/?q=Don+Angie+103+Greenwich+Ave+New+York",
+      miniRoteiro: {
+        title: "West Village contemporâneo",
+        steps: [
+          "19h — Drink no Employees Only (3 quarteirões)",
+          "20h30 — Jantar no Don Angie (lasagna for two)",
+          "22h30 — Sobremesa no Sant Ambroeus West Village"
+        ]
+      }
+    },
+    {
+      id: "misi",
+      cat: "italiano",
+      name: "Misi",
+      subtitle: "Pasta artesanal e vegetais de chef Missy Robbins",
+      neighborhood: "Williamsburg (Brooklyn)",
+      neighborhoodKey: "brooklyn",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["pasta", "brooklyn", "chef-celebridade"],
+      description: "Da chef Missy Robbins (Lilia), o Misi é um templo da pasta italiana com ambiente de tijolo aparente em Williamsburg. Massas frescas, vegetais sazonais brilhantes, vista do East River.",
+      whyVisit: [
+        "Pasta fresca é o ponto alto — agnolotti, pappardelle ao ragù",
+        "Sala iluminada, vista do rio, atmosfera Brooklyn refinada"
+      ],
+      practical: "Reserva via site, abre 30 dias antes. Walk-in possível na barra.",
+      address: "329 Kent Ave, Brooklyn, NY 11249",
+      hours: "Ter–Dom 17h30–22h | Seg fechado",
+      image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1200&q=80",
+      imageSource: "https://www.misinewyork.com",
+      officialSite: "https://www.misinewyork.com",
+      reservationSite: "https://www.misinewyork.com",
+      mapsLink: "https://maps.google.com/?q=Misi+329+Kent+Ave+Brooklyn",
+      miniRoteiro: {
+        title: "Williamsburg ao entardecer",
+        steps: [
+          "18h — Caminhada pelo East River Ferry (Pier 1) ao pôr do sol",
+          "20h — Jantar no Misi",
+          "22h — Drink no Westlight (rooftop do William Vale, vista 360°)"
+        ]
+      }
+    },
+    {
+      id: "roscioli",
+      cat: "italiano",
+      name: "Roscioli",
+      subtitle: "Salumeria-restaurante romana clássica",
+      neighborhood: "SoHo",
+      neighborhoodKey: "soho",
+      duration: "2-3h",
+      bestTime: "almoço-jantar",
+      formality: "smart",
+      tags: ["salumeria", "vinho", "novo", "soho"],
+      description: "A primeira filial fora de Roma do icônico Roscioli. Cacio e pepe, carbonara e amatriciana feitas com técnica romana rigorosa. Adega impressionante, queijos e embutidos italianos importados diretamente.",
+      whyVisit: [
+        "A carbonara mais respeitada de NY no momento",
+        "Adega de mais de 1.500 rótulos italianos selecionados"
+      ],
+      practical: "Reservas Resy. Procurar mesa em horário de almoço para experiência mais íntima.",
+      address: "43 MacDougal St, New York, NY 10012",
+      hours: "Diariamente 12h–15h + 17h30–23h",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
+      imageSource: "https://www.roscioli.com",
+      officialSite: "https://www.rosciolinyc.com",
+      reservationSite: "https://www.sevenrooms.com/explore/rosciolinyc/reservations/create/search",
+      mapsLink: "https://maps.google.com/?q=Roscioli+NYC+43+MacDougal+St+New+York",
+      miniRoteiro: {
+        title: "SoHo gastronômico",
+        steps: [
+          "13h — Almoço no Roscioli (carbonara obrigatória)",
+          "15h — Galerias e lojas de design SoHo",
+          "18h — Aperitivo no Lure Fishbar"
+        ]
+      }
+    },
+    {
+      id: "lupa",
+      cat: "italiano",
+      name: "Lupa",
+      subtitle: "Trattoria romana de Mario Batali",
+      neighborhood: "Greenwich Village",
+      neighborhoodKey: "greenwich-village",
+      duration: "1h30-2h",
+      bestTime: "almoço-jantar",
+      formality: "casual",
+      tags: ["trattoria", "preço-acessível", "downtown"],
+      description: "Trattoria romana descontraída no Village desde 1999. Cozinha simples e correta — bucatini, saltimbocca, fritto misto — com preços acessíveis para o padrão de Manhattan.",
+      whyVisit: [
+        "Custo-benefício excelente para italiano de qualidade",
+        "Atmosfera descontraída, boa para almoço de trabalho"
+      ],
+      practical: "Reservas via site, walk-in costuma funcionar.",
+      address: "170 Thompson St, New York, NY 10012",
+      hours: "Diariamente 11h30–22h",
+      image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1200&q=80",
+      imageSource: "https://www.luparestaurant.com",
+      officialSite: "https://www.luparestaurant.com",
+      reservationSite: "https://www.luparestaurant.com",
+      mapsLink: "https://maps.google.com/?q=Lupa+170+Thompson+St+New+York",
+      miniRoteiro: {
+        title: "Almoço Village clássico",
+        steps: [
+          "12h30 — Almoço no Lupa",
+          "14h30 — Caminhada por Washington Square e bairro NYU",
+          "16h — Café no Caffè Reggio (icônico desde 1927)"
+        ]
+      }
+    },
+    {
+      id: "lartusi",
+      cat: "italiano",
+      name: "L'Artusi",
+      subtitle: "Italiano contemporâneo do West Village",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["pasta", "vinho", "downtown", "elegante"],
+      description: "Italiano contemporâneo dos sócios do dell'anima, com pasta artesanal, vegetais sazonais e adega impressionante. Sala de dois andares iluminada, atmosfera elegante e energética que define o West Village atual.",
+      whyVisit: [
+        "Pasta fresca feita diariamente, com clássicos como spaghetti com vôngole e pappardelle ao ragù",
+        "Adega curada com mais de 250 rótulos italianos, atendimento técnico"
+      ],
+      practical: "Reservas via site oficial. Walk-in possível no balcão chegando cedo.",
+      address: "228 W 10th St, New York, NY 10014",
+      hours: "Dom–Qui 17h–23h | Sex–Sáb 17h–meia-noite",
+      image: "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?w=1200&q=80",
+      imageSource: "https://www.lartusi.com",
+      officialSite: "https://www.lartusi.com",
+      reservationSite: "https://www.lartusi.com/#/form-reservations",
+      mapsLink: "https://maps.google.com/?q=L%27Artusi+228+W+10th+St+New+York",
+      miniRoteiro: {
+        title: "West Village italiano contemporâneo",
+        steps: [
+          "18h30 — Aperitivo no Bar Pisellino (1 quarteirão)",
+          "20h — Jantar L'Artusi (pappardelle ao ragù é referência)",
+          "23h — Drink final no Employees Only (Hudson St)"
+        ]
+      }
+    },
+    {
+      id: "torrisi",
+      cat: "italiano",
+      name: "Torrisi",
+      subtitle: "Italian-American refinado em NoLita",
+      neighborhood: "NoLita",
+      neighborhoodKey: "nolita",
+      duration: "2-3h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["italian-american", "fine-dining", "downtown", "cena"],
+      description: "Reabertura do conceito original Torrisi em formato refinado: cardápio italian-american com mão pesada de produto e técnica francesa. Sala intimista com painéis de mogno, serviço de mesa formal e adega italiana de referência.",
+      whyVisit: [
+        "Releitura sofisticada do italian-american clássico — equilibrio entre nostalgia e técnica",
+        "Sala pequena (cerca de 50 lugares) garante atendimento próximo"
+      ],
+      practical: "Reservas Resy, abrem 30 dias antes. Walk-in raro.",
+      address: "275 Mulberry St, New York, NY 10012",
+      hours: "Ter–Sáb 17h30–22h30 | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1525755662778-989d0524087e?w=1200&q=80",
+      imageSource: "https://torrisinyc.com",
+      officialSite: "https://torrisinyc.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/torrisi?date=2026-04-29&seats=2",
+      mapsLink: "https://maps.google.com/?q=Torrisi+275+Mulberry+St+New+York",
+      miniRoteiro: {
+        title: "NoLita refinado",
+        steps: [
+          "18h30 — Drink no Mulberry Project (mesma rua)",
+          "20h — Jantar Torrisi",
+          "23h — Café no La Esquina ou drink no Spring Lounge"
+        ]
+      }
+    },
+    {
+      id: "sant-ambroeus",
+      cat: "italiano",
+      name: "Sant Ambroeus",
+      subtitle: "Café-restaurante milanês desde 1936",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "1h30-2h",
+      bestTime: "qualquer-horário",
+      formality: "smart",
+      tags: ["café", "italiano", "atemporal", "instituição"],
+      description: "Instituição milanesa fundada em 1936, com várias unidades em Manhattan. Cappuccino, cornetto, risoto à milanesa e gelato artesanal. Frequentado pelo circuito de moda, arte e finanças. A unidade do West Village tem terraço aberto.",
+      whyVisit: [
+        "Um dos cafés italianos mais autênticos da cidade — lattes, panini e gelato de referência",
+        "Ambiente de café europeu para break entre compromissos do dia"
+      ],
+      practical: "Walk-in para café da manhã e almoço. Reservas via site para jantar.",
+      address: "259 W 4th St, New York, NY 10014",
+      hours: "Diariamente 7h30–22h",
+      image: "https://images.unsplash.com/photo-1442975631115-c4f7b05b8a2c?w=1200&q=80",
+      imageSource: "https://www.santambroeus.com",
+      officialSite: "https://www.santambroeus.com",
+      reservationSite: "https://www.santambroeus.com/pages/locations",
+      mapsLink: "https://maps.google.com/?q=Sant+Ambroeus+259+W+4th+St+New+York",
+      miniRoteiro: {
+        title: "Manhã West Village italiana",
+        steps: [
+          "9h — Café da manhã Sant Ambroeus (cappuccino e cornetto)",
+          "10h30 — Caminhada Bedford St + Perry St + Greenwich Ave",
+          "12h — Compras Bleecker St (livrarias e marcas independentes)"
+        ]
+      }
+    },
+    {
+      id: "marea",
+      cat: "italiano",
+      name: "Marea",
+      subtitle: "Frutos do mar italianos com Estrela Michelin",
+      neighborhood: "Central Park South — Midtown",
+      neighborhoodKey: "midtown",
+      duration: "2-3h",
+      bestTime: "almoço-jantar",
+      formality: "formal",
+      tags: ["michelin", "frutos-do-mar", "perto-harvard-club", "fine-dining"],
+      description: "Estrela Michelin do chef Michael White, com vista para Central Park. Pasta artesanal e crudo de peixe são os destaques: o fusilli com bochecha de polvo e a torre de fuselli ao molho de bottarga estão entre os pratos mais cobiçados de Manhattan.",
+      whyVisit: [
+        "Crudo bar é referência — uma das melhores degustações de peixe cru italianizado da cidade",
+        "Localização estratégica para um almoço entre compromissos no Midtown"
+      ],
+      practical: "Reservas SevenRooms, antecedência de 30 dias. Dress code formal.",
+      address: "240 Central Park S, New York, NY 10019",
+      hours: "Diariamente 11h45–14h30 + 17h–22h",
+      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80",
+      imageSource: "https://www.marearestaurant.com",
+      officialSite: "https://www.marearestaurant.com/new-york",
+      reservationSite: "https://www.sevenrooms.com/explore/marea/reservations/create/search?venues=marea%2Caifiori%2C53",
+      mapsLink: "https://maps.google.com/?q=Marea+240+Central+Park+South+New+York",
+      miniRoteiro: {
+        title: "Central Park gastronômico (perto BRM)",
+        steps: [
+          "12h — Caminhada por Central Park South",
+          "13h — Almoço Marea (fusilli ao polvo)",
+          "16h — Visita ao MoMA (Duchamp, 6 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "harry-cipriani",
+      cat: "italiano",
+      name: "Harry Cipriani",
+      subtitle: "Bellini e cucina italiana clássica",
+      neighborhood: "Midtown — Sherry-Netherland",
+      neighborhoodKey: "midtown",
+      duration: "1h30-2h",
+      bestTime: "almoço",
+      formality: "formal",
+      tags: ["italiano", "bellini", "atemporal", "perto-harvard-club"],
+      description: "Filial nova-iorquina do icônico Harry's Bar de Veneza, no térreo do hotel Sherry-Netherland em frente ao Central Park. Bellini original, carpaccio (inventado pela casa) e tagliolini com presunto. Ambiente formal com mesas amarelo-canário e atendimento de banqueta.",
+      whyVisit: [
+        "Bellini servido como na casa-mãe veneziana — fórmula praticamente inalterada desde 1948",
+        "Carpaccio Cipriani, inventado pela família, é referência mundial"
+      ],
+      practical: "Reservas via site oficial Cipriani. Jaqueta para homens em jantares.",
+      address: "781 5th Ave, New York, NY 10022",
+      hours: "Diariamente almoço 12h–15h + jantar 17h30–23h",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+      imageSource: "https://www.cipriani.com/harry-cipriani",
+      officialSite: "https://www.cipriani.com/harry-cipriani",
+      reservationSite: "https://www.cipriani.com/book-a-table",
+      mapsLink: "https://maps.google.com/?q=Harry+Cipriani+781+5th+Ave+New+York",
+      miniRoteiro: {
+        title: "Almoço institucional Midtown (perto BRM)",
+        steps: [
+          "11h — Caminhada 5th Ave (Plaza Hotel, Bergdorf, Apple)",
+          "13h — Almoço Harry Cipriani (bellini + carpaccio)",
+          "15h — Frick Madison ou Met Museum (10 quarteirões a norte)"
+        ]
+      }
+    },
+
+    /* FRANCESES ──────────────────────────────────────────────────────── */
+    {
+      id: "le-pavillon",
+      cat: "frances",
+      name: "Le Pavillon",
+      subtitle: "Francês contemporâneo do chef Daniel Boulud",
+      neighborhood: "Midtown — One Vanderbilt",
+      neighborhoodKey: "midtown",
+      duration: "2-3h",
+      bestTime: "almoço-jantar",
+      formality: "formal",
+      tags: ["michelin", "fine-dining", "perto-harvard-club", "vista"],
+      description: "No topo do One Vanderbilt, do chef Daniel Boulud, com vista do Chrysler Building e tetos de 17 metros. Arquitetura assinada por Isay Weinfeld (brasileiro), oliveiras de 6 metros, frutos do mar como protagonistas. Almoço oficial da Expedição BRM NY 12/05.",
+      whyVisit: [
+        "Estrela Michelin com cardápio focado em frutos do mar e vegetais sazonais",
+        "Arquitetura brasileira de Isay Weinfeld em pleno One Vanderbilt"
+      ],
+      practical: "Reserva firme via Resy, antecedência mínima de 4 semanas. Dress code: business attire.",
+      address: "One Vanderbilt Ave, New York, NY 10017",
+      hours: "Seg–Sex 11h30–22h | Sáb 17h–22h | Dom fechado",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+      imageSource: "https://www.lepavillonnyc.com",
+      officialSite: "https://www.lepavillonnyc.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/le-pavillon",
+      mapsLink: "https://maps.google.com/?q=Le+Pavillon+One+Vanderbilt+Ave+New+York",
+      miniRoteiro: {
+        title: "Midtown elegante (próximo ao Harvard Club)",
+        steps: [
+          "12h — Almoço no Le Pavillon (oficial BRM)",
+          "15h — Visita à Morgan Library (oficial BRM, 8 quarteirões)",
+          "18h — Drinks no King Cole Bar (St. Regis, 5 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "buvette",
+      cat: "frances",
+      name: "Buvette",
+      subtitle: "Bistrô parisiense íntimo",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "1h30-2h",
+      bestTime: "qualquer-horário",
+      formality: "casual",
+      tags: ["bistrô", "brunch", "downtown", "atemporal"],
+      description: "Um clássico do West Village desde 2011, aberto do café da manhã à madrugada. Ambiente de canto parisiense com jardim externo arborizado. Brunch sofisticado, croque madame impecável, coq au vin ao jantar.",
+      whyVisit: [
+        "Único endereço com a mesma qualidade de Paris e Tóquio (mesma família)",
+        "Ótimo para brunch sem reserva ou jantar tarde da noite"
+      ],
+      practical: "Sem reservas — walk-in. Mesas pequenas. Ideal para casais ou duplas.",
+      address: "42 Grove St, New York, NY 10014",
+      hours: "Diariamente 8h–meia-noite",
+      image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&q=80",
+      imageSource: "https://ilovebuvette.com",
+      officialSite: "https://ilovebuvette.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Buvette+42+Grove+St+New+York",
+      miniRoteiro: {
+        title: "Brunch West Village",
+        steps: [
+          "10h — Brunch no Buvette",
+          "12h — Caminhada Bedford St + The Friends Apartment Building (90 Bedford)",
+          "14h — Magnolia Bakery (banana pudding clássico)"
+        ]
+      }
+    },
+    {
+      id: "balthazar",
+      cat: "frances",
+      name: "Balthazar",
+      subtitle: "Brasserie francesa institucional",
+      neighborhood: "SoHo",
+      neighborhoodKey: "soho",
+      duration: "1h30-2h",
+      bestTime: "qualquer-horário",
+      formality: "smart",
+      tags: ["brasserie", "icônico", "soho", "atemporal"],
+      description: "Brasserie clássica de Keith McNally desde 1997. Ambiente parisiense com painéis de espelho desgastados, banquetes vermelhos e zinco no bar. Steak frites, plateaux de mariscos, croque monsieur — clássicos bem executados.",
+      whyVisit: [
+        "Instituição da gastronomia novaiorquina há quase três décadas",
+        "Plateau de frutos do mar fresquíssimo, ostras Blue Point selecionadas"
+      ],
+      practical: "Reservas Resy. Almoço é mais tranquilo; jantar tem disputa.",
+      address: "80 Spring St, New York, NY 10012",
+      hours: "Seg–Qui 7h30–meia-noite | Sex–Sáb 7h30–1h | Dom 8h–meia-noite",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+      imageSource: "https://www.balthazarny.com",
+      officialSite: "https://www.balthazarny.com",
+      reservationSite: "https://balthazarny.com/make-booking/",
+      mapsLink: "https://maps.google.com/?q=Balthazar+80+Spring+St+New+York",
+      miniRoteiro: {
+        title: "SoHo institucional",
+        steps: [
+          "12h30 — Almoço no Balthazar",
+          "14h30 — Compras SoHo (Greene St, Mercer St)",
+          "17h — Café e padaria Balthazar Bakery (mesma esquina)"
+        ]
+      }
+    },
+    {
+      id: "lucien",
+      cat: "frances",
+      name: "Lucien",
+      subtitle: "Bistrô parisiense no East Village",
+      neighborhood: "East Village",
+      neighborhoodKey: "east-village",
+      duration: "1h30-2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["bistrô", "atemporal", "downtown", "instituição"],
+      description: "Bistrô francês aberto em 1998 pelo francês Lucien Bahaj, virou instituição do East Village. Steak frites, escargot, blanquette de veau e moules marinière em sala pequena com toalhas xadrez, vela em garrafa de vinho e atendimento direto.",
+      whyVisit: [
+        "Um dos bistrôs mais autênticos da cidade — atmosfera mantida há quase três décadas",
+        "Cardápio enxuto e correto, sem floreios — exatamente como em Paris"
+      ],
+      practical: "Reservas via site oficial. Walk-in possível chegando cedo (17h30) ou tarde (após 22h).",
+      address: "14 1st Ave, New York, NY 10009",
+      hours: "Diariamente 9h–meia-noite",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+      imageSource: "https://www.luciennyc.com",
+      officialSite: "https://www.luciennyc.com",
+      reservationSite: "https://www.luciennyc.com/about.html",
+      mapsLink: "https://maps.google.com/?q=Lucien+14+1st+Ave+New+York",
+      miniRoteiro: {
+        title: "East Village francês",
+        steps: [
+          "18h30 — Drink no Amor y Amargo (mesma rua)",
+          "20h — Jantar Lucien (steak frites é o clássico)",
+          "23h — Drink final no Death & Co (3 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "cafe-cluny",
+      cat: "frances",
+      name: "Cafe Cluny",
+      subtitle: "Bistrô francês-americano em West Village",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "1h30-2h",
+      bestTime: "qualquer-horário",
+      formality: "smart",
+      tags: ["bistrô", "brunch", "downtown", "atemporal"],
+      description: "Bistrô francês aconchegante de Keith McNally desde 2006, em uma das esquinas mais charmosas do West Village. Steak tartare, frisée aux lardons, steak frites au poivre e sticky toffee pudding. Ambiente acolhedor para café da manhã, brunch sofisticado, almoço ou jantar casual.",
+      whyVisit: [
+        "Brunch é o ponto alto: cinnamon doughnuts, mimosas e clássicos do bistrô francês",
+        "Atmosfera de Greenwich Village clássico — esquina iluminada, mesa na janela é referência"
+      ],
+      practical: "Reservas via OpenTable. Brunch de fim de semana costuma ter espera; chegar cedo ou reservar com antecedência.",
+      address: "284 W 12th St, New York, NY 10014",
+      hours: "Café 8h30–11h30 | Brunch sáb–dom 10h–16h | Almoço 11h30–16h | Jantar 17h–22h",
+      image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80",
+      imageSource: "https://www.cafecluny.com",
+      officialSite: "https://www.cafecluny.com",
+      reservationSite: "https://www.opentable.com/cafe-cluny",
+      mapsLink: "https://maps.google.com/?q=Cafe+Cluny+284+W+12th+St+New+York",
+      miniRoteiro: {
+        title: "Brunch West Village",
+        steps: [
+          "10h — Brunch no Cafe Cluny (cinnamon doughnuts e mimosas)",
+          "12h — Caminhada por Bedford St + Perry St + Bleecker St",
+          "14h — Café no Caffè Reggio (icônico desde 1927)"
+        ]
+      }
+    },
+
+    /* AMERICANOS ─────────────────────────────────────────────────────── */
+    {
+      id: "minetta-tavern",
+      cat: "americano",
+      name: "Minetta Tavern",
+      subtitle: "Taverna de 1937 reinventada",
+      neighborhood: "Greenwich Village",
+      neighborhoodKey: "greenwich-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["michelin-bib", "histórico", "carnes", "downtown"],
+      description: "Taverna histórica de 1937 reinventada com o melhor hambúrguer de NYC — o Black Label Burger. Murais com caricaturas de Hemingway, Ezra Pound e Dylan Thomas. Cardápio de clássicos franco-americanos.",
+      whyVisit: [
+        "Black Label Burger entrou para a história do hambúrguer americano",
+        "Soufflé de chocolate e steak frites de altíssimo nível"
+      ],
+      practical: "Reserva firme — abertura 30 dias antes às 10h. Bar walk-in possível.",
+      address: "113 MacDougal St, New York, NY 10012",
+      hours: "Diariamente 17h–23h | Bar até 1h",
+      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
+      imageSource: "https://www.minettatavernny.com",
+      officialSite: "https://www.minettatavernny.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/minetta-tavern",
+      mapsLink: "https://maps.google.com/?q=Minetta+Tavern+113+MacDougal+St+New+York",
+      miniRoteiro: {
+        title: "Greenwich Village clássico",
+        steps: [
+          "19h — Drink no Bar Pisellino",
+          "20h30 — Jantar Minetta Tavern (Black Label Burger)",
+          "23h — Jazz no Village Vanguard (5 min de táxi)"
+        ]
+      }
+    },
+    {
+      id: "keens",
+      cat: "americano",
+      name: "Keens Steakhouse",
+      subtitle: "Steakhouse histórica de 1885",
+      neighborhood: "Midtown",
+      neighborhoodKey: "midtown",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["histórico", "carnes", "perto-harvard-club", "atemporal"],
+      description: "A steakhouse mais antiga em operação contínua de NY. Sala dos cachimbos com 90 mil cachimbos pendurados (Einstein, Roosevelt, Babe Ruth foram membros). Mutton Chop é o prato emblemático — 26 oz de carne de carneiro envelhecida.",
+      whyVisit: [
+        "Mutton Chop não existe em quase nenhum outro lugar dos EUA",
+        "Sala histórica é experiência única — quase um museu vivo"
+      ],
+      practical: "Reservas via site oficial. Dress code: smart casual.",
+      address: "72 W 36th St, New York, NY 10018",
+      hours: "Seg–Sex 11h45–22h | Sáb 17h–22h30 | Dom 17h–22h",
+      image: "https://images.unsplash.com/photo-1546964124-0cce460f38ef?w=1200&q=80",
+      imageSource: "https://www.keens.com",
+      officialSite: "https://www.keens.com",
+      reservationSite: "https://www.keens.com/reservations",
+      mapsLink: "https://maps.google.com/?q=Keens+Steakhouse+72+W+36th+St+New+York",
+      miniRoteiro: {
+        title: "Midtown histórico",
+        steps: [
+          "18h — Top of the Rock (pôr do sol, 12 quarteirões)",
+          "20h30 — Jantar Keens (Mutton Chop)",
+          "23h — Bar do Pen Top (rooftop Peninsula Hotel)"
+        ]
+      }
+    },
+    {
+      id: "corner-store",
+      cat: "americano",
+      name: "The Corner Store",
+      subtitle: "Americano contemporâneo descolado",
+      neighborhood: "SoHo",
+      neighborhoodKey: "soho",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["novo", "cena", "soho"],
+      description: "Endereço da temporada em SoHo. Releitura do diner americano com cocktails autorais e cardápio comfort-food sofisticado. Burguer com queijo americano, pollo a la brasa, sundae de banana.",
+      whyVisit: [
+        "Cena gastronômica do momento, frequentado pelo circuito de moda e arte",
+        "Decoração retro-irônica, ambiente animado"
+      ],
+      practical: "Reservas Resy, walk-in no bar.",
+      address: "57 Thompson St, New York, NY 10012",
+      hours: "Diariamente 17h30–meia-noite",
+      image: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&q=80",
+      imageSource: "https://www.thecornerstoresoho.com",
+      officialSite: "https://www.thecornerstoresoho.com/",
+      reservationSite: "https://fp.sevenrooms.com/explore/thecornerstore/reservations/create/search/",
+      mapsLink: "https://maps.google.com/?q=The+Corner+Store+57+Thompson+St+New+York",
+      miniRoteiro: {
+        title: "SoHo descolado",
+        steps: [
+          "18h — Compras finais SoHo",
+          "20h — Jantar The Corner Store",
+          "22h30 — Drink no Pearl & Ash ou Temple Bar"
+        ]
+      }
+    },
+    {
+      id: "smithereens",
+      cat: "americano",
+      name: "Smithereens",
+      subtitle: "Bistrô americano de cena no East Village",
+      neighborhood: "East Village",
+      neighborhoodKey: "east-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "casual",
+      tags: ["novo", "cena", "bistrô", "downtown"],
+      description: "Um dos endereços mais comentados de 2026. Pratos de inspiração francesa com sotaque novaiorquino: tartare de carne com gema, costela braseada, vinho natural servido por copo. Sala pequena, energia jovem.",
+      whyVisit: [
+        "Cena descolada que define o East Village contemporâneo",
+        "Carta de vinho natural é destaque, ambiente animado até tarde"
+      ],
+      practical: "Reservas Resy, abre 14 dias antes. Walk-in difícil.",
+      address: "414 E 9th St, New York, NY 10009",
+      hours: "Qui–Seg 17h30–meia-noite | Ter–Qua fechado",
+      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80",
+      imageSource: "https://www.smithereensnyc.com",
+      officialSite: "https://www.smithereensnyc.com/",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/smithereens",
+      mapsLink: "https://maps.google.com/?q=Smithereens+414+E+9th+St+New+York",
+      miniRoteiro: {
+        title: "East Village contemporâneo",
+        steps: [
+          "19h — Drink no Amor y Amargo",
+          "20h30 — Jantar Smithereens",
+          "23h — Drink final no Death & Co (4 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "river-cafe",
+      cat: "americano",
+      name: "The River Café",
+      subtitle: "Americana contemporânea com vista de Manhattan",
+      neighborhood: "DUMBO (Brooklyn)",
+      neighborhoodKey: "brooklyn",
+      duration: "2-3h",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["michelin", "vista", "romântico", "histórico"],
+      description: "Restaurante flutuante sob a Brooklyn Bridge desde 1977, com a vista mais celebrada de Manhattan. Estrela Michelin, cozinha americana contemporânea sazonal. Berço de Daniel Boulud, David Burke, Larry Forgione.",
+      whyVisit: [
+        "Vista do skyline de Manhattan a partir da água — única em NY",
+        "Sobremesa Brooklyn Bridge em chocolate é institucional"
+      ],
+      practical: "Reserva firme via site, dress code: business jacket obrigatório no jantar.",
+      address: "1 Water St, Brooklyn, NY 11201",
+      hours: "Diariamente almoço 12h–14h30 + jantar 17h30–22h",
+      image: "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1200&q=80",
+      imageSource: "https://www.therivercafe.com",
+      officialSite: "https://www.therivercafe.com",
+      reservationSite: "https://www.therivercafe.com/reservations",
+      mapsLink: "https://maps.google.com/?q=The+River+Cafe+1+Water+St+Brooklyn",
+      miniRoteiro: {
+        title: "Sunset Brooklyn Bridge",
+        steps: [
+          "17h30 — Caminhada Brooklyn Bridge sentido Manhattan→Brooklyn (40 min)",
+          "19h — Drink no terraço do River Café",
+          "20h — Jantar com vista do skyline acendendo"
+        ]
+      }
+    },
+    {
+      id: "polo-bar",
+      cat: "americano",
+      name: "The Polo Bar",
+      subtitle: "Restaurante institucional em Midtown",
+      neighborhood: "Midtown",
+      neighborhoodKey: "midtown",
+      duration: "2h",
+      bestTime: "almoço-jantar",
+      formality: "formal",
+      tags: ["clássico", "perto-harvard-club", "atemporal", "icônico"],
+      description: "Restaurante de Ralph Lauren em Midtown East, ambientado como clube de equitação inglês: madeira escura, couro envelhecido, fotos equestres antigas. Cardápio de comfort food americano elevado — corn-flake-crusted chicken, prime burger, hot fudge sundae.",
+      whyVisit: [
+        "Reserva mais disputada de NY há mais de uma década — ambiente de clube privado",
+        "Atmosfera atemporal preservada com rigor absoluto"
+      ],
+      practical: "Reservas extremamente disputadas, abrem 30 dias antes via telefone. Dress code: jaqueta obrigatória.",
+      address: "1 E 55th St, New York, NY 10022",
+      hours: "Seg–Sex 12h–14h30 + 17h30–22h | Sáb 17h30–22h | Dom fechado",
+      image: "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1200&q=80",
+      imageSource: "https://www.ralphlauren.com/global-polo-bar",
+      officialSite: "https://www.ralphlauren.com/global-polo-bar",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=The+Polo+Bar+1+E+55th+St+New+York",
+      miniRoteiro: {
+        title: "Midtown clássico (perto BRM)",
+        steps: [
+          "12h — Caminhada 5th Ave (Plaza Hotel, Bergdorf Goodman)",
+          "13h — Almoço no Polo Bar",
+          "16h — MoMA (Duchamp + Frida & Diego, 4 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "pj-clarkes",
+      cat: "americano",
+      name: "PJ Clarke's",
+      subtitle: "Pub histórico desde 1884",
+      neighborhood: "Midtown East",
+      neighborhoodKey: "midtown",
+      duration: "1h-1h30",
+      bestTime: "qualquer-horário",
+      formality: "casual",
+      tags: ["pub", "histórico", "perto-harvard-club", "atemporal"],
+      description: "Pub novaiorquino aberto em 1884, considerado por críticos um dos melhores hambúrgueres da cidade. Sala original preservada com mosaico de tile, balcão de mogno e teto de estanho. Frequentado por gerações de jornalistas, advogados e celebridades.",
+      whyVisit: [
+        "Hambúrguer com cheddar é considerado um dos clássicos definitivos de NY",
+        "Atmosfera intacta há 140 anos — pub de bairro à moda antiga em pleno Midtown"
+      ],
+      practical: "Walk-in apenas, sem reservas. Movimento mais calmo após 14h ou após 22h.",
+      address: "915 3rd Ave, New York, NY 10022",
+      hours: "Diariamente 11h30–4h",
+      image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1200&q=80",
+      imageSource: "https://pjclarkes.com",
+      officialSite: "https://pjclarkes.com/location/third-avenue/",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=PJ+Clarke%27s+915+3rd+Ave+New+York",
+      miniRoteiro: {
+        title: "Almoço informal Midtown (perto BRM)",
+        steps: [
+          "12h30 — Almoço no PJ Clarke's (cheeseburger e cerveja)",
+          "14h — Caminhada por Park Ave + Lexington",
+          "16h — Frick Madison ou MoMA"
+        ]
+      }
+    },
+    {
+      id: "au-cheval",
+      cat: "americano",
+      name: "Au Cheval",
+      subtitle: "Diner contemporâneo em Tribeca",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "1h30-2h",
+      bestTime: "qualquer-horário",
+      formality: "casual",
+      tags: ["diner", "burger", "downtown", "cena"],
+      description: "Filial nova-iorquina do diner original de Chicago, considerado por publicações especializadas um dos melhores hambúrgueres da América. Cheeseburger duplo com bacon, ovo frito e um molho secreto da casa, servido em ambiente íntimo de balcão e box.",
+      whyVisit: [
+        "Hambúrguer cult — listado entre os melhores dos EUA por críticos americanos",
+        "Atmosfera de diner reinventada, frequentada pelo circuito de galerias Tribeca"
+      ],
+      practical: "Walk-in apenas, lista de espera no balcão. Picos pesados sex–sáb.",
+      address: "33 Cortlandt Alley, New York, NY 10013",
+      hours: "Diariamente 11h–meia-noite",
+      image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80",
+      imageSource: "https://www.auchevaldiner.com",
+      officialSite: "https://www.auchevaldiner.com/nyc/home",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Au+Cheval+33+Cortlandt+Alley+New+York",
+      miniRoteiro: {
+        title: "Almoço Tribeca + galerias",
+        steps: [
+          "12h — Galerias Tribeca (Mendes Wood, Marian Goodman)",
+          "14h — Almoço Au Cheval (cheeseburger duplo)",
+          "16h — Café no Smile to Go ou drink no Locanda Verde Bar"
+        ]
+      }
+    },
+    {
+      id: "4-charles",
+      cat: "americano",
+      name: "4 Charles Prime Rib",
+      subtitle: "Steakhouse íntima no West Village",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "2-3h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["steakhouse", "downtown", "fine-dining", "cobiçado"],
+      description: "Steakhouse pequeníssima em uma casa do séc. XIX no West Village. Prime rib trinchada à mesa, costela do dia em corte espesso, batatas hash brown e martini gelado. Sala íntima com cerca de 40 lugares, atmosfera atemporal.",
+      whyVisit: [
+        "Reserva entre as mais difíceis de Manhattan — abre 30 dias antes às 10h e esgota em minutos",
+        "Prime rib trinchada à mesa é o destaque, com porções generosas"
+      ],
+      practical: "Reservas via site (NYC Prime Rib), abertura mensal exata. Dress code smart casual.",
+      address: "4 Charles St, New York, NY 10014",
+      hours: "Diariamente 17h–23h",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
+      imageSource: "https://www.nycprimerib.com",
+      officialSite: "https://www.nycprimerib.com/",
+      reservationSite: "https://www.nycprimerib.com/",
+      mapsLink: "https://maps.google.com/?q=4+Charles+Prime+Rib+4+Charles+St+New+York",
+      miniRoteiro: {
+        title: "West Village clássico noite",
+        steps: [
+          "18h30 — Drink no Buvette (3 quarteirões)",
+          "20h — Jantar 4 Charles (prime rib é referência)",
+          "23h — Drink final no Employees Only"
+        ]
+      }
+    },
+    {
+      id: "casa-cruz",
+      cat: "americano",
+      name: "Casa Cruz",
+      subtitle: "Argentino sofisticado no Upper East Side",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "2-3h",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["argentino", "fine-dining", "elegante", "cena"],
+      description: "Filial nova-iorquina da casa argentina de Juan Santa Cruz (originalmente em Londres). Cozinha sul-americana refinada com técnica francesa, em mansão de quatro andares no Upper East Side. Carta de vinhos com forte presença de produtores argentinos boutique e europeus selecionados.",
+      whyVisit: [
+        "Casarão de quatro andares com programa de arte e atendimento de clube privado",
+        "Carnes argentinas trabalhadas com técnica francesa — empanadas, ojo de bife, pâtisserie"
+      ],
+      practical: "Reservas via OpenTable. Dress code formal, sem tênis.",
+      address: "61 E 84th St, New York, NY 10028",
+      hours: "Ter–Sáb 17h30–meia-noite | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1564758564-6e83a6f1edda?w=1200&q=80",
+      imageSource: "https://www.casacruz.nyc",
+      officialSite: "https://www.casacruz.nyc/",
+      reservationSite: "https://www.opentable.com/booking/restref/availability?lang=en-US&correlationId=f5d82641-e088-42ef-a81b-e0d76c62233d&restRef=1396294&otSource=Restaurant%20website",
+      mapsLink: "https://maps.google.com/?q=Casa+Cruz+61+E+84th+St+New+York",
+      miniRoteiro: {
+        title: "Upper East Side noite-galeria",
+        steps: [
+          "18h — Met Museum (visita ao final da tarde)",
+          "20h — Jantar Casa Cruz",
+          "23h — Drink final no Bemelmans Bar (8 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "butterfield-market",
+      cat: "americano",
+      name: "Butterfield Market",
+      subtitle: "Mercado gourmet com sanduíches",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "30min-1h",
+      bestTime: "almoço",
+      formality: "casual",
+      tags: ["mercado", "sanduíches", "almoço-rápido", "atemporal"],
+      description: "Mercado gourmet aberto em 1915 na Lexington Avenue, hoje conhecido pelos sanduíches artesanais — pastrami, peru com cranberry, lobster roll e o emblemático Butterfield Club. Excelente para um almoço rápido entre visitas ao Met, Frick e galerias do UES.",
+      whyVisit: [
+        "Sanduíches preparados na hora com ingredientes selecionados — alternativa rápida e qualificada",
+        "Localização estratégica para um almoço entre Met, Guggenheim e Frick Madison"
+      ],
+      practical: "Walk-in. Pegar para viagem (parque) ou comer no balcão informal.",
+      address: "1114 Lexington Ave, New York, NY 10075",
+      hours: "Diariamente 7h–20h",
+      image: "https://images.unsplash.com/photo-1509722747041-616f39b57569?w=1200&q=80",
+      imageSource: "https://www.butterfieldmarket.com",
+      officialSite: "https://www.butterfieldmarket.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Butterfield+Market+1114+Lexington+Ave+New+York",
+      miniRoteiro: {
+        title: "Almoço rápido entre museus do UES",
+        steps: [
+          "10h30 — Visita Met Museum (Raphael ou Costume Art)",
+          "13h — Sanduíche Butterfield Market (para viagem)",
+          "13h30 — Piquenique no Central Park (Conservatory Garden, 6 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "katzs",
+      cat: "americano",
+      name: "Katz's Delicatessen",
+      subtitle: "Deli judaica icônica desde 1888",
+      neighborhood: "Lower East Side",
+      neighborhoodKey: "lower-east-side",
+      duration: "1h",
+      bestTime: "almoço",
+      formality: "casual",
+      tags: ["deli", "histórico", "icônico", "atemporal"],
+      description: "Delicatessen aberta em 1888, instituição da culinária judaica de Nova York. Pastrami sandwich cortado à mão, matzo ball soup, knishes e cervejas geladas. Sistema clássico: o cliente pega um ticket na entrada e leva ao balcão. Cenário do filme Quando Harry encontrou Sally.",
+      whyVisit: [
+        "Pastrami feito na casa há mais de 130 anos, cortado à mão na frente do cliente",
+        "Atmosfera intacta — placas, balcão e luzes mantidos como no início do séc. XX"
+      ],
+      practical: "Walk-in apenas. Sistema de tickets na entrada — não perder. Picos no almoço de fim de semana.",
+      address: "205 E Houston St, New York, NY 10002",
+      hours: "Dom–Qua 8h–22h45 | Qui 8h–2h45 | Sex–Sáb 24h",
+      image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=1200&q=80",
+      imageSource: "https://katzsdelicatessen.com",
+      officialSite: "https://katzsdelicatessen.com/",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Katz%27s+Delicatessen+205+E+Houston+St+New+York",
+      miniRoteiro: {
+        title: "Almoço Lower East Side + caminhada",
+        steps: [
+          "12h — Almoço Katz's (pastrami sandwich é obrigatório)",
+          "13h30 — Caminhada Orchard St + Russ & Daughters Cafe (café e blini)",
+          "15h — Tenement Museum (3 quarteirões a leste)"
+        ]
+      }
+    },
+    {
+      id: "rubys-cafe",
+      cat: "americano",
+      name: "Little Ruby's",
+      subtitle: "Café australiano para brunch e almoço",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "1h-1h30",
+      bestTime: "qualquer-horário",
+      formality: "casual",
+      tags: ["brunch", "burger", "downtown", "casual"],
+      description: "Café australiano-americano aberto em 2003, com várias unidades em Manhattan. A unidade do West Village (esquina W 4th + 7th Ave) tem espaço amplo, terraço, cocktails e cardápio com Bronte burger, ricotta hotcakes, pastas e bowls. Cena descontraída para brunch ou almoço entre compromissos.",
+      whyVisit: [
+        "Bronte burger e ricotta hotcakes são clássicos com fila aos finais de semana",
+        "Programa de cocktails na unidade West Village (única com bar completo) amplia o uso para happy hour"
+      ],
+      practical: "Reservas via OpenTable em todas as unidades. Walk-in aceito. Outras unidades: SoHo (219 Mulberry), Murray Hill, East Village, Williamsburg.",
+      address: "225 W 4th St, New York, NY 10014",
+      hours: "Diariamente 9h–meia-noite (sex/sáb até 2h)",
+      image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=1200&q=80",
+      imageSource: "https://www.rubyscafe.com",
+      officialSite: "https://www.rubyscafe.com",
+      reservationSite: "https://www.opentable.com/r/little-rubys-west-village-new-york",
+      mapsLink: "https://maps.google.com/?q=Little+Ruby%27s+225+W+4th+St+New+York",
+      miniRoteiro: {
+        title: "Brunch e compras West Village",
+        steps: [
+          "10h — Brunch Little Ruby's (Bronte burger ou ricotta hotcakes)",
+          "12h — Compras Bleecker St (livrarias e marcas independentes)",
+          "14h — Café no Sant Ambroeus (mesmo bairro)"
+        ]
+      }
+    },
+    {
+      id: "cha-cha-matcha",
+      cat: "americano",
+      name: "Cha Cha Matcha",
+      subtitle: "Café especializado em matcha",
+      neighborhood: "NoHo",
+      neighborhoodKey: "noho",
+      duration: "30min",
+      bestTime: "manhã-tarde",
+      formality: "casual",
+      tags: ["café", "matcha", "downtown", "instagramável"],
+      description: "Café aberto em 2016, especializado em matcha cerimonial, lattes criativos, soft serve e pastéis. Decoração rosa-pastel, atmosfera descolada, ponto de parada do circuito de moda e arte do downtown. Outras unidades em NoMad (1158 Broadway) e Moynihan Train Hall.",
+      whyVisit: [
+        "Matcha cerimonial estoneado, com opções de leite de macadâmia, oat e coco",
+        "Café para break rápido entre galerias e compras de SoHo, NoHo e NoLita"
+      ],
+      practical: "Walk-in apenas, sem reservas. Filas curtas em horário de pico, costuma ser rápido.",
+      address: "327 Lafayette St, New York, NY 10012",
+      hours: "Seg–Sex 7h–18h | Sáb–Dom 8h–18h",
+      image: "https://images.unsplash.com/photo-1536013455244-e9c9c5f6b0e5?w=1200&q=80",
+      imageSource: "https://chachamatcha.com",
+      officialSite: "https://chachamatcha.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Cha+Cha+Matcha+327+Lafayette+St+New+York",
+      miniRoteiro: {
+        title: "Manhã downtown",
+        steps: [
+          "9h — Matcha latte no Cha Cha Matcha",
+          "10h — Caminhada Lafayette + Mulberry (galerias e arquitetura)",
+          "12h — Almoço Torrisi ou Manuela (a poucos quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "glace-by-noglu",
+      cat: "americano",
+      name: "Glace by Noglu",
+      subtitle: "Sorvetes e o viral S'mores Hot Chocolate",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "30min-1h",
+      bestTime: "tarde-noite",
+      formality: "casual",
+      tags: ["sobremesa", "sorvete", "viral", "instagramável"],
+      description: "Sorveteria aberta em 2023 pela família Zabar, hoje famosa pelo S'mores Hot Chocolate (frio ou quente, com marshmallow brûlée na borda da xícara), virou fenômeno no TikTok com filas que passam de 30 minutos. Sorvete, soft serve e sundaes — tudo sem glúten. Ao lado funciona a Glace Candy.",
+      whyVisit: [
+        "S'mores Hot Chocolate viral — é a referência em sobremesas instagramáveis de Manhattan",
+        "Soft serve sazonal e sundaes criativos como Nutella Fluffernutter, todos sem glúten"
+      ],
+      practical: "Walk-in apenas. Sem assento dentro da loja. Picos de fila no fim de semana e em dias frios.",
+      address: "1266 Madison Ave, New York, NY 10128",
+      hours: "Seg–Qui 11h–21h | Sex–Dom 11h–22h",
+      image: "https://images.unsplash.com/photo-1551529834-525807d6b4f3?w=1200&q=80",
+      imageSource: "https://glaceny.com",
+      officialSite: "https://glaceny.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Glace+by+Noglu+1266+Madison+Ave+New+York",
+      miniRoteiro: {
+        title: "Tarde Upper East Side com sobremesa",
+        steps: [
+          "14h — Met Museum (Costume Art ou Raphael)",
+          "17h — Caminhada Madison Ave (compras de luxo)",
+          "18h — S'mores Hot Chocolate na Glace by Noglu"
+        ]
+      }
+    },
+    {
+      id: "the-mark-restaurant",
+      cat: "americano",
+      name: "The Mark Restaurant by Jean-Georges",
+      subtitle: "Contemporâneo americano de Jean-Georges Vongerichten",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "1h30-2h30",
+      bestTime: "qualquer-horário",
+      formality: "smart",
+      tags: ["chef-celebridade", "hotel", "europeu", "atemporal"],
+      description: "Restaurante de Jean-Georges Vongerichten dentro do hotel The Mark, com sala desenhada por Jacques Grange. Cardápio europeu com toques globais, parede de vinhos em cobre e vidro. O hotel ainda opera o icônico Mark Hot Dog Cart na frente, com hot dog do chef.",
+      whyVisit: [
+        "Cozinha sazonal de Jean-Georges em ambiente formal — referência do Upper East Side há mais de uma década",
+        "Mark Hot Dog Cart na calçada (9h–17h) é a versão informal do mesmo programa"
+      ],
+      practical: "Reservas Resy ou pelo telefone (212.606.3030). Mark Bar com seleção de coquetéis na entrada, walk-in.",
+      address: "25 E 77th St (The Mark Hotel), New York, NY 10075",
+      hours: "Diariamente 7h–1h | Mark Bar 7h–2h | Hot Dog Cart 9h–17h (clima permitindo)",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+      imageSource: "https://www.themarkrestaurantnyc.com",
+      officialSite: "https://www.themarkrestaurantnyc.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/the-mark-restaurant-by-jean-georges",
+      mapsLink: "https://maps.google.com/?q=The+Mark+Restaurant+25+E+77th+St+New+York",
+      miniRoteiro: {
+        title: "Almoço entre Met e Frick",
+        steps: [
+          "11h — Met Museum (visita pela manhã)",
+          "13h — Almoço The Mark Restaurant",
+          "15h — Frick Madison ou Whitney (8 quarteirões a sul)"
+        ]
+      }
+    },
+    {
+      id: "catch-nyc",
+      cat: "americano",
+      name: "Catch NYC",
+      subtitle: "Frutos do mar, sushi e steak no Meatpacking",
+      neighborhood: "Meatpacking District",
+      neighborhoodKey: "meatpacking",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["frutos-do-mar", "sushi", "downtown", "cena"],
+      description: "Restaurante de três andares no Meatpacking, em prédio histórico, com programa de frutos do mar, sushi e carnes — peixes do Toyosu Market de Tóquio. Ambiente badalado, virou cena à noite com música alta. Pretzel Croissant Pull Apart Bread, Catch Roll e Wagyu Fried Rice estão entre os clássicos.",
+      whyVisit: [
+        "Pretzel Croissant Pull Apart Bread é institucional, servido em todas as mesas",
+        "Cobertura com terraço aberto à noite oferece atmosfera mais lounge para drinks após o jantar"
+      ],
+      practical: "Reservas via OpenTable. Espera mesmo com reserva é frequente; reservar com antecedência.",
+      address: "21 9th Ave, New York, NY 10014",
+      hours: "Diariamente 17h30–22h15",
+      image: "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&q=80",
+      imageSource: "https://www.catchrestaurants.com",
+      officialSite: "https://www.catchrestaurants.com/location/catch-nyc/",
+      reservationSite: "https://www.opentable.com/catch-new-york",
+      mapsLink: "https://maps.google.com/?q=Catch+NYC+21+9th+Ave+New+York",
+      miniRoteiro: {
+        title: "Noite no Meatpacking",
+        steps: [
+          "18h — Caminhada na High Line ao pôr do sol",
+          "20h — Jantar Catch NYC (Pretzel Bread + Catch Roll)",
+          "23h — Drink no Standard Highline Top of the Standard"
+        ]
+      }
+    },
+
+    /* JAPONESES ──────────────────────────────────────────────────────── */
+    {
+      id: "anba",
+      cat: "japones",
+      name: "Anbā",
+      subtitle: "Omakase kaiseki feminino com 16 cursos",
+      neighborhood: "Lower East Side",
+      neighborhoodKey: "lower-east-side",
+      duration: "2h30",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["omakase", "fine-dining", "novo", "downtown"],
+      description: "Único balcão de kaiseki feminino de NYC. Chef Ambrely Ouimette serve 16 cursos por US$220, com programa de peixes envelhecidos a seco e fermentações artesanais. 10 assentos, balcão de travertino italiano, estética wabi-sabi minimalista.",
+      whyVisit: [
+        "Único kaiseki conduzido por chef mulher na cidade",
+        "Cocktail lounge anexo até 4h transforma a experiência em noite completa"
+      ],
+      practical: "Reservas OpenTable. Sessões 18h e 20h30. Cocktail lounge walk-in.",
+      address: "92 Ludlow St, New York, NY 10002",
+      hours: "Qua–Sáb sessões 18h e 20h30 | Lounge 17h–4h",
+      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80",
+      imageSource: "https://anbanewyork.com",
+      officialSite: "https://anbanewyork.com/",
+      reservationSite: "https://www.exploretock.com/anba-new-york",
+      mapsLink: "https://maps.app.goo.gl/rQqcWWcwCgMNwD2o8",
+      miniRoteiro: {
+        title: "Lower East Side noite-de-cena",
+        steps: [
+          "18h — Sessão omakase Anbā",
+          "20h30 — Cocktail lounge anexo (Anbā lounge)",
+          "23h — Bar Goldfinch ou Bar Goto (3 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "muku",
+      cat: "japones",
+      name: "Muku",
+      subtitle: "Kaiseki 10 cursos com Estrela Michelin",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "2h30",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["michelin", "omakase", "tribeca", "fine-dining"],
+      description: "Estrela Michelin mais rápida da história de NYC — recebida 2 meses após a abertura. Chef Manabu Asanuma serve kaiseki de 10 cursos por US$295, com mural dourado do séc. XVII e ambiente sereno. 10 assentos.",
+      whyVisit: [
+        "Goho — 5 técnicas clássicas japonesas executadas com precisão",
+        "Mural dourado do séc. XVII transforma a sala em quase um templo"
+      ],
+      practical: "Reservas OpenTable, abertura 1° de cada mês à meia-noite.",
+      address: "412 Greenwich St (Penthouse B), New York, NY 10013",
+      hours: "Ter–Sáb sessões 17h30 e 20h30 | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80",
+      imageSource: "https://www.restaurantmuku.nyc",
+      officialSite: "https://www.restaurantmuku.nyc",
+      reservationSite: "https://www.restaurantmuku.nyc/reservations",
+      mapsLink: "https://maps.google.com/?q=Muku+412+Greenwich+St+New+York",
+      miniRoteiro: {
+        title: "Tribeca refinado (combine com galerias)",
+        steps: [
+          "14h — Galerias Tribeca (Mendes Wood DM, Marian Goodman)",
+          "17h30 — Sessão Muku (kaiseki 10 cursos)",
+          "20h30 — Drink final no Locanda Verde Bar (3 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "cote-550",
+      cat: "coreano",
+      name: "Cote 550",
+      subtitle: "Korean BBQ Michelin com pista de dança",
+      neighborhood: "Midtown — 550 Madison",
+      neighborhoodKey: "midtown",
+      duration: "2-3h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["coreano", "michelin", "perto-harvard-club", "novo", "experiência"],
+      description: "Versão Madison Avenue do icônico Cote (estrela Michelin). Piscina rasa decorativa no centro da sala, DJ até 23h, corredor azul iluminado, butcher's feast de US$118 por pessoa com otoro e japchae. Adega com 1.400 garrafas.",
+      whyVisit: [
+        "Korean BBQ de alta gastronomia transformado em experiência clubstaurant",
+        "Adega de 1.400 rótulos é uma das mais robustas da cidade"
+      ],
+      practical: "Reservas Resy liberadas 2 semanas antes às 10h.",
+      address: "550 Madison Ave (subsolo), New York, NY 10022",
+      hours: "Seg–Sáb 17h em diante | Dom fechado",
+      image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=80",
+      imageSource: "https://www.cotekoreansteakhouse.com",
+      officialSite: "https://www.cotekoreansteakhouse.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/cote-550?seats=2&date=2026-04-29",
+      mapsLink: "https://maps.google.com/?q=Cote+550+Madison+New+York",
+      miniRoteiro: {
+        title: "Midtown noite-clubstaurant (perto BRM)",
+        steps: [
+          "18h — Drink no Bar Chimera (mesmo prédio, térreo)",
+          "20h — Butcher's Feast no Cote 550",
+          "23h — DJ set até fechar ou Bemelmans Bar (4 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "tashca",
+      cat: "japones",
+      name: "Tashca",
+      subtitle: "Pop-up de cena no Nolita",
+      neighborhood: "Nolita",
+      neighborhoodKey: "nolita",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["pop-up", "vinho-natural", "novo", "downtown"],
+      description: "Restaurante-pop-up dentro de um espaço de eventos privados no Nolita. Duas mesas comunitárias, fritters de bacalhau, steak frites com bagna cauda, vinho natural. Reservas só por DM no Instagram.",
+      whyVisit: [
+        "Funciona como restaurante apenas alguns dias da semana — exclusividade real",
+        "Cena gastronômica mais comentada do downtown"
+      ],
+      practical: "Reservas apenas via Instagram DM (@tashcanyc).",
+      address: "Nolita (endereço revelado após confirmação)",
+      hours: "Operação variável — verificar @tashcanyc",
+      image: "https://images.unsplash.com/photo-1517833969403-d8b0d5e1e0d8?w=1200&q=80",
+      imageSource: "https://tashcanyc.com",
+      officialSite: "https://tashcanyc.com",
+      reservationSite: "https://www.instagram.com/tashca.nyc/",
+      mapsLink: "https://maps.google.com/?q=Nolita+New+York",
+      miniRoteiro: {
+        title: "Downtown insider",
+        steps: [
+          "19h — Drink no Pegu Club ou Spring Lounge",
+          "20h30 — Jantar Tashca",
+          "23h — Bar Goldfinch ou Joyface"
+        ]
+      }
+    },
+    {
+      id: "odo-east-village",
+      cat: "japones",
+      name: "Odo East Village",
+      subtitle: "Primeiro kaiseki izakaya à la carte de Manhattan",
+      neighborhood: "East Village",
+      neighborhoodKey: "east-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["izakaya", "novo", "sem-glúten", "downtown"],
+      description: "Spin-off mais acessível do Odo (2 estrelas Michelin no Flatiron). Centrado em arroz em todas as formas, pratos entre US$15–20. Totalmente sem glúten — único do gênero em Manhattan.",
+      whyVisit: [
+        "Acesso à culinária Odo sem o ticket do menu degustação",
+        "Único kaiseki izakaya 100% sem glúten da cidade"
+      ],
+      practical: "Reservas Resy. Walk-in no balcão sushi possível.",
+      address: "536 E 5th St, New York, NY 10009",
+      hours: "Seg, Qua–Dom 17h–meia-noite | Ter fechado",
+      image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=80",
+      imageSource: "https://www.odoeastvillage.nyc",
+      officialSite: "https://www.odoeastvillage.nyc",
+      reservationSite: "https://resy.com",
+      mapsLink: "https://maps.google.com/?q=Odo+East+Village+536+E+5th+St+New+York",
+      miniRoteiro: {
+        title: "East Village descontraído",
+        steps: [
+          "18h — Caminhada Tompkins Square Park",
+          "19h30 — Jantar Odo East Village",
+          "22h — Drink no Mace ou Death & Co"
+        ]
+      }
+    },
+    {
+      id: "bond-st",
+      cat: "japones",
+      name: "BondST",
+      subtitle: "Japonês contemporâneo desde 1998",
+      neighborhood: "NoHo",
+      neighborhoodKey: "noho",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["sushi", "downtown", "atemporal", "elegante"],
+      description: "Em uma brownstone histórica do NoHo desde 1998, BondST distribui-se em três andares: lounge no térreo, sala principal de 75 lugares com balcão de sushi e segundo andar com sala íntima e tatami room. Cozinha japonesa moderna com toques europeus e asiáticos, conhecida pelo serviço discreto e clientela elegante.",
+      whyVisit: [
+        "Um dos endereços de sushi mais consistentes e atemporais de Manhattan",
+        "Espaço em três níveis funciona tanto para drink no lounge quanto para jantar elaborado"
+      ],
+      practical: "Reservas via OpenTable abrem 60 dias antes para grupos de até 10. Walk-in aceito.",
+      address: "6 Bond St, New York, NY 10012",
+      hours: "Dom–Seg 17h30–21h30 | Ter–Qua 17h30–22h | Qui–Sáb 17h30–22h30",
+      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80",
+      imageSource: "https://bondstrestaurant.com",
+      officialSite: "https://bondstrestaurant.com",
+      reservationSite: "https://www.opentable.com/r/bondst-new-york",
+      mapsLink: "https://maps.google.com/?q=BondST+6+Bond+St+New+York",
+      miniRoteiro: {
+        title: "NoHo elegante",
+        steps: [
+          "18h — Drink no Temple Bar (5 quarteirões na Lafayette)",
+          "20h — Jantar BondST",
+          "22h30 — Drink no The Nines (Great Jones, mesma rua)"
+        ]
+      }
+    },
+    {
+      id: "sushi-noz",
+      cat: "japones",
+      name: "Sushi Noz",
+      subtitle: "Omakase Edomae com duas Estrelas Michelin",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "2h30",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["michelin", "omakase", "fine-dining", "edomae"],
+      description: "Templo de sushi Edomae do chef Nozomu Abe, premiado com duas Estrelas Michelin. Balcão de hinoki de 200 anos no centro da sala, arquitetura Sukiya construída sem um único prego, com mais de 1.000 peças de cedro importadas do Japão. Apenas 14 lugares no total, em duas salas íntimas.",
+      whyVisit: [
+        "Duas Estrelas Michelin — uma das experiências de sushi mais reverenciadas dos EUA",
+        "Arquitetura e atmosfera transportam o convidado a um templo de Kyoto"
+      ],
+      practical: "Reservas via SevenRooms (link no site oficial) ou Tock. Política rígida: depósito de US$100 por pessoa, reembolso só com 72h de antecedência.",
+      address: "181 East 78th St, New York, NY 10075",
+      hours: "Ter–Sáb seatings 17h45 e 20h45 | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80",
+      imageSource: "https://www.noz.global",
+      officialSite: "https://www.noz.global",
+      reservationSite: "https://www.exploretock.com/sushinoz/",
+      mapsLink: "https://maps.google.com/?q=Sushi+Noz+181+E+78th+St+New+York",
+      miniRoteiro: {
+        title: "Upper East Side fine-dining",
+        steps: [
+          "17h — Met Museum (visita ao final da tarde)",
+          "20h — Sessão Sushi Noz (omakase Edomae)",
+          "23h — Drink final no Bemelmans Bar (3 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "sushi-nakazawa",
+      cat: "japones",
+      name: "Sushi Nakazawa",
+      subtitle: "Omakase do discípulo de Jiro Ono — Estrela Michelin",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "2h",
+      bestTime: "almoço-jantar",
+      formality: "smart",
+      tags: ["michelin", "omakase", "downtown", "icônico"],
+      description: "Restaurante do chef Daisuke Nakazawa, conhecido pelo documentário Jiro Dreams of Sushi. Estrela Michelin, omakase de 20 cursos com peixes meticulosamente preparados sobre arroz à temperatura precisa. Sala minimalista preto-e-branco com balcão de 10 lugares e sala adicional de 25.",
+      whyVisit: [
+        "Discípulo direto de Jiro Ono — referência mundial em sushi Edomae",
+        "Custo-benefício considerado excepcional para o nível Michelin (omakase a partir de US$190)"
+      ],
+      practical: "Reservas exclusivas via Resy (não está no OpenTable). Almoço 11h30 e 13h, jantar 17h, 19h15 e 21h30. Para o jantar apenas duplas no balcão.",
+      address: "23 Commerce St, New York, NY 10014",
+      hours: "Diariamente almoço + jantar (verificar Resy)",
+      image: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=1200&q=80",
+      imageSource: "https://www.sushinakazawa.com",
+      officialSite: "https://www.sushinakazawa.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/sushi-nakazawa",
+      mapsLink: "https://maps.google.com/?q=Sushi+Nakazawa+23+Commerce+St+New+York",
+      miniRoteiro: {
+        title: "West Village memorável",
+        steps: [
+          "18h — Caminhada por Bedford St + Commerce St (mais charmosas do downtown)",
+          "19h15 — Sessão Sushi Nakazawa",
+          "22h — Set de jazz no Smalls (5 quarteirões na W 10th)"
+        ]
+      }
+    },
+    {
+      id: "noda",
+      cat: "japones",
+      name: "Noda",
+      subtitle: "Omakase íntimo de 20 cursos — Estrela Michelin",
+      neighborhood: "Flatiron",
+      neighborhoodKey: "flatiron",
+      duration: "2h30",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["michelin", "omakase", "fine-dining", "speakeasy"],
+      description: "Estrela Michelin do chef Shigeyuki Tsunoda, transferido de Ginza, Tóquio. Balcão semicircular de 8 lugares em peça única de 800 lb de madeira, atmosfera de speakeasy com paredes de tijolo aparente. Bar Shinji na entrada (mesma equipe) com programa de coquetéis premiado e adega de uísques japoneses raros.",
+      whyVisit: [
+        "20 cursos sazonais com técnica Edomae conduzida em ritmo calmo",
+        "Adega de uísques japoneses considerada das mais robustas do continente americano"
+      ],
+      practical: "Reservas via Tock, prepago US$400 por pessoa. Reservas para grupos de 1 a 6.",
+      address: "37 W 20th St, New York, NY 10011",
+      hours: "Verificar Tock para sessões disponíveis",
+      image: "https://images.unsplash.com/photo-1553621042-f6e147245754?w=1200&q=80",
+      imageSource: "https://www.noda.nyc",
+      officialSite: "https://www.noda.nyc",
+      reservationSite: "https://www.exploretock.com/noda-nyc",
+      mapsLink: "https://maps.google.com/?q=Noda+37+W+20th+St+New+York",
+      miniRoteiro: {
+        title: "Flatiron noite refinada",
+        steps: [
+          "18h — Coquetel no Pergola (mesmo bairro, 8 quarteirões)",
+          "20h — Sessão Noda (omakase 20 cursos)",
+          "23h — Drink final no bar Shinji (anexo) ou Death & Co (15 min)"
+        ]
+      }
+    },
+    {
+      id: "kurumazushi",
+      cat: "japones",
+      name: "Kurumazushi",
+      subtitle: "Sushi tradicional desde 1977 — instituição",
+      neighborhood: "Midtown East",
+      neighborhoodKey: "midtown",
+      duration: "1h30-2h",
+      bestTime: "almoço-jantar",
+      formality: "smart",
+      tags: ["sushi", "atemporal", "perto-harvard-club", "tradicional"],
+      description: "Sushi tradicional aberto em 1977 pelo chef Toshihiro Uezu, ainda hoje à frente do balcão. Localizado no segundo andar de um edifício comercial de 47th St, sem ostentação visual — toda a atenção volta-se ao corte e à temperatura precisa de cada peça. Almoço institucional para o circuito de negócios do Midtown.",
+      whyVisit: [
+        "Quase 50 anos com o mesmo chef — uma das mais antigas instituições de sushi de Manhattan",
+        "Almoço no Midtown East é tradição de executivos; combo é exemplo de simplicidade Edomae"
+      ],
+      practical: "Reservas apenas por telefone (212.317.2802). Não está em sistemas online. Almoço lota cedo.",
+      address: "7 E 47th St, 2º andar, New York, NY 10017",
+      hours: "Seg–Sex almoço 12h–14h + jantar 17h–21h | Sáb–Dom fechado",
+      image: "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=1200&q=80",
+      imageSource: "https://www.kurumazushi.com",
+      officialSite: "https://www.kurumazushi.com",
+      reservationSite: "https://www.kurumazushi.com",
+      mapsLink: "https://maps.google.com/?q=Kurumazushi+7+E+47th+St+New+York",
+      miniRoteiro: {
+        title: "Almoço institucional Midtown (perto BRM)",
+        steps: [
+          "11h30 — Almoço Kurumazushi (sushi plate ou omakase)",
+          "13h30 — Caminhada por Park Ave + 5th Ave",
+          "15h — Morgan Library (5 quarteirões a sul)"
+        ]
+      }
+    },
+
+    /* BARES & SPEAKEASY ──────────────────────────────────────────────── */
+    {
+      id: "bemelmans",
+      cat: "bar",
+      name: "Bemelmans Bar",
+      subtitle: "Piano bar lendário no Carlyle Hotel",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "1h30-2h",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["jazz", "histórico", "atemporal", "icônico"],
+      description: "Piano bar lendário desde 1947. Murais originais de Ludwig Bemelmans (autor de Madeline) cobrindo as paredes. Jazz e voz ao vivo todas as noites. Frequentado por socialites, políticos e artistas. Cerca de 1.000 martinis servidos por noite.",
+      whyVisit: [
+        "Único bar do mundo com murais Bemelmans originais",
+        "Atmosfera intacta há quase 80 anos — instituição real"
+      ],
+      practical: "Reservas Resy. Dress code smart casual obrigatório. Cover charge após 21h30.",
+      address: "35 E 76th St (The Carlyle Hotel), New York, NY 10075",
+      hours: "Dom–Seg 12h–meia-noite | Ter–Qui 12h–0h30 | Sex–Sáb 12h–1h",
+      image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1200&q=80",
+      imageSource: "https://www.rosewoodhotels.com/en/the-carlyle-new-york",
+      officialSite: "https://www.rosewoodhotels.com/en/the-carlyle-new-york/dining/bemelmans-bar",
+      reservationSite: "https://www.rosewoodhotels.com/en/the-carlyle-new-york/dining",
+      mapsLink: "https://maps.google.com/?q=Bemelmans+Bar+35+E+76th+St+New+York",
+      miniRoteiro: {
+        title: "Upper East Side clássico",
+        steps: [
+          "17h — Met Museum (Costume Art ou Raphael)",
+          "19h — Bemelmans Bar (martini ao piano)",
+          "21h — Jantar próximo: Daniel ou Cafe Boulud"
+        ]
+      }
+    },
+    {
+      id: "bar-oliver",
+      cat: "bar",
+      name: "Bar Oliver",
+      subtitle: "Pintxos bascos com vermouth on tap",
+      neighborhood: "Financial District",
+      neighborhoodKey: "fidi",
+      duration: "1h30",
+      bestTime: "qualquer-horário",
+      formality: "smart",
+      tags: ["pintxos", "vinho", "novo", "downtown"],
+      description: "Bar de pintxos bascos com vermouth on tap, vinho ao copo, cerveja artesanal. Frequentado pelo circuito de galeristas e colecionadores do Lower Manhattan. Atmosfera evoca um bar de San Sebastián.",
+      whyVisit: [
+        "Único endereço de pintxos bascos legítimos em Manhattan",
+        "Vermouth on tap (raríssimo nos EUA)"
+      ],
+      practical: "Reservas Resy. Walk-in no balcão funciona.",
+      address: "1 Oliver St, New York, NY 10038",
+      hours: "Seg 8h–15h | Ter–Qui 8h–23h | Sex–Sáb 8h–meia-noite | Dom 8h–23h",
+      image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&q=80",
+      imageSource: "https://www.barolivernyc.com",
+      officialSite: "https://www.barolivernyc.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/bar-oliver?seats=2&date=2026-04-29",
+      mapsLink: "https://maps.google.com/?q=Bar+Oliver+1+Oliver+St+New+York",
+      miniRoteiro: {
+        title: "Lower Manhattan insider",
+        steps: [
+          "18h — Drinks Bar Oliver",
+          "20h — Jantar Crown Shy ou Saga (mesmo prédio histórico)",
+          "23h — Drink final The Dead Rabbit"
+        ]
+      }
+    },
+    {
+      id: "bar-chimera",
+      cat: "bar",
+      name: "Bar Chimera",
+      subtitle: "Cocktail bar de 3 conceitos",
+      neighborhood: "Midtown — 550 Madison",
+      neighborhoodKey: "midtown",
+      duration: "1h30-2h",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["cocktails", "novo", "perto-harvard-club"],
+      description: "Cocktail bar com 3 conceitos distintos sob o mesmo teto: wine bar (a cabra — sociável), martini bar (a serpente — \"lethal, not fatal\") e whiskey bar (o leão). Pinheiro vivo de 18m no centro, neon de Martin Creed: \"Don't Worry.\"",
+      whyVisit: [
+        "Conceito tripartido único — três experiências em uma noite",
+        "Lista de vinhos com 1.200+ rótulos"
+      ],
+      practical: "Reservas Resy. Smart casual.",
+      address: "550 Madison Ave (térreo), New York, NY 10022",
+      hours: "Seg–Sáb 17h em diante | Dom fechado",
+      image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1200&q=80",
+      imageSource: "https://www.gracious550.com",
+      officialSite: "https://www.gracious550.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/bar-chimera?date=2026-04-29&seats=2",
+      mapsLink: "https://maps.app.goo.gl/sAMU6LpBUVae8zq67",
+      miniRoteiro: {
+        title: "550 Madison completo (perto BRM)",
+        steps: [
+          "18h — Wine bar do Bar Chimera (a cabra)",
+          "20h — Jantar Cote 550 no subsolo do mesmo prédio",
+          "23h — Whiskey bar do Bar Chimera (o leão)"
+        ]
+      }
+    },
+    {
+      id: "hotel-chelsea-bar",
+      cat: "bar",
+      name: "Hotel Chelsea — Lobby Bar",
+      subtitle: "Bar de coquetel em hotel histórico",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h30",
+      bestTime: "qualquer-horário",
+      formality: "smart",
+      tags: ["histórico", "cocktails", "perto-galerias", "atemporal"],
+      description: "Bar de coquetel de alto padrão dentro do hotel histórico do séc. XIX. Piso em mosaico de mármore original, piano vintage, obras de arte nas paredes. Frequentado por Bob Dylan, Andy Warhol, Patti Smith.",
+      whyVisit: [
+        "Hotel é monumento histórico real, com mais de 140 anos de cena cultural",
+        "Combinação perfeita após circuito de galerias Chelsea"
+      ],
+      practical: "Walk-in permitido. Drinques a partir de US$25.",
+      address: "222–226 W 23rd St, New York, NY 10011",
+      hours: "Diariamente 11h–2h",
+      image: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?w=1200&q=80",
+      imageSource: "https://www.hotelchelsea.com",
+      officialSite: "https://www.hotelchelsea.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Hotel+Chelsea+222+W+23rd+St+New+York",
+      miniRoteiro: {
+        title: "Chelsea galerias + drink histórico",
+        steps: [
+          "14h — Circuito galerias Chelsea (Pace, Hauser & Wirth, Gagosian)",
+          "18h — Drink no Lobby Bar do Hotel Chelsea",
+          "20h — Jantar no Manuela (4 quarteirões) ou Cookshop"
+        ]
+      }
+    },
+    {
+      id: "the-nines",
+      cat: "bar",
+      name: "The Nines",
+      subtitle: "Piano bar e supper club glamouroso",
+      neighborhood: "NoHo",
+      neighborhoodKey: "noho",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "formal",
+      tags: ["piano-bar", "supper-club", "downtown", "elegante"],
+      description: "Piano bar e supper club do grupo Golden Age Hospitality (Le Crocodile, The Happiest Hour). Inspirado nos grandes piano bars europeus: cortinas vermelhas, banquetes burgundy, tapete leopardo, papel de parede em folha de ouro. Programa de coquetéis e cardápio de oysters, foie gras e tartare.",
+      whyVisit: [
+        "Piano ao vivo todas as noites — atmosfera de glamour antigo de Nova York",
+        "Lounge frontal de 15 lugares aceita walk-in, sala principal precisa de reserva firme"
+      ],
+      practical: "Reservas via Resy, abrem dias antes e esgotam rapidamente. Lounge frontal walk-in. Dress code: sem boné, flip-flop, shorts ou regata.",
+      address: "9 Great Jones St, New York, NY 10012",
+      hours: "Seg 17h–1h | Ter–Qua 17h–2h | Qui 17h–3h | Sex–Sáb 17h–3h | Dom 17h–1h",
+      image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1200&q=80",
+      imageSource: "https://www.ninesnyc.com",
+      officialSite: "https://www.ninesnyc.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/the-nines",
+      mapsLink: "https://maps.google.com/?q=The+Nines+9+Great+Jones+St+New+York",
+      miniRoteiro: {
+        title: "NoHo glamour",
+        steps: [
+          "19h — Aperitivo no Temple Bar (5 min de caminhada)",
+          "21h — Drinks e jantar leve no The Nines (piano ao vivo)",
+          "00h — Drink final no The Mulberry (15 min)"
+        ]
+      }
+    },
+    {
+      id: "the-mulberry-bar",
+      cat: "bar",
+      name: "The Mulberry",
+      subtitle: "Cocktail bar speakeasy em NoLita",
+      neighborhood: "NoLita",
+      neighborhoodKey: "nolita",
+      duration: "1h30-2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["speakeasy", "cocktails", "downtown", "cena"],
+      description: "Cocktail bar e lounge no subsolo da Mulberry Street, com luz baixa, acentos vintage e DJ ao vivo. Especialidade: cocktails autorais com caviar service em ambiente íntimo de speakeasy. Cena badalada do downtown, com VIP dome para grupos privados.",
+      whyVisit: [
+        "Cocktails & caviar — combinação rara em formato speakeasy intimista",
+        "Frequentado pelo circuito de moda e celebridades; ambiente exclusivo"
+      ],
+      practical: "Reservas via Resy. Smart casual, sem athleisure. Capacidade limitada, reserva é fortemente recomendada.",
+      address: "240 Mulberry St, Lower Level, New York, NY 10012",
+      hours: "Seg fechado | Ter–Qua 18h–2h | Qui–Sáb 18h–3h | Dom 18h–2h",
+      image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=1200&q=80",
+      imageSource: "https://themulberrybar.com",
+      officialSite: "https://themulberrybar.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/the-mulberry",
+      mapsLink: "https://maps.google.com/?q=The+Mulberry+240+Mulberry+St+New+York",
+      miniRoteiro: {
+        title: "Noite NoLita",
+        steps: [
+          "20h — Jantar Torrisi (4 quarteirões na mesma rua)",
+          "22h30 — Drinks no The Mulberry (cocktails e caviar)",
+          "00h — Café no La Esquina (8 min de caminhada)"
+        ]
+      }
+    },
+    {
+      id: "temple-bar",
+      cat: "bar",
+      name: "Temple Bar",
+      subtitle: "Cocktail den histórico revivido",
+      neighborhood: "NoHo",
+      neighborhoodKey: "noho",
+      duration: "1h30",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["cocktails", "atemporal", "downtown", "icônico"],
+      description: "Reabertura em 2021 do icônico Temple Bar, fechado em 2017 após 28 anos. Equipe inclui Michael McIlroy e Sam Ross do Attaboy. Bar de carvalho original preservado, cortinas de veludo, mármore preto e mesas de couro. Carta extensa de martinis em homenagem à raiz, mais coquetéis contemporâneos como Penicillin (criação do próprio Sam Ross).",
+      whyVisit: [
+        "Renascimento de uma das mais icônicas cocktail dens de Nova York dos anos 90",
+        "Equipe Attaboy traz reputação técnica para uma carta de martinis impecável"
+      ],
+      practical: "Reservas exclusivas via Resy, abrem 2 semanas antes. Não é dinner spot — apenas light bites.",
+      address: "332 Lafayette St, New York, NY 10012",
+      hours: "Dom fechado | Seg–Qui 17h–1h | Sex–Sáb 17h–2h",
+      image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&q=80",
+      imageSource: "https://www.templebar.co",
+      officialSite: "https://www.templebar.co",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/temple-bar",
+      mapsLink: "https://maps.google.com/?q=Temple+Bar+332+Lafayette+St+New+York",
+      miniRoteiro: {
+        title: "Aperitivo NoHo",
+        steps: [
+          "18h30 — Drinks de abertura no Temple Bar (martinis clássicos)",
+          "20h30 — Jantar BondST (mesmo bairro, 5 min) ou Lucien (East Village)",
+          "23h — Drink final no The Nines (piano bar)"
+        ]
+      }
+    },
+    {
+      id: "la-esquina",
+      cat: "bar",
+      name: "La Esquina",
+      subtitle: "Cantina mexicana e brasserie subterrânea",
+      neighborhood: "SoHo",
+      neighborhoodKey: "soho",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["mexicano", "speakeasy", "downtown", "icônico"],
+      description: "Conceito icônico desde 2006 na esquina SoHo/NoLita: o que parece uma deli mexicana de rua esconde, no subsolo, uma brasserie speakeasy com escada estreita, cozinha aberta e mesas comunitárias. Tacos, ceviche, queso fundido, margaritas. Outras unidades no Midtown e Upper East Side.",
+      whyVisit: [
+        "Entrada secreta pela cozinha da deli é parte definitiva da experiência",
+        "Mexican street food sofisticado, atmosfera de descoberta"
+      ],
+      practical: "Reservas Resy para a brasserie subterrânea. Cantina (térreo) também aceita walk-in. Reservar com antecedência.",
+      address: "114 Kenmare St, New York, NY 10012",
+      hours: "Diariamente 12h–23h (cantina) | Brasserie 18h–meia-noite",
+      image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1200&q=80",
+      imageSource: "https://www.esquinanyc.com",
+      officialSite: "https://www.esquinanyc.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/la-esquina-soho",
+      mapsLink: "https://maps.google.com/?q=La+Esquina+114+Kenmare+St+New+York",
+      miniRoteiro: {
+        title: "SoHo subterrâneo",
+        steps: [
+          "19h — Drinks no Pegu Club ou Spring Lounge",
+          "20h30 — Jantar La Esquina (brasserie subterrânea)",
+          "23h30 — Café no Cha Cha Matcha (10 min de caminhada)"
+        ]
+      }
+    },
+    {
+      id: "saint-tuesday",
+      cat: "bar",
+      name: "Saint Tuesday",
+      subtitle: "Speakeasy com jazz ao vivo no Walker Hotel Tribeca",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["speakeasy", "jazz", "tribeca", "atemporal"],
+      description: "Speakeasy no sub-cellar do Walker Hotel Tribeca, em prédio de 1890 que foi fábrica de botões e fitas. Entrada discreta na Cortlandt Alley, descida por escada metálica. Cocktail program de Christopher Covey (alumno do Milk & Honey), com jazz cigano, choro brasileiro e gêneros eclécticos das 21h30 até tarde, todas as noites.",
+      whyVisit: [
+        "Música ao vivo todas as noites — uma das experiências mais autênticas de speakeasy de Manhattan",
+        "Atmosfera de cave parisiense em Tribeca, design de Johnny McCormick (Maison Premiere, Five Leaves)"
+      ],
+      practical: "Walk-in com tocar campainha na entrada da Cortlandt Alley. Espera de até 45 min em horário de pico.",
+      address: "24 Cortlandt Alley (Walker Hotel Tribeca), New York, NY 10013",
+      hours: "Diariamente 18h–2h | Música ao vivo a partir das 21h30",
+      image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1200&q=80",
+      imageSource: "https://www.sainttuesdaynyc.com",
+      officialSite: "https://www.sainttuesdaynyc.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Saint+Tuesday+24+Cortlandt+Alley+New+York",
+      miniRoteiro: {
+        title: "Tribeca noite secreta",
+        steps: [
+          "20h — Jantar Beefbar ou Au Cheval (mesma alameda)",
+          "22h — Saint Tuesday (chegar antes do set das 21h30 ajuda)",
+          "00h — Drink no rooftop do Walker Hotel"
+        ]
+      }
+    },
+    {
+      id: "double-chicken-please",
+      cat: "bar",
+      name: "Double Chicken Please",
+      subtitle: "Top-rated mundial — coquetéis culinários",
+      neighborhood: "Lower East Side",
+      neighborhoodKey: "lower-east-side",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["cocktails", "downtown", "icônico", "premiado"],
+      description: "Bar dos taiwaneses GN Chan e Faye Chen, ranqueado entre os melhores bares do mundo (No.1 da América do Norte 2023, top 5 mundial). Dois ambientes: Free Range (frente, walk-in, drafts e small bites) e The Coop (fundo, reservas, coquetéis culinários inspirados em pratos como key lime pie e mango sticky rice). Sanduíche de fried chicken é cult.",
+      whyVisit: [
+        "Top 50 Best Bars mundial — destino obrigatório para entusiastas de coquetéis",
+        "Coquetéis 'comestíveis' — drinks que reproduzem sabores de pratos específicos"
+      ],
+      practical: "70% do The Coop é walk-in (chegar cedo). Reservas Resy para grupos até 6, abrem 6 dias antes à meia-noite. Front room (Free Range) sempre walk-in.",
+      address: "115 Allen St, New York, NY 10002",
+      hours: "Ter–Qui 17h–1h | Sex–Sáb 17h–1h30 | Dom 17h–meia-noite | Seg fechado",
+      image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=1200&q=80",
+      imageSource: "https://doublechickenplease.com",
+      officialSite: "https://doublechickenplease.com",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/double-chicken-please",
+      mapsLink: "https://maps.google.com/?q=Double+Chicken+Please+115+Allen+St+New+York",
+      miniRoteiro: {
+        title: "Lower East Side noite-de-cena",
+        steps: [
+          "19h30 — Drink no Bar Goto (mesmo bairro)",
+          "21h — The Coop do Double Chicken Please (com reserva)",
+          "23h30 — Pastrami sandwich Katz's (delicatessen 24h às sex/sáb)"
+        ]
+      }
+    },
+    {
+      id: "pergola",
+      cat: "bar",
+      name: "Pergola",
+      subtitle: "Mediterrâneo descontraído com hookah lounge",
+      neighborhood: "Flatiron",
+      neighborhoodKey: "flatiron",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "casual",
+      tags: ["mediterrâneo", "hookah", "downtown", "informal"],
+      description: "Restaurante e lounge em prédio de 3.700 m² na Flatiron (antiga floricultura), com cardápio mediterrâneo de inspiração grega, turca e do Oriente Médio. Cozinha do chef Nestor Moina, programa de coquetéis e menu de hookah com 12 sabores. Espresso martini é destaque entre os drinks.",
+      whyVisit: [
+        "Espresso martini virou referência da casa, listado entre os melhores da cidade",
+        "Programa de hookah em ambiente bi-level com vidro e folhagem"
+      ],
+      practical: "Reservas pelo telefone (212.679.4842). Mínimo de consumo pode aplicar em horário de pico.",
+      address: "36 W 28th St, New York, NY 10001",
+      hours: "Diariamente 16h–2h",
+      image: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?w=1200&q=80",
+      imageSource: "https://www.pergolanewyork.com",
+      officialSite: "https://www.pergolanewyork.com",
+      reservationSite: "https://www.pergolanewyork.com",
+      mapsLink: "https://maps.google.com/?q=Pergola+36+W+28th+St+New+York",
+      miniRoteiro: {
+        title: "Flatiron descontraído",
+        steps: [
+          "19h30 — Aperitivo Pergola (espresso martini)",
+          "21h — Jantar Noda ou Cha Cha Matcha rooftop (mesma região)",
+          "23h — Drink final no Death & Co Flatiron"
+        ]
+      }
+    },
+    {
+      id: "beefbar",
+      cat: "bar",
+      name: "Beefbar",
+      subtitle: "Estreia americana da casa de Mônaco — carnes e street food",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["steakhouse", "tribeca", "novo", "internacional"],
+      description: "Primeira unidade americana da rede Beefbar (originalmente de Mônaco, com filiais de Tóquio a Saint-Tropez), no histórico Powell Building (antigo espaço do Nobu Tribeca). Programa de cortes nobres americanos (Snake River Farms, Creekstone) e Wagyu, combinado com street food global como tacos de Kobe e quesadillas de Wagyu. Design assinado por Humbert & Poyet.",
+      whyVisit: [
+        "Conceito singular: steakhouse refinada com aposta forte em street food internacional",
+        "Quartas a sábados com DJ, a sala se transforma em cena social — Thursday é o dia mais badalado"
+      ],
+      practical: "Reservas via Resy ou OpenTable. Seg–qua mais tranquilo; quintas em diante mais animado, com música.",
+      address: "105 Hudson St, New York, NY 10013",
+      hours: "Diariamente 17h–meia-noite (verificar — pode variar)",
+      image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=1200&q=80",
+      imageSource: "https://beefbar.com/new-york",
+      officialSite: "https://beefbar.com/new-york/",
+      reservationSite: "https://resy.com/cities/new-york-ny/venues/beefbar-new-york",
+      mapsLink: "https://maps.google.com/?q=Beefbar+105+Hudson+St+New+York",
+      miniRoteiro: {
+        title: "Noite Tribeca cena",
+        steps: [
+          "19h — Drinks no Locanda Verde Bar (3 quarteirões)",
+          "20h30 — Jantar Beefbar (Kobe tacos + Wagyu pasta)",
+          "23h — Saint Tuesday (mesma alameda, jazz speakeasy)"
+        ]
+      }
+    },
+
+    /* JAZZ ──────────────────────────────────────────────────────────── */
+    {
+      id: "village-vanguard",
+      cat: "jazz",
+      name: "Village Vanguard",
+      subtitle: "Templo do jazz desde 1935",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["jazz", "histórico", "icônico", "downtown"],
+      description: "Templo do jazz mundial em operação contínua desde 1935. Coltrane, Bill Evans, Sonny Rollins gravaram aqui. Sets às 20h e 22h, todas as noites. Sala em forma de cunha no subsolo, sem garçons durante a apresentação — silêncio reverente.",
+      whyVisit: [
+        "Mais lendário clube de jazz do planeta — quase um santuário",
+        "Vanguard Jazz Orchestra toca todas as segundas há mais de 50 anos"
+      ],
+      practical: "Reservas via site oficial. Cover ~US$45 por set + 1 drink mínimo.",
+      address: "178 7th Ave S, New York, NY 10014",
+      hours: "Diariamente — sets 20h e 22h",
+      image: "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=1200&q=80",
+      imageSource: "https://www.villagevanguard.com",
+      officialSite: "https://www.villagevanguard.com",
+      reservationSite: "https://www.villagevanguard.com",
+      mapsLink: "https://maps.google.com/?q=Village+Vanguard+178+7th+Ave+S+New+York",
+      miniRoteiro: {
+        title: "Noite de jazz no Village",
+        steps: [
+          "18h — Jantar Carbone, Via Carota ou Don Angie",
+          "20h — Set 1 no Village Vanguard",
+          "22h — Drink no Bar Pisellino ou Employees Only"
+        ]
+      }
+    },
+    {
+      id: "smalls-jazz",
+      cat: "jazz",
+      name: "Smalls Jazz Club",
+      subtitle: "Jazz íntimo no porão desde 1994",
+      neighborhood: "West Village",
+      neighborhoodKey: "west-village",
+      duration: "1h30-2h",
+      bestTime: "noite",
+      formality: "casual",
+      tags: ["jazz", "downtown", "atemporal", "íntimo"],
+      description: "Clube de jazz histórico aberto em 1994, hoje uma instituição do West Village. Sala de cerca de 60 lugares no porão, com balcão completo, paredes de tijolo aparente, bandeira de Louis Armstrong e atmosfera de jam session. Sets das 19h30 em diante, com jam sessions tarde da noite às madrugadas de domingo (1h–4h).",
+      whyVisit: [
+        "Lendário jam session de domingo de madrugada — músicos de NY tocam livremente",
+        "Cobertura acessível para o nível do programa, com nomes consagrados e talentos emergentes"
+      ],
+      practical: "Tickets via SmallsLIVE. Sentado por ordem de chegada (chegar 30 min antes do set). Walk-in possível conforme disponibilidade.",
+      address: "183 W 10th St, New York, NY 10014",
+      hours: "Sets diários a partir das 19h30 — programação rotativa",
+      image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80",
+      imageSource: "https://www.smallslive.com",
+      officialSite: "https://www.smallslive.com",
+      reservationSite: "https://www.smallslive.com/tickets/",
+      mapsLink: "https://maps.google.com/?q=Smalls+Jazz+Club+183+W+10th+St+New+York",
+      miniRoteiro: {
+        title: "After-dinner jazz West Village",
+        steps: [
+          "19h — Jantar L'Artusi ou Sushi Nakazawa (mesmo bairro)",
+          "21h — Set tardio no Smalls",
+          "1h — Jam session de domingo (apenas dom 1h–4h)"
+        ]
+      }
+    },
+    {
+      id: "blue-note",
+      cat: "jazz",
+      name: "Blue Note",
+      subtitle: "Clube de jazz internacional",
+      neighborhood: "Greenwich Village",
+      neighborhoodKey: "greenwich-village",
+      duration: "2h",
+      bestTime: "noite",
+      formality: "smart",
+      tags: ["jazz", "icônico", "downtown"],
+      description: "Casa de jazz com programação internacional desde 1981. Apresentações duplas todas as noites (20h e 22h30). Sala íntima com mesas pequenas e palco baixo. Brunch de jazz aos domingos.",
+      whyVisit: [
+        "Programação que circula entre Tóquio, Milão, Pequim e Nova York",
+        "Brunch de jazz domingo é experiência diferenciada"
+      ],
+      practical: "Reservas firmes via site, mesa custa entre US$45–95 dependendo do artista.",
+      address: "131 W 3rd St, New York, NY 10012",
+      hours: "Diariamente — sets 20h e 22h30",
+      image: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=1200&q=80",
+      imageSource: "https://www.bluenotejazz.com/nyc",
+      officialSite: "https://www.bluenotejazz.com/nyc",
+      reservationSite: "https://www.bluenotejazz.com/nyc",
+      mapsLink: "https://maps.google.com/?q=Blue+Note+131+W+3rd+St+New+York",
+      miniRoteiro: {
+        title: "Domingo de jazz brunch",
+        steps: [
+          "11h30 — Jazz Brunch Blue Note (set + 3 cursos)",
+          "14h — Caminhada Washington Square",
+          "16h — Café Reggio (icônico desde 1927)"
+        ]
+      }
+    }
+  ],
+
+  /* ──────────────────────────────────────────────────────────────────────
+     CULTURA
+     ────────────────────────────────────────────────────────────────────── */
+  cultural: [
+
+    /* MUSEUS ─────────────────────────────────────────────────────────── */
+    {
+      id: "moma",
+      cat: "museu",
+      name: "MoMA — Museum of Modern Art",
+      subtitle: "Arte moderna e contemporânea",
+      neighborhood: "Midtown",
+      neighborhoodKey: "midtown",
+      duration: "dia-inteiro",
+      bestTime: "manhã-tarde",
+      formality: "casual",
+      tags: ["museu", "perto-harvard-club", "imperdível"],
+      description: "Coleção definitiva da arte moderna ocidental. Em maio de 2026: Marcel Duchamp (primeira retrospectiva nos EUA em 50 anos, ~300 obras), Frida and Diego: The Last Dream, e Elizabeth Murray: Painters Progress. Sextas, entrada gratuita 17h30–20h30.",
+      whyVisit: [
+        "Retrospectiva Duchamp é evento histórico — não acontece há meio século",
+        "Mesmo ingresso cobre todas as exposições simultâneas"
+      ],
+      practical: "Ingresso ~US$30. Compra antecipada online recomendada para evitar fila.",
+      address: "11 W 53rd St, New York, NY 10019",
+      hours: "Diariamente 10h30–17h30 | Sextas até 20h30",
+      image: "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1200&q=80",
+      imageSource: "https://www.moma.org",
+      officialSite: "https://www.moma.org",
+      reservationSite: "https://www.moma.org/tickets",
+      mapsLink: "https://maps.google.com/?q=MoMA+11+W+53rd+St+New+York",
+      miniRoteiro: {
+        title: "MoMA dia inteiro",
+        steps: [
+          "10h30 — Entrada (Duchamp piso 6)",
+          "13h — Almoço The Modern (Michelin, dentro do museu) ou Cafe 2",
+          "14h30 — Frida & Diego + Elizabeth Murray + acervo permanente",
+          "17h — Drink no Pen Top Bar (Peninsula, 4 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "met",
+      cat: "museu",
+      name: "The Metropolitan Museum of Art",
+      subtitle: "Museu enciclopédico — 5.000 anos de arte",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "dia-inteiro",
+      bestTime: "manhã-tarde",
+      formality: "casual",
+      tags: ["museu", "imperdível", "atemporal"],
+      description: "O maior museu enciclopédico das Américas. Em maio de 2026: Raphael: Sublime Poetry (primeira retrospectiva de Raphael nos EUA, +200 obras), Costume Art (do Met Gala) e Gothic by Design. Atenção: fechado às quartas (incluindo 13/mai).",
+      whyVisit: [
+        "Retrospectiva Raphael é a maior já organizada em solo americano",
+        "Costume Art é a exposição-irmã do Met Gala — visitação imediata após a estreia"
+      ],
+      practical: "Ingresso US$30. Compra antecipada online. FECHADO QUARTAS — não tentar 13/mai.",
+      address: "1000 5th Ave, New York, NY 10028",
+      hours: "Dom, Ter, Qui 10h–17h | Sex–Sáb 10h–21h | Quarta FECHADO",
+      image: "https://images.unsplash.com/photo-1565060169187-5284c5b1e0a9?w=1200&q=80",
+      imageSource: "https://www.metmuseum.org",
+      officialSite: "https://www.metmuseum.org",
+      reservationSite: "https://engage.metmuseum.org/admission",
+      mapsLink: "https://maps.google.com/?q=Metropolitan+Museum+of+Art+New+York",
+      miniRoteiro: {
+        title: "Met dia inteiro",
+        steps: [
+          "10h — Raphael (galeria 999, piso 2)",
+          "12h30 — Almoço no Cafeteria do Met ou Members Dining Room",
+          "14h — Costume Art + acervo egípcio + Gothic by Design",
+          "17h — Drink no Bemelmans Bar (5 quarteirões a sul)"
+        ]
+      }
+    },
+    {
+      id: "guggenheim",
+      cat: "museu",
+      name: "Solomon R. Guggenheim Museum",
+      subtitle: "Edifício Frank Lloyd Wright + arte moderna",
+      neighborhood: "Upper East Side",
+      neighborhoodKey: "upper-east-side",
+      duration: "2-3h",
+      bestTime: "manhã-tarde",
+      formality: "casual",
+      tags: ["museu", "arquitetura", "icônico"],
+      description: "Edifício icônico de Frank Lloyd Wright (1959). Em maio de 2026: Carol Bove (primeira retrospectiva museológica da escultora americano-suíça, ocupa toda a rotunda), em diálogo com o minimalismo.",
+      whyVisit: [
+        "Edifício é, em si, uma obra de arte — rampa espiral de 400 metros",
+        "Carol Bove ocupa toda a rotunda — experiência única"
+      ],
+      practical: "Ingresso US$30. \"Pay what you wish\" às segundas e sábados 16h–17h30.",
+      address: "1071 5th Ave, New York, NY 10128",
+      hours: "Diariamente 10h30–17h30",
+      image: "https://images.unsplash.com/photo-1568575814090-b95daa6814b2?w=1200&q=80",
+      imageSource: "https://www.guggenheim.org",
+      officialSite: "https://www.guggenheim.org",
+      reservationSite: "https://www.guggenheim.org/buy-tickets",
+      mapsLink: "https://maps.google.com/?q=Guggenheim+Museum+1071+5th+Ave+New+York",
+      miniRoteiro: {
+        title: "Upper East Side circuito-museus",
+        steps: [
+          "10h30 — Guggenheim (Carol Bove, rotunda completa)",
+          "12h30 — Almoço Sant Ambroeus Madison (5 quarteirões)",
+          "14h — Met Museum (mesmo bairro, 7 quarteirões a sul)"
+        ]
+      }
+    },
+    {
+      id: "whitney",
+      cat: "museu",
+      name: "Whitney Museum of American Art",
+      subtitle: "Arte americana do séc. XX ao contemporâneo",
+      neighborhood: "Meatpacking District",
+      neighborhoodKey: "chelsea",
+      duration: "2-3h",
+      bestTime: "manhã-tarde",
+      formality: "casual",
+      tags: ["museu", "perto-galerias", "perto-highline"],
+      description: "Em maio de 2026: Whitney Biennial 2026 (82ª edição) — 56 artistas e coletivos com panorama da arte americana atual. Temas: identidade, tecnologia, geopolítica, parentescos interespécies. Atenção: FECHADO terças.",
+      whyVisit: [
+        "Whitney Biennial é a mais importante mostra de arte americana contemporânea",
+        "Edifício Renzo Piano com terraços abertos para o Hudson"
+      ],
+      practical: "Ingresso US$30. Sextas 17h–22h gratuito. Sempre gratuito menores de 25.",
+      address: "99 Gansevoort St, New York, NY 10014",
+      hours: "Qua–Dom 10h30–18h | Sex até 22h | Terça FECHADO",
+      image: "https://images.unsplash.com/photo-1544967082-d9d25d867d66?w=1200&q=80",
+      imageSource: "https://whitney.org",
+      officialSite: "https://whitney.org",
+      reservationSite: "https://whitney.org/visit",
+      mapsLink: "https://maps.google.com/?q=Whitney+Museum+99+Gansevoort+St+New+York",
+      miniRoteiro: {
+        title: "Whitney + High Line + Chelsea",
+        steps: [
+          "10h30 — Whitney Biennial (~3h)",
+          "13h30 — Caminhada High Line (entrada Gansevoort, sentido norte)",
+          "15h — Galerias Chelsea (Hauser & Wirth, Pace, Gagosian)"
+        ]
+      }
+    },
+    {
+      id: "noguchi",
+      cat: "museu",
+      name: "Noguchi Museum",
+      subtitle: "Escultura, design e jardim de Isamu Noguchi",
+      neighborhood: "Long Island City (Queens)",
+      neighborhoodKey: "queens",
+      duration: "2-3h",
+      bestTime: "manhã-tarde",
+      formality: "casual",
+      tags: ["museu", "arquitetura", "jardim"],
+      description: "Museu fundado e projetado pelo próprio Isamu Noguchi em 1985. Acervo permanente de esculturas, móveis, instalações de luz Akari e jardim de esculturas ao ar livre. Atmosfera contemplativa.",
+      whyVisit: [
+        "Museu-monografia raríssimo — apenas Noguchi, do projeto à curadoria",
+        "Jardim de esculturas é experiência singular em qualquer estação"
+      ],
+      practical: "Ingresso US$16. FECHADO seg e ter. Pode-se combinar com MoMA PS1 (mesmo bairro).",
+      address: "9-01 33rd Road, Long Island City, Queens, NY 11106",
+      hours: "Qua–Dom 11h–18h | Seg–Ter FECHADO",
+      image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80",
+      imageSource: "https://www.noguchi.org",
+      officialSite: "https://www.noguchi.org",
+      reservationSite: "https://tickets.noguchi.org",
+      mapsLink: "https://maps.google.com/?q=Noguchi+Museum+9-01+33rd+Road+Queens",
+      miniRoteiro: {
+        title: "Queens cultural day",
+        steps: [
+          "11h — Noguchi Museum + jardim de esculturas",
+          "13h — Almoço M. Wells Steakhouse (5 min, ícone Queens)",
+          "15h — MoMA PS1 (10 min, arte contemporânea experimental)"
+        ]
+      }
+    },
+    {
+      id: "morgan-library",
+      cat: "museu",
+      name: "Morgan Library & Museum",
+      subtitle: "Biblioteca e museu de J.P. Morgan",
+      neighborhood: "Midtown",
+      neighborhoodKey: "midtown",
+      duration: "2h",
+      bestTime: "manhã",
+      formality: "casual",
+      tags: ["museu", "histórico", "perto-harvard-club", "agenda-brm"],
+      description: "Biblioteca particular de J.P. Morgan transformada em museu público. Manuscritos iluminados, partituras de Beethoven, primeira edição de Frankenstein. Visita oficial da Expedição BRM NY na manhã de 12/05.",
+      whyVisit: [
+        "Visita já incluída no programa oficial Expedição BRM (12/05 manhã)",
+        "Biblioteca de Pierpont Morgan é uma das salas mais bonitas da cidade"
+      ],
+      practical: "Para o BRM, visita guiada exclusiva. Acesso público regular: ingresso US$25.",
+      address: "225 Madison Ave, New York, NY 10016",
+      hours: "Ter–Dom 10h30–17h | Sex até 19h | Seg fechado",
+      image: "https://images.unsplash.com/photo-1568667256549-094345857637?w=1200&q=80",
+      imageSource: "https://www.themorgan.org",
+      officialSite: "https://www.themorgan.org",
+      reservationSite: "https://www.themorgan.org/visit",
+      mapsLink: "https://maps.google.com/?q=Morgan+Library+225+Madison+Ave+New+York",
+      miniRoteiro: {
+        title: "Manhã clássica Midtown (oficial BRM)",
+        steps: [
+          "10h30 — Morgan Library (visita BRM 12/05)",
+          "12h30 — Almoço Le Pavillon (oficial BRM, 8 quarteirões)",
+          "15h — Tarde livre antes do MFO Rockefeller (15h30)"
+        ]
+      }
+    },
+
+    /* GALERIAS CHELSEA ───────────────────────────────────────────────── */
+    {
+      id: "pace-gallery",
+      cat: "galeria",
+      name: "Pace Gallery",
+      subtitle: "Galeria contemporânea de referência mundial",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h-1h30",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "arte-contemporânea"],
+      description: "Uma das maiores galerias do mundo. Representa Rothko, Hockney, Calder, James Turrell. Em 15 de maio de 2026 abre 4 novas exposições simultaneamente: The Turning Season, Italy Through Its Trees, The Moon Room, Dream of Vanishing.",
+      whyVisit: [
+        "Quatro exposições novas no mesmo dia — abertura coincide com a Brazil Week",
+        "Edifício de 8 andares dedicado à arte contemporânea"
+      ],
+      practical: "Entrada gratuita. Combine com Hauser & Wirth e Gagosian (mesma rua).",
+      address: "540 W 25th St, New York, NY 10001",
+      hours: "Ter–Sáb 10h–18h | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=1200&q=80",
+      imageSource: "https://www.pacegallery.com",
+      officialSite: "https://www.pacegallery.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Pace+Gallery+540+W+25th+St+New+York",
+      miniRoteiro: {
+        title: "Sábado de galerias Chelsea (15/05 abertura nova)",
+        steps: [
+          "11h — Pace Gallery (4 exposições novas)",
+          "13h — Almoço Cookshop (Chelsea Market vizinho)",
+          "15h — Hauser & Wirth + Gagosian + David Zwirner (mesmas quadras)"
+        ]
+      }
+    },
+    {
+      id: "gagosian",
+      cat: "galeria",
+      name: "Gagosian",
+      subtitle: "Galeria global de arte moderna e contemporânea",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "arte-contemporânea"],
+      description: "Em maio de 2026: Giuseppe Penone — The Reflection of Bronze (22 abr–2 jul). Esculturas em bronze do artista conceitual italiano. Curadoria de Adam D. Weinberg (ex-diretor do Whitney).",
+      whyVisit: [
+        "Penone é um dos maiores escultores vivos da escola Arte Povera",
+        "Edifício 555 W 24th tem pé-direito de 7m, ideal para escultura"
+      ],
+      practical: "Entrada gratuita. Visita rápida (~45 min) combina bem com galerias vizinhas.",
+      address: "555 W 24th St, New York, NY 10011",
+      hours: "Ter–Sáb 10h–18h | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1561839561-b13bcfe95249?w=1200&q=80",
+      imageSource: "https://gagosian.com",
+      officialSite: "https://gagosian.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Gagosian+555+W+24th+St+New+York",
+      miniRoteiro: {
+        title: "Bloco oeste da rua 24",
+        steps: [
+          "14h — Gagosian (Penone)",
+          "15h — Hauser & Wirth (mesma quadra, novo prédio)",
+          "16h — Café no Hotel Chelsea ou Manuela"
+        ]
+      }
+    },
+    {
+      id: "hauser-wirth",
+      cat: "galeria",
+      name: "Hauser & Wirth",
+      subtitle: "Mega-galeria internacional",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h-1h30",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "abertura-12mai"],
+      description: "Mega-galeria suíça com programa internacional. Em 12 de maio de 2026 abre duas novas exposições simultaneamente — coincidindo com o início da Brazil Week. Programação rotativa de artistas como Mark Bradford, Pipilotti Rist, Roni Horn.",
+      whyVisit: [
+        "Aberturas no dia 12/05 coincidem com a Expedição BRM — ponto de roteiro",
+        "Espaço expositivo de 3.300 m², ambicioso e refinado"
+      ],
+      practical: "Entrada gratuita. Cafeteria interna recomendada.",
+      address: "542 W 22nd St, New York, NY 10011",
+      hours: "Ter–Sáb 10h–18h | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1545569310-99d4c5d9e4ab?w=1200&q=80",
+      imageSource: "https://www.hauserwirth.com",
+      officialSite: "https://www.hauserwirth.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Hauser+Wirth+542+W+22nd+St+New+York",
+      miniRoteiro: {
+        title: "Aberturas 12/05 (durante BRM)",
+        steps: [
+          "11h — Hauser & Wirth (2 aberturas novas)",
+          "12h30 — Almoço Manuela (a 2 quarteirões)",
+          "14h — David Zwirner + Dia Chelsea + Pace"
+        ]
+      }
+    },
+    {
+      id: "gladstone-gallery",
+      cat: "galeria",
+      name: "Gladstone Gallery",
+      subtitle: "Galeria de elite com programa multidisciplinar",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "elite"],
+      description: "Galeria fundada por Barbara Gladstone em 1980, hoje uma das mais influentes do mundo. Representa Anish Kapoor, Carrie Mae Weems, Joan Jonas, Matthew Barney, Shirin Neshat e Ugo Rondinone. Quatro espaços em Manhattan, com o principal em Chelsea (530 W 21st e 515 W 24th).",
+      whyVisit: [
+        "Programação rigorosa entre artistas estabelecidos e nomes contemporâneos de peso",
+        "Dois espaços contíguos em Chelsea permitem combinação rápida na mesma visita"
+      ],
+      practical: "Entrada gratuita. Combinar visita com aberturas próximas em sábados.",
+      address: "530 W 21st St, New York, NY 10011",
+      hours: "Ter–Sáb 10h–18h | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?w=1200&q=80",
+      imageSource: "https://www.gladstonegallery.com",
+      officialSite: "https://www.gladstonegallery.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Gladstone+Gallery+530+W+21st+St+New+York",
+      miniRoteiro: {
+        title: "Galerias premium 21st–24th St",
+        steps: [
+          "14h — Gladstone Gallery (530 W 21st)",
+          "15h — Gladstone (515 W 24th, segundo espaço)",
+          "16h — Hauser & Wirth + Pace (caminhada de 5 minutos)"
+        ]
+      }
+    },
+    {
+      id: "david-zwirner",
+      cat: "galeria",
+      name: "David Zwirner",
+      subtitle: "Galeria de elite mundial",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "arte-contemporânea"],
+      description: "Em maio de 2026: Elizabeth Peyton — mountains in my heart (the death of Sarpedon) no 533 W 19th, e Gerhard Richter — Landschaften no 537 W 20th (abre 7 mai). Dois espaços, duas exposições maiúsculas.",
+      whyVisit: [
+        "Gerhard Richter é provavelmente o pintor vivo mais influente",
+        "Dois prédios contíguos, fácil combinação"
+      ],
+      practical: "Entrada gratuita.",
+      address: "533 W 19th St + 537 W 20th St, New York, NY 10011",
+      hours: "Ter–Sáb 10h–18h | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80",
+      imageSource: "https://www.davidzwirner.com",
+      officialSite: "https://www.davidzwirner.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=David+Zwirner+533+W+19th+St+New+York",
+      miniRoteiro: {
+        title: "Galerias 19th–20th",
+        steps: [
+          "14h — David Zwirner (Richter + Peyton)",
+          "15h30 — High Line (entrada 16th St, vai a norte)",
+          "17h — Whitney Museum (final High Line sul, conexão direta)"
+        ]
+      }
+    },
+    {
+      id: "dia-chelsea",
+      cat: "galeria",
+      name: "Dia Chelsea",
+      subtitle: "Arte conceitual e minimalista permanente",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "1h",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "arte-conceitual"],
+      description: "Sede da Dia Art Foundation, dedicada à arte minimalista, conceitual e Land Art. Programação rotativa de Walter De Maria, Robert Ryman, Donald Judd, Richard Serra.",
+      whyVisit: [
+        "Único espaço dedicado integralmente à preservação do minimalismo americano",
+        "Atmosfera de templo — silêncio, escala, contemplação"
+      ],
+      practical: "Entrada gratuita. Verifique calendário, pode ter horário reduzido em alguns dias.",
+      address: "537 W 22nd St, New York, NY 10011",
+      hours: "Qua–Sáb 11h–18h | Dom 11h–17h",
+      image: "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1200&q=80",
+      imageSource: "https://www.diaart.org",
+      officialSite: "https://www.diaart.org",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Dia+Chelsea+537+W+22nd+St+New+York",
+      miniRoteiro: {
+        title: "Minimalismo + galerias 22nd",
+        steps: [
+          "14h — Dia Chelsea (silêncio e contemplação)",
+          "15h — Hauser & Wirth (mesma rua)",
+          "16h30 — Café Hotel Chelsea ou Manuela"
+        ]
+      }
+    },
+    {
+      id: "skarstedt",
+      cat: "galeria",
+      name: "Skarstedt Gallery",
+      subtitle: "Arte europeia e americana sécs. XX–XXI",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "45min",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito"],
+      description: "Galeria especializada no mercado secundário de obras de Warhol, Basquiat, Bacon, Koons, Haring. Catálogo curatorial de altíssimo nível, com exposições temáticas refinadas.",
+      whyVisit: [
+        "Acesso a obras de mestres do séc. XX raramente vistas em galerias",
+        "Curadoria de referência no mercado secundário"
+      ],
+      practical: "Entrada gratuita. Verificar exposição em cartaz.",
+      address: "547 W 25th St, New York, NY 10001",
+      hours: "Ter–Sex 9h30–18h | Sáb 10h–18h",
+      image: "https://images.unsplash.com/photo-1565060169187-5284c5b1e0a9?w=1200&q=80",
+      imageSource: "https://www.skarstedt.com",
+      officialSite: "https://www.skarstedt.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Skarstedt+547+W+25th+St+New+York",
+      miniRoteiro: {
+        title: "25th Street completa",
+        steps: [
+          "14h — Skarstedt (mestres séc. XX)",
+          "15h — Pace Gallery (mesma quadra)",
+          "16h30 — Hotel Chelsea Lobby Bar"
+        ]
+      }
+    },
+    {
+      id: "nara-roesler",
+      cat: "galeria",
+      name: "Nara Roesler",
+      subtitle: "Arte latino-americana contemporânea",
+      neighborhood: "Chelsea",
+      neighborhoodKey: "chelsea",
+      duration: "45min",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "perto-galerias", "gratuito", "brasileira"],
+      description: "Filial nova-iorquina da galeria brasileira Nara Roesler. Representa Vik Muniz, Antonio Dias, Tomie Ohtake, Cristina Iglesias. Único espaço em Chelsea com foco específico em arte latino-americana de alto nível.",
+      whyVisit: [
+        "Conexão direta com o ecossistema brasileiro de arte contemporânea",
+        "Vik Muniz e Tomie Ohtake têm presença frequente"
+      ],
+      practical: "Entrada gratuita.",
+      address: "511 W 21st St, New York, NY 10011",
+      hours: "Ter–Sex 10h–18h | Sáb 11h–18h",
+      image: "https://images.unsplash.com/photo-1547149700-1f4cb1faafa1?w=1200&q=80",
+      imageSource: "https://nararoesler.art",
+      officialSite: "https://nararoesler.art",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Nara+Roesler+511+W+21st+St+New+York",
+      miniRoteiro: {
+        title: "Brasil em Chelsea",
+        steps: [
+          "14h — Nara Roesler (arte brasileira)",
+          "15h — Mendes Wood DM (Tribeca, 12 min de táxi) ou outras galerias Chelsea",
+          "17h — Drink Manuela ou Hotel Chelsea"
+        ]
+      }
+    },
+
+    /* GALERIAS TRIBECA ───────────────────────────────────────────────── */
+    {
+      id: "mendes-wood",
+      cat: "galeria",
+      name: "Mendes Wood DM",
+      subtitle: "Arte contemporânea com forte presença latino-americana",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "1h",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "tribeca", "gratuito", "brasileira"],
+      description: "Filial nova-iorquina da galeria brasileira Mendes Wood DM, com sede em São Paulo, Bruxelas e Paris. Em maio de 2026: Kishio Suga (artista japonês do movimento Mono-ha). Programação fortemente curada.",
+      whyVisit: [
+        "Galeria brasileira com presença internacional consolidada",
+        "Curadoria intelectual de referência no circuito de Tribeca"
+      ],
+      practical: "Entrada gratuita.",
+      address: "47 Walker St, New York, NY 10013",
+      hours: "Ter–Sáb 10h–18h",
+      image: "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=1200&q=80",
+      imageSource: "https://mendeswooddm.com",
+      officialSite: "https://mendeswooddm.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Mendes+Wood+DM+47+Walker+St+New+York",
+      miniRoteiro: {
+        title: "Tribeca galerias + jantar",
+        steps: [
+          "14h — Mendes Wood DM",
+          "15h30 — Marian Goodman + Andrew Kreps + Luhring Augustine Tribeca",
+          "20h30 — Jantar Muku (penthouse 412 Greenwich)"
+        ]
+      }
+    },
+    {
+      id: "marian-goodman",
+      cat: "galeria",
+      name: "Marian Goodman Gallery",
+      subtitle: "Arte contemporânea intelectual",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "1h",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "tribeca", "gratuito", "arte-contemporânea"],
+      description: "Em maio de 2026: Julie Mehretu — Our Days, Like a Shadow (a non-abiding hauntology). Pinturas em grande escala da artista etíope-americana, uma das mais importantes da sua geração.",
+      whyVisit: [
+        "Mehretu é referência absoluta — telas de até 7 metros de largura",
+        "Espaço novo em Tribeca (385 Broadway), pé-direito monumental"
+      ],
+      practical: "Entrada gratuita.",
+      address: "385 Broadway, New York, NY 10013",
+      hours: "Ter–Sáb 10h–18h",
+      image: "https://images.unsplash.com/photo-1547149700-1f4cb1faafa1?w=1200&q=80",
+      imageSource: "https://www.mariangoodman.com",
+      officialSite: "https://www.mariangoodman.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Marian+Goodman+385+Broadway+New+York",
+      miniRoteiro: {
+        title: "Pinturas monumentais Tribeca",
+        steps: [
+          "14h — Marian Goodman (Mehretu)",
+          "15h30 — Mendes Wood DM + Andrew Kreps",
+          "17h30 — Drink Locanda Verde Bar (3 quarteirões)"
+        ]
+      }
+    },
+    {
+      id: "luhring-augustine-tribeca",
+      cat: "galeria",
+      name: "Luhring Augustine Tribeca",
+      subtitle: "Arte contemporânea internacional",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "45min",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "tribeca", "gratuito"],
+      description: "Em maio de 2026: Emily Kraus (11 abr–13 jun). Pinturas da artista americana com nova abordagem da pintura gestual. Galeria também representa Glenn Ligon, Rachel Whiteread, Oscar Tuazon.",
+      whyVisit: [
+        "Acompanhamento de carreiras emergentes de altíssimo nível curatorial",
+        "Espaço de Tribeca complementa a sede Chelsea"
+      ],
+      practical: "Entrada gratuita.",
+      address: "17 White St, New York, NY 10013",
+      hours: "Ter–Sáb 10h–18h",
+      image: "https://images.unsplash.com/photo-1545569310-99d4c5d9e4ab?w=1200&q=80",
+      imageSource: "https://www.luhringaugustine.com",
+      officialSite: "https://www.luhringaugustine.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Luhring+Augustine+Tribeca+17+White+St+New+York",
+      miniRoteiro: {
+        title: "Tribeca completa",
+        steps: [
+          "14h — Luhring Augustine Tribeca",
+          "15h — Mendes Wood DM + Marian Goodman",
+          "17h — Caminhada Hudson River Park (rio)"
+        ]
+      }
+    },
+    {
+      id: "andrew-kreps",
+      cat: "galeria",
+      name: "Andrew Kreps Gallery",
+      subtitle: "Galeria contemporânea de programação rigorosa",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "45min",
+      bestTime: "tarde",
+      formality: "casual",
+      tags: ["galeria", "tribeca", "gratuito", "contemporâneo"],
+      description: "Galeria contemporânea aberta em 1996, hoje em Tribeca. Programa rigoroso de pintura, escultura e instalação, com nomes como Goshka Macuga, Anne Collier, Andrew Lord e Kelley Walker. Complementa o circuito de galerias Tribeca em conjunto com Mendes Wood e Marian Goodman.",
+      whyVisit: [
+        "Curadoria séria de artistas contemporâneos com presença forte em bienais e museus internacionais",
+        "Localização em Cortlandt Alley, eixo de galerias e estúdios criativos de Tribeca"
+      ],
+      practical: "Entrada gratuita. Sábados são o melhor dia para ver aberturas e movimento de público de arte.",
+      address: "22 Cortlandt Alley, New York, NY 10013",
+      hours: "Ter–Sáb 10h–18h | Dom–Seg fechado",
+      image: "https://images.unsplash.com/photo-1577083552431-6e5fd01988ec?w=1200&q=80",
+      imageSource: "https://www.andrewkreps.com",
+      officialSite: "https://www.andrewkreps.com",
+      reservationSite: null,
+      mapsLink: "https://maps.google.com/?q=Andrew+Kreps+Gallery+22+Cortlandt+Alley+New+York",
+      miniRoteiro: {
+        title: "Cortlandt Alley + galerias Tribeca",
+        steps: [
+          "14h — Andrew Kreps (22 Cortlandt Alley)",
+          "15h — Mendes Wood DM + Marian Goodman (mesmo bairro)",
+          "17h — Almoço tardio no Au Cheval (mesma alameda) ou drink Locanda Verde"
+        ]
+      }
+    },
+
+    /* OUTROS ─────────────────────────────────────────────────────────── */
+    {
+      id: "manuela",
+      cat: "galeria",
+      name: "Manuela",
+      subtitle: "Restaurante-galeria em SoHo",
+      neighborhood: "SoHo",
+      neighborhoodKey: "soho",
+      duration: "1h30-2h",
+      bestTime: "almoço-jantar",
+      formality: "smart",
+      tags: ["galeria", "perto-galerias", "almoço-galerias"],
+      description: "Conceito híbrido entre galeria de arte contemporânea e restaurante. Coleção de obras nas paredes em rotação curatorial. Cozinha americana sazonal. Frequentado pelo circuito de marchands e colecionadores.",
+      whyVisit: [
+        "Almoço perfeito entre visitas a galerias Chelsea — mesmo público",
+        "Programa expositivo próprio + rotação de obras nas paredes"
+      ],
+      practical: "Reservas via SevenRooms. Programa expositivo próprio em manuela-nyc.com/art-at-manuela.",
+      address: "130 Prince Street, New York, NY 10012",
+      hours: "Diariamente 11h30–22h",
+      image: "https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&q=80",
+      imageSource: "https://manuela-nyc.com",
+      officialSite: "https://manuela-nyc.com/art-at-manuela/",
+      reservationSite: "https://www.sevenrooms.com/explore/manuelany/reservations/create/search/",
+      mapsLink: "https://maps.google.com/?q=Manuela+130+Prince+St+New+York",
+      miniRoteiro: {
+        title: "Almoço em SoHo entre arte e arquitetura",
+        steps: [
+          "12h — Caminhada SoHo (Greene St, Mercer St, lojas e arquitetura cast-iron)",
+          "13h30 — Almoço no Manuela (programa expositivo nas paredes)",
+          "15h — Galerias SoHo (The Drawing Center, Deitch Projects)"
+        ]
+      }
+    },
+    {
+      id: "independent-art-fair",
+      cat: "feira",
+      name: "Independent Art Fair",
+      subtitle: "Feira de arte contemporânea de cena",
+      neighborhood: "Tribeca",
+      neighborhoodKey: "tribeca",
+      duration: "3-4h",
+      bestTime: "manhã-tarde",
+      formality: "smart",
+      tags: ["feira", "agenda-brm", "imperdível"],
+      description: "Feira de arte contemporânea independente, focada em galerias emergentes e propostas curatoriais ousadas. VIP Preview incluído nos pacotes Acesso, Imersão e Legado da Expedição BRM NY 2026.",
+      whyVisit: [
+        "VIP Preview já incluído nos pacotes oficiais BRM",
+        "Cena de galerias emergentes — descobertas reais antes de virarem mainstream"
+      ],
+      practical: "Para o BRM, VIP Preview na agenda oficial. Acesso público ~US$30 (verificar datas).",
+      address: "Spring Studios — 50 Varick St, New York, NY 10013",
+      hours: "Datas anuais — verificar site oficial",
+      image: "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=1200&q=80",
+      imageSource: "https://www.independenthq.com",
+      officialSite: "https://www.independenthq.com",
+      reservationSite: "https://www.independenthq.com/fair",
+      mapsLink: "https://maps.google.com/?q=Spring+Studios+50+Varick+St+New+York",
+      miniRoteiro: {
+        title: "Feira + galerias Tribeca",
+        steps: [
+          "11h — Independent Art Fair (VIP Preview BRM)",
+          "14h — Almoço Locanda Verde",
+          "16h — Mendes Wood DM + Marian Goodman (mesmo bairro)"
+        ]
+      }
+    }
+
+  ]
+};
+
+
+(function () {
+  'use strict';
+
+  const state = {
+    gastro: { search: '', neigh: '', cat: '' },
+    cultura: { search: '', neigh: '', cat: '' }
+  };
+
+  function $(s, c) { return (c || document).querySelector(s); }
+  function $$(s, c) { return Array.from((c || document).querySelectorAll(s)); }
+  function escapeHtml(str) {
+    if (str == null) return '';
+    return String(str)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+  function escapeAttr(s) { return escapeHtml(s); }
+
+  function isNearHarvardClub(item) {
+    if (!item) return false;
+    if (Array.isArray(item.tags) && item.tags.indexOf('perto-harvard-club') !== -1) return true;
+    if (item.neighborhoodKey === 'midtown') return true;
+    return false;
+  }
+
+  function renderCardHTML(item) {
+    if (!item) return '';
+    const initial = (item.name || '?').trim().charAt(0).toUpperCase();
+    const nearTag = isNearHarvardClub(item)
+      ? '<span class="meta-pill brm">Perto do Harvard Club</span>' : '';
+
+    const whyBlock = (Array.isArray(item.whyVisit) && item.whyVisit.length)
+      ? '<div class="why-block"><div class="why-label">Por que vale</div><ul class="why-list">' +
+        item.whyVisit.map(w => '<li>' + escapeHtml(w) + '</li>').join('') +
+        '</ul></div>'
+      : '';
+
+    const infoRows = [];
+    if (item.neighborhood) infoRows.push({ key: 'Bairro', val: item.neighborhood });
+    if (item.duration) infoRows.push({ key: 'Duração', val: item.duration });
+    if (item.hours) infoRows.push({ key: 'Horário', val: item.hours });
+    if (item.formality) {
+      const formMap = { casual: 'Casual', smart: 'Smart casual', formal: 'Formal' };
+      infoRows.push({ key: 'Estilo', val: formMap[item.formality] || item.formality });
+    }
+    if (item.practical) infoRows.push({ key: 'Detalhe', val: item.practical });
+    if (item.address) infoRows.push({ key: 'Endereço', val: item.address });
+
+    const infoBlock = infoRows.length
+      ? '<div class="card-info">' + infoRows.map(r =>
+          '<div class="info-row"><span class="info-key">' + escapeHtml(r.key) +
+          '</span><span class="info-val">' + escapeHtml(r.val) + '</span></div>'
+        ).join('') + '</div>'
+      : '';
+
+    const miniRoteiroBlock = (item.miniRoteiro && Array.isArray(item.miniRoteiro.steps) && item.miniRoteiro.steps.length)
+      ? '<div class="roteiro-block"><div class="roteiro-head">' +
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="14" height="14"><path d="M3 12h18M3 6h18M3 18h18"/></svg>' +
+        '<span class="roteiro-title">' + escapeHtml(item.miniRoteiro.title || 'Mini-roteiro') + '</span>' +
+        '</div><ul class="roteiro-list">' +
+        item.miniRoteiro.steps.map(s => '<li>' + escapeHtml(s) + '</li>').join('') +
+        '</ul></div>'
+      : '';
+
+    const officialBtn = item.officialSite
+      ? '<a class="action-btn" href="' + escapeAttr(item.officialSite) + '" target="_blank" rel="noopener noreferrer" aria-label="Site oficial de ' + escapeAttr(item.name) + '">Site oficial</a>'
+      : '<span class="action-btn disabled" aria-disabled="true">Site oficial</span>';
+
+    const reserveBtn = item.reservationSite
+      ? '<a class="action-btn action-reserve" href="' + escapeAttr(item.reservationSite) + '" target="_blank" rel="noopener noreferrer" aria-label="Reserva em ' + escapeAttr(item.name) + '">Reservar</a>'
+      : '<span class="action-btn disabled" aria-disabled="true">Reservar</span>';
+
+    const mapsBtn = item.mapsLink
+      ? '<a class="action-btn action-map" href="' + escapeAttr(item.mapsLink) + '" target="_blank" rel="noopener noreferrer" aria-label="Abrir ' + escapeAttr(item.name) + ' no Google Maps">Google Maps</a>'
+      : '<span class="action-btn disabled" aria-disabled="true">Google Maps</span>';
+
+    const labels = {
+      italiano: 'Italiano', frances: 'Francês', americano: 'Americano',
+      japones: 'Japonês', coreano: 'Coreano', bar: 'Bar', jazz: 'Jazz',
+      museu: 'Museu', galeria: 'Galeria', feira: 'Feira'
+    };
+    const catLabel = labels[item.cat] || (item.cat || '');
+
+    return '<article class="card" data-id="' + escapeAttr(item.id) + '">' +
+      '<div class="card-image">' +
+      '<img src="' + escapeAttr(item.image || '') + '" alt="' + escapeAttr(item.name) + '" loading="lazy" decoding="async" ' +
+      'onerror="this.style.display=\'none\';this.parentElement.parentElement.classList.add(\'no-img\');">' +
+      '<div class="image-fallback" aria-hidden="true">' + escapeHtml(initial) + '</div>' +
+      '</div>' +
+      '<div class="card-body">' +
+        (catLabel ? '<div class="card-cat">' + escapeHtml(catLabel) + '</div>' : '') +
+        '<h3 class="card-title">' + escapeHtml(item.name) + '</h3>' +
+        (item.subtitle ? '<p class="card-subtitle">' + escapeHtml(item.subtitle) + '</p>' : '') +
+        '<div class="card-meta">' +
+          (item.neighborhood ? '<span class="meta-pill neighborhood">' + escapeHtml(item.neighborhood) + '</span>' : '') +
+          (item.duration ? '<span class="meta-pill">' + escapeHtml(item.duration) + '</span>' : '') +
+          nearTag +
+        '</div>' +
+        (item.description ? '<p class="card-desc">' + escapeHtml(item.description) + '</p>' : '') +
+        whyBlock + infoBlock + miniRoteiroBlock +
+        '<div class="card-actions">' + officialBtn + reserveBtn + mapsBtn + '</div>' +
+      '</div>' +
+    '</article>';
+  }
+
+  function applyFilters(items, f) {
+    const q = (f.search || '').toLowerCase().trim();
+    return items.filter(item => {
+      if (f.cat && item.cat !== f.cat) return false;
+      if (f.neigh && item.neighborhoodKey !== f.neigh) return false;
+      if (q) {
+        const hay = [
+          item.name, item.subtitle, item.neighborhood, item.description, item.cat,
+          (item.tags || []).join(' '), (item.whyVisit || []).join(' '), item.address
+        ].filter(Boolean).join(' ').toLowerCase();
+        if (hay.indexOf(q) === -1) return false;
+      }
+      return true;
+    });
+  }
+
+  function emptyHTML(t, d) {
+    return '<div class="empty"><h3 class="empty-title">' + escapeHtml(t) + '</h3><p class="empty-desc">' + escapeHtml(d) + '</p></div>';
+  }
+
+  function renderGastronomia() {
+    const grid = $('#gridGastro'); if (!grid) return;
+    const items = applyFilters(DATA.gastronomia, state.gastro);
+    const c = $('#countGastro'); if (c) c.textContent = items.length;
+    grid.innerHTML = items.length === 0
+      ? emptyHTML('Nenhum resultado', 'Tente ajustar os filtros ou limpar a busca para ver toda a curadoria de gastronomia.')
+      : items.map(renderCardHTML).join('');
+  }
+
+  function renderCultura() {
+    const grid = $('#gridCultura'); if (!grid) return;
+    const items = applyFilters(DATA.cultural, state.cultura);
+    const c = $('#countCultura'); if (c) c.textContent = items.length;
+    grid.innerHTML = items.length === 0
+      ? emptyHTML('Nenhum resultado', 'Tente ajustar os filtros ou limpar a busca para ver toda a curadoria cultural.')
+      : items.map(renderCardHTML).join('');
+  }
+
+  /* Router */
+  const ROUTES = ['home', 'gastronomia', 'cultura', 'links'];
+  function currentRoute() {
+    const h = (location.hash || '').replace(/^#\/?/, '').split('/')[0];
+    return ROUTES.indexOf(h) !== -1 ? h : 'home';
+  }
+  function showRoute(route) {
+    $$('.page').forEach(p => p.classList.remove('active'));
+    const target = $('#page-' + route);
+    if (target) target.classList.add('active');
+    $$('.nav-link[data-route]').forEach(a => {
+      const isActive = a.getAttribute('data-route') === route;
+      a.classList.toggle('active', isActive);
+      if (isActive) a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    if (route === 'gastronomia') renderGastronomia();
+    if (route === 'cultura') renderCultura();
+    window.scrollTo(0, 0);
+  }
+
+  /* Bindings */
+  function bindGastro() {
+    const s = $('#searchGastro'), n = $('#filterNeighGastro');
+    if (s) s.addEventListener('input', e => { state.gastro.search = e.target.value; renderGastronomia(); });
+    if (n) n.addEventListener('change', e => { state.gastro.neigh = e.target.value; renderGastronomia(); });
+    const chips = $('#chipsGastro');
+    if (chips) chips.addEventListener('click', e => {
+      const btn = e.target.closest('.chip'); if (!btn) return;
+      $$('.chip', chips).forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      state.gastro.cat = btn.getAttribute('data-cat') || '';
+      renderGastronomia();
+    });
+  }
+  function bindCultura() {
+    const s = $('#searchCultura'), n = $('#filterNeighCultura');
+    if (s) s.addEventListener('input', e => { state.cultura.search = e.target.value; renderCultura(); });
+    if (n) n.addEventListener('change', e => { state.cultura.neigh = e.target.value; renderCultura(); });
+    const chips = $('#chipsCultura');
+    if (chips) chips.addEventListener('click', e => {
+      const btn = e.target.closest('.chip'); if (!btn) return;
+      $$('.chip', chips).forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      state.cultura.cat = btn.getAttribute('data-cat') || '';
+      renderCultura();
+    });
+  }
+
+  function init() {
+    bindGastro();
+    bindCultura();
+    renderGastronomia();
+    renderCultura();
+    if (!location.hash) location.hash = '#/home';
+    showRoute(currentRoute());
+    window.addEventListener('hashchange', () => showRoute(currentRoute()));
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+</body>
+</html>
