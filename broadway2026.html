@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Broadway · Redoma</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #002D5C;
+    --blue: #0078D2;
+    --light-blue: #8CBCE8;
+    --white: #FFFFFF;
+    --off-white: #F6F6F6;
+    --gold: #C9A84C;
+    --text-dark: #1A1A2E;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    background: linear-gradient(135deg, #000d1a 0%, var(--navy) 50%, #00183a 100%);
+    padding: 80px 60px 60px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,120,210,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .redoma-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 56px;
+  }
+
+  .diamond {
+    width: 28px;
+    height: 28px;
+    background: var(--white);
+    transform: rotate(45deg);
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5em;
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .hero-eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(42px, 6vw, 72px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--light-blue);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2.2vw, 22px);
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 40px;
+    font-style: italic;
+  }
+
+  /* INTRO BLOCK */
+  .intro-section {
+    background: #000d1a;
+    padding: 56px 60px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+    max-width: 1100px;
+  }
+
+  .intro-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .intro-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--white);
+    margin-bottom: 24px;
+  }
+
+  .intro-text {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.65);
+  }
+
+  .intro-divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, rgba(201,168,76,0.4), transparent);
+    height: 100%;
+    justify-self: center;
+  }
+
+  .intro-right {
+    padding-top: 48px;
+  }
+
+  .intro-highlight {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 2.5vw, 26px);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--light-blue);
+    line-height: 1.5;
+    padding-left: 24px;
+    border-left: 2px solid var(--gold);
+    margin-bottom: 24px;
+  }
+
+  /* BROADWAY EXPLAINER */
+  .broadway-explainer {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(255,255,255,0.65);
+  }
+
+  /* SHOWS GRID */
+  .shows-section {
+    padding: 60px;
+    background: #00122a;
+  }
+
+  .shows-section-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+  }
+
+  .shows-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 2px;
+  }
+
+  /* SHOW CARD */
+  .show-card {
+    position: relative;
+    background: #000d1a;
+    overflow: hidden;
+    cursor: default;
+    transition: transform 0.4s ease;
+  }
+
+  .show-card:hover {
+    transform: translateY(-4px);
+    z-index: 2;
+  }
+
+  .show-card:hover .card-overlay {
+    opacity: 1;
+  }
+
+  .card-image-wrap {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+  }
+
+  .card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    transition: transform 0.6s ease;
+    display: block;
+  }
+
+  .show-card:hover .card-image-wrap img {
+    transform: scale(1.04);
+  }
+
+  .card-image-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 20%, rgba(0,13,26,0.85) 100%);
+  }
+
+  .card-badge {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: var(--blue);
+    color: var(--white);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    padding: 5px 10px;
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,45,92,0.15);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .card-content {
+    padding: 28px 32px 36px;
+  }
+
+  .card-theatre {
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(24px, 2.8vw, 32px);
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+
+  .card-type {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--light-blue);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+
+  .card-divider {
+    width: 32px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .card-text {
+    font-size: 12.5px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.62);
+  }
+
+  /* FEATURED CARD — full width */
+  .show-card.featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .show-card.featured .card-image-wrap {
+    height: 100%;
+    min-height: 340px;
+  }
+
+  .show-card.featured .card-image-wrap img {
+    height: 100%;
+  }
+
+  .show-card.featured .card-content {
+    padding: 48px 48px 48px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .show-card.featured .card-title {
+    font-size: clamp(32px, 3.5vw, 48px);
+  }
+
+  .redoma-pick {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    width: fit-content;
+  }
+
+  .redoma-pick::before {
+    content: '◆';
+    font-size: 7px;
+  }
+
+  /* FOOTER */
+  .footer-section {
+    background: #000a17;
+    padding: 48px 60px;
+    border-top: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .footer-note {
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.7;
+    max-width: 560px;
+  }
+
+  .footer-note strong {
+    color: rgba(255,255,255,0.65);
+    font-weight: 500;
+  }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.5;
+  }
+
+  .footer-logo .diamond {
+    width: 18px;
+    height: 18px;
+  }
+
+  .footer-logo .logo-text {
+    font-size: 10px;
+    letter-spacing: 0.45em;
+  }
+
+  /* SEPARATORS */
+  .show-separator {
+    grid-column: 1 / -1;
+    height: 1px;
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .hero, .intro-section, .shows-section, .footer-section { padding: 48px 24px; }
+    .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+    .intro-divider { display: none; }
+    .shows-grid { grid-template-columns: 1fr; }
+    .show-card.featured { grid-template-columns: 1fr; }
+    .show-card.featured .card-image-wrap { min-height: 240px; }
+    .show-card.featured .card-content { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="redoma-logo">
+    <div class="diamond"></div>
+    <span class="logo-text">Redoma</span>
+  </div>
+  <p class="hero-eyebrow">Nova York · Maio 2026 · Seleção Exclusiva</p>
+  <h1 class="hero-title">Uma noite<br><em>na Broadway</em></h1>
+  <p class="hero-subtitle">Espetáculos selecionados para Juan &amp; Sofia</p>
+</section>
+
+<!-- INTRO -->
+<section class="intro-section">
+  <div class="intro-grid">
+    <div>
+      <p class="intro-label">O que é a Broadway</p>
+      <h2 class="intro-heading">O coração do<br>teatro mundial</h2>
+    </div>
+    <div class="intro-divider"></div>
+    <div class="intro-right">
+      <p class="intro-label">Apresentação</p>
+      <p class="intro-highlight">Para quem visita Nova York pela primeira vez, escolher ao menos uma noite na Broadway é tão essencial quanto o Central Park ou o skyline ao entardecer.</p>
+      <p class="broadway-explainer">Juan e Sofia,<br><br>"A" Broadway não é um único teatro, mas uma região de Nova Iorque localizada no Midtown de Manhattan. O complexo artístico e cultural concentra 41 teatros históricos, formando o distrito cênico mais prestigiado do planeta que une o coração do teatro mundial. É onde as maiores produções do mundo estreiam e os musicais se tornam fenômenos culturais que atravessam décadas.<br><br>Apresentamos uma seleção dos melhores e mais especiais espetáculos para uma boa experiência na Broadway — cada uma em um teatro icônico!</p>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWS -->
+<section class="shows-section">
+  <p class="shows-section-label">Seleção de Espetáculos · 19 a 22 de Maio de 2026</p>
+
+  <div class="shows-grid">
+
+    <!-- THE LION KING — Featured -->
+    <div class="show-card featured">
+      <div class="card-image-wrap">
+        <img src="https://imaging.broadway.com/images/widescreen-169/w1920/113949-14.jpg" alt="The Lion King Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+      </div>
+      <div class="card-content">
+        <div class="redoma-pick">Sugestão Redoma</div>
+        <p class="card-theatre">Minskoff Theatre</p>
+        <h3 class="card-title">The Lion King</h3>
+        <p class="card-type">Musical</p>
+        <div class="card-divider"></div>
+        <p class="card-text">Um dos espetáculos mais bem-sucedidos da história do teatro mundial, em cartaz contínuo desde 1997. A história de Simba, herdeiro do reino da savana africana, ganha vida em cena com fantoches monumentais, figurinos extraordinários e a trilha original de Elton John e Tim Rice. A abertura — com o nascer do sol e os animais marchando pelo corredor da plateia — é um dos momentos mais emocionantes já criados no palco. Imperdível mesmo para quem já conhece o filme de memória.</p>
+      </div>
+    </div>
+
+    <div class="show-separator"></div>
+
+    <!-- MJ -->
+    <div class="show-card">
+      <div class="card-image-wrap">
+        <img src="https://imaging.broadway.com/images/widescreen-169/w1920/124990-20.jpg" alt="MJ The Musical Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+        <div class="card-badge">Musical</div>
+      </div>
+      <div class="card-content">
+        <p class="card-theatre">Al Hirschfeld Theatre</p>
+        <h3 class="card-title">MJ The Musical</h3>
+        <p class="card-type">Musical</p>
+        <div class="card-divider"></div>
+        <p class="card-text">A produção reúne os maiores sucessos de Michael Jackson numa narrativa que acompanha os bastidores da preparação para a turnê Dangerous de 1992. Com coreografias que reproduzem os movimentos icônicos do artista com fidelidade impressionante e uma produção de som e luz de nível cinematográfico, o espetáculo é uma celebração completa do maior entertainer do século XX. Indicado ao Tony, é consistentemente apontado como uma das experiências mais energéticas da Broadway atual.</p>
+      </div>
+    </div>
+
+    <!-- HAMILTON -->
+    <div class="show-card">
+      <div class="card-image-wrap">
+        <img src="https://hamiltonmusical.com/new-york/wp-content/uploads/sites/2/2023/07/FB_shareCard_1200x628_v01.jpg" alt="Hamilton Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+        <div class="card-badge">Musical</div>
+      </div>
+      <div class="card-content">
+        <p class="card-theatre">Richard Rodgers Theatre</p>
+        <h3 class="card-title">Hamilton</h3>
+        <p class="card-type">Musical</p>
+        <div class="card-divider"></div>
+        <p class="card-text">Fenômeno cultural que redefiniu o teatro musical contemporâneo, Hamilton conta a história do fundador norte-americano Alexander Hamilton por meio do hip-hop, R&amp;B e jazz — um contraste radical com a América do século XVIII que resulta em algo genuinamente único. Vencedor de 11 Tony Awards, continua sendo um dos espetáculos mais disputados de Nova York após mais de uma década em cartaz. Ingressos com alta procura: reserva antecipada essencial.</p>
+      </div>
+    </div>
+
+    <div class="show-separator"></div>
+
+    <!-- WICKED -->
+    <div class="show-card">
+      <div class="card-image-wrap">
+        <img src="https://imaging.broadway.com/images/widescreen-169/w1920/138658-19.jpg" alt="Wicked Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+        <div class="card-badge">Musical</div>
+      </div>
+      <div class="card-content">
+        <p class="card-theatre">Gershwin Theatre</p>
+        <h3 class="card-title">Wicked</h3>
+        <p class="card-type">Musical</p>
+        <div class="card-divider"></div>
+        <p class="card-text">Um dos musicais mais aclamados em cartaz em Nova York, Wicked conta a história de origem das bruxas de Oz — a amizade improvável entre Elphaba, a bruxa verde incompreendida, e Glinda, a popular e deslumbrante. Com a trilha de Stephen Schwartz, cenários épicos e o número Defying Gravity como um dos mais memoráveis da história do teatro musical, a produção ganhou novo fôlego após o sucesso retumbante da adaptação cinematográfica. Para quem assistiu ao filme, ver ao vivo é uma experiência de outra dimensão.</p>
+      </div>
+    </div>
+
+    <!-- HARRY POTTER -->
+    <div class="show-card">
+      <div class="card-image-wrap">
+        <img src="https://imaging.broadway.com/images/custom/w1200/137613-20.jpg" alt="Harry Potter and the Cursed Child Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+        <div class="card-badge">Teatro</div>
+      </div>
+      <div class="card-content">
+        <p class="card-theatre">Palace Theatre</p>
+        <h3 class="card-title">Harry Potter<br>and the Cursed Child</h3>
+        <p class="card-type">Peça teatral com efeitos especiais</p>
+        <div class="card-divider"></div>
+        <p class="card-text">Tom Felton retorna ao papel de Draco Malfoy adulto nesta produção oficial que continua a saga de Harry Potter após os eventos dos livros. Mais do que uma peça convencional, o espetáculo é uma sequência de mágicas de palco que desafiam a explicação — objetos que flutuam, personagens que desaparecem e transformações que o público não consegue decifrar. A produção venceu seis Tony Awards e é recomendada mesmo para quem não acompanhou a saga de perto. O impacto visual é absoluto.</p>
+      </div>
+    </div>
+
+    <div class="show-separator"></div>
+
+    <!-- SIX -->
+    <div class="show-card">
+      <div class="card-image-wrap">
+        <img src="https://imaging.broadway.com/images/widescreen-169/w1920/139222-30.jpg" alt="SIX The Musical Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+        <div class="card-badge">Musical</div>
+      </div>
+      <div class="card-content">
+        <p class="card-theatre">Brooks Atkinson Theatre</p>
+        <h3 class="card-title">SIX: The Musical</h3>
+        <p class="card-type">Musical</p>
+        <div class="card-divider"></div>
+        <p class="card-text">As seis esposas de Henrique VIII transformam sua história de tragédias e decapitações em um show de pop contemporâneo de alto impacto. Irreverente, enérgico e com músicas que saem da cabeça, SIX é um dos fenômenos mais originais dos últimos anos na Broadway — curto, sem intervalo, e com a plateia dançando já na primeira metade. Uma escolha excelente para uma noite leve e divertida.</p>
+      </div>
+    </div>
+
+    <!-- TITANIQUE -->
+    <div class="show-card">
+      <div class="card-image-wrap">
+        <img src="https://imaging.broadway.com/images/widescreen-169/w1920/140022-22.jpg" alt="Titanique Broadway" loading="lazy">
+        <div class="card-image-overlay"></div>
+        <div class="card-overlay"></div>
+        <div class="card-badge">Musical Comédia</div>
+      </div>
+      <div class="card-content">
+        <p class="card-theatre">St. James Theatre</p>
+        <h3 class="card-title">Titanique</h3>
+        <p class="card-type">Musical Comédia</p>
+        <div class="card-divider"></div>
+        <p class="card-text">Titanique chega à Broadway após três anos de temporada Off-Broadway e múltiplas produções internacionais. No espetáculo, Céline Dion narra sua versão bem-humorada do que realmente aconteceu entre Jack e Rose, com os maiores sucessos da cantora como trilha — incluindo, inevitavelmente, My Heart Will Go On. Irreverente, hilário e com energia contagiante, é a pedida certa para uma noite descontraída a dois.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer-section">
+  <p class="footer-note">
+    <strong>Reserva antecipada recomendada.</strong> Os teatros da Broadway ficam a menos de 15 minutos a pé do Aliz Hotel Times Square. Sessões de terça a domingo, com matinês nas quartas e sábados. A Redoma está à disposição para apoio na aquisição dos ingressos.
+  </p>
+  <div class="footer-logo">
+    <div class="diamond"></div>
+    <span class="logo-text">Redoma</span>
+  </div>
+</footer>
+
+</body>
+</html>
