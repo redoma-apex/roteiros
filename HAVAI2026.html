@@ -1,0 +1,1709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orçamento Havaí | Redoma · Junho 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600&family=Cardo:ital,wght@0,400;0,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #f4ede1;
+    --paper-deep: #ebe1cf;
+    --paper-light: #faf6ee;
+    --ink: #1f1a14;
+    --ink-soft: #3a3127;
+    --ink-muted: #6b5d4c;
+    --gold: #9c7a3c;
+    --gold-deep: #6e5326;
+    --gold-soft: #c9b896;
+    --line: #d4c4a3;
+    --line-soft: #e5d9bf;
+    --shadow: rgba(31, 26, 20, 0.08);
+    --highlight: #f9f1e1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cardo', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 16px;
+    font-weight: 400;
+    background-image:
+      radial-gradient(at 10% 8%, rgba(156, 122, 60, 0.05) 0%, transparent 50%),
+      radial-gradient(at 90% 92%, rgba(110, 83, 38, 0.04) 0%, transparent 55%);
+    background-attachment: fixed;
+  }
+
+  .page {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  /* ============ CABEÇALHO ============ */
+  .masthead {
+    padding: 60px 48px 40px;
+    border-bottom: 1px solid var(--line);
+    background: var(--paper-light);
+  }
+
+  .masthead-inner {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+
+  .brandblock { display: flex; flex-direction: column; }
+
+  .brandblock .mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: 38px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .brandblock .tagline {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+
+  .docmeta {
+    text-align: right;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    line-height: 1.9;
+  }
+
+  .docmeta strong { font-weight: 500; color: var(--ink); }
+
+  /* ============ ABERTURA ============ */
+  .intro {
+    padding: 90px 0 70px;
+    background: var(--paper);
+  }
+
+  .doc-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .doc-label::before {
+    content: '';
+    display: inline-block;
+    width: 36px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(48px, 6vw, 78px);
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 30px;
+    letter-spacing: -0.005em;
+  }
+
+  h1 em { font-style: italic; color: var(--gold-deep); }
+
+  .intro-text {
+    max-width: 760px;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+
+  .intro-grid {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .intro-stat {
+    padding: 24px 28px;
+    border-right: 1px solid var(--line);
+  }
+
+  .intro-stat:last-child { border-right: none; }
+
+  .intro-stat .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+
+  .intro-stat .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--ink);
+    line-height: 1.2;
+  }
+
+  /* ============ SEÇÃO ============ */
+  section { padding: 90px 0 30px; }
+
+  .section-head {
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 30px;
+  }
+
+  .section-head h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(36px, 4.5vw, 54px);
+    line-height: 1.05;
+    color: var(--ink);
+    margin-bottom: 14px;
+    letter-spacing: -0.005em;
+  }
+
+  .section-head h2 em { font-style: italic; color: var(--gold-deep); }
+
+  .section-head p {
+    font-size: 17px;
+    color: var(--ink-muted);
+    max-width: 720px;
+    font-style: italic;
+  }
+
+  /* ============ DESTINO ============ */
+  .destino { background: var(--paper); }
+
+  .islands {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .island-card {
+    background: var(--paper-light);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .island-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    filter: saturate(0.94) contrast(1.02);
+  }
+
+  .island-body {
+    padding: 28px 28px 32px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .island-eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 10px;
+  }
+
+  .island-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 16px;
+  }
+
+  .island-card p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    flex: 1;
+  }
+
+  .island-highlights {
+    border-top: 1px solid var(--line-soft);
+    padding-top: 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    line-height: 2;
+  }
+
+  .island-highlights strong {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  /* ============ COMO CHEGAR ============ */
+  .como-chegar {
+    background: var(--paper-deep);
+    padding: 80px 0 60px;
+  }
+
+  .chegar-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+  }
+
+  .chegar-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .chegar-block p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 12px;
+  }
+
+  .chegar-block .route {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--ink);
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .chegar-block .route .arrow {
+    color: var(--gold);
+    margin: 0 6px;
+    font-style: italic;
+  }
+
+  /* ============ HOSPEDAGENS ============ */
+  .hospedagens {
+    background: var(--paper);
+    padding: 100px 0 60px;
+  }
+
+  .hotel-block {
+    margin-bottom: 80px;
+    background: var(--paper-light);
+    border: 1px solid var(--line);
+    overflow: hidden;
+  }
+
+  .hotel-block:last-of-type { margin-bottom: 0; }
+
+  .hotel-header {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    min-height: 380px;
+  }
+
+  .hotel-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.94) contrast(1.02);
+  }
+
+  .hotel-header-text {
+    padding: 50px 44px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .hotel-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+  }
+
+  .hotel-island {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+  }
+
+  .hotel-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 20px;
+  }
+
+  .hotel-header p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+
+  .hotel-info {
+    padding: 36px 44px 40px;
+    border-top: 1px solid var(--line);
+  }
+
+  .hotel-period {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 24px;
+    margin-bottom: 26px;
+    border-bottom: 1px solid var(--line-soft);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .hotel-period .lbl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 4px;
+  }
+
+  .hotel-period .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+  }
+
+  .room-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-bottom: 26px;
+  }
+
+  .room-option {
+    background: var(--paper);
+    border: 1px solid var(--line-soft);
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .room-option .opt-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 12px;
+  }
+
+  .room-option h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+
+  .room-option .room-size {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+
+  .room-option .room-price {
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .room-option .room-price .pl {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+  }
+
+  .room-option .room-price .pv {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .room-option .room-price .pv small {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.2em;
+    margin-right: 6px;
+    font-weight: 400;
+  }
+
+  .hotel-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 8px;
+  }
+
+  .hotel-bottom .item h5 {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .hotel-bottom .item p {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+
+  /* ============ EXPERIÊNCIAS ============ */
+  .experiencias {
+    background: var(--paper-deep);
+    padding: 100px 0 60px;
+  }
+
+  .exp-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 140px 170px;
+    gap: 24px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+  }
+
+  .exp-row:first-of-type { border-top: 1px solid var(--line); }
+
+  .exp-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--gold-deep);
+    text-align: center;
+  }
+
+  .exp-main h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+
+  .exp-main p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .exp-main .tags {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+
+  .exp-duration {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    text-align: center;
+    padding: 8px 14px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+  }
+
+  .exp-price {
+    text-align: right;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .exp-price .currency {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .exp-price .amount {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .exp-note {
+    background: var(--paper);
+    padding: 22px 28px;
+    border-left: 2px solid var(--gold);
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.65;
+  }
+
+  .exp-note strong {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  /* ============ SERVIÇOS ADICIONAIS ============ */
+  .servicos {
+    background: var(--paper);
+    padding: 100px 0 60px;
+  }
+
+  .servico-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 180px;
+    gap: 24px;
+    padding: 30px 0;
+    border-bottom: 1px solid var(--line);
+    align-items: center;
+  }
+
+  .servico-row:first-of-type { border-top: 1px solid var(--line); }
+
+  .servico-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 28px;
+    color: var(--gold-deep);
+    text-align: center;
+  }
+
+  .servico-main h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+
+  .servico-main p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+
+  .servico-price {
+    text-align: right;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .servico-price .currency {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    color: var(--ink-muted);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .servico-price .amount {
+    font-size: 26px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1;
+  }
+
+  .servico-price .per {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-top: 6px;
+  }
+
+  /* ============ INVESTIMENTO TOTAL ============ */
+  .investimento {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 100px 0;
+  }
+
+  .investimento .section-head { border-bottom-color: rgba(217, 185, 122, 0.25); }
+  .investimento .section-head h2 { color: var(--paper); }
+  .investimento .section-head h2 em { color: #d9b97a; }
+  .investimento .section-head p { color: rgba(244, 237, 225, 0.7); }
+
+  .total-wrapper {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 0;
+    border: 1px solid rgba(217, 185, 122, 0.3);
+    background: rgba(217, 185, 122, 0.06);
+  }
+
+  .total-breakdown {
+    padding: 44px 46px;
+    border-right: 1px solid rgba(217, 185, 122, 0.25);
+  }
+
+  .total-breakdown h3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b97a;
+    margin-bottom: 24px;
+    font-weight: 500;
+  }
+
+  .breakdown-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(217, 185, 122, 0.15);
+    gap: 16px;
+  }
+
+  .breakdown-row:last-of-type { border-bottom: none; }
+
+  .breakdown-row .desc {
+    font-family: 'Cardo', serif;
+    font-size: 15px;
+    color: rgba(244, 237, 225, 0.85);
+    line-height: 1.45;
+  }
+
+  .breakdown-row .desc small {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(244, 237, 225, 0.5);
+    margin-top: 3px;
+  }
+
+  .breakdown-row .val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--paper);
+    white-space: nowrap;
+  }
+
+  .breakdown-row .val small {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(244, 237, 225, 0.6);
+    margin-right: 6px;
+    font-weight: 400;
+  }
+
+  .total-final {
+    padding: 44px 46px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(217, 185, 122, 0.04);
+  }
+
+  .total-final .label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b97a;
+    margin-bottom: 18px;
+  }
+
+  .total-final .currency-line {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .total-final .currency-line .cur {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(244, 237, 225, 0.7);
+    width: 40px;
+  }
+
+  .total-final .currency-line .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 42px;
+    color: var(--paper);
+    line-height: 1;
+  }
+
+  .total-final .equivalent {
+    margin-top: 28px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(217, 185, 122, 0.25);
+  }
+
+  .total-final .equivalent .ltl {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #d9b97a;
+    margin-bottom: 12px;
+  }
+
+  .total-final .equivalent .big {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 32px;
+    color: #d9b97a;
+    line-height: 1.1;
+  }
+
+  .total-final .equivalent .big small {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(217, 185, 122, 0.75);
+    margin-right: 6px;
+    font-weight: 400;
+  }
+
+  .total-cotacao {
+    margin-top: 30px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244, 237, 225, 0.55);
+    line-height: 1.7;
+  }
+
+  /* ============ CONDIÇÕES ============ */
+  .condicoes {
+    background: var(--paper);
+    padding: 90px 0 60px;
+  }
+
+  .cond-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px 60px;
+  }
+
+  .cond-block {
+    border-top: 1px solid var(--line);
+    padding-top: 22px;
+  }
+
+  .cond-block h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  .cond-block p {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin-bottom: 10px;
+  }
+
+  .cond-list {
+    list-style: none;
+    margin-top: 4px;
+  }
+
+  .cond-list li {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+    padding: 5px 0 5px 18px;
+    position: relative;
+  }
+
+  .cond-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .cond-pay {
+    background: var(--paper-deep);
+    padding: 22px 26px;
+    margin-top: 16px;
+    border-left: 2px solid var(--gold);
+  }
+
+  .cond-pay-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  .cond-pay-row .l { color: var(--ink-soft); }
+  .cond-pay-row .r {
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 500;
+  }
+
+  .important-note {
+    margin-top: 60px;
+    padding: 30px 34px;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--gold-deep);
+  }
+
+  .important-note h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+    font-weight: 500;
+  }
+
+  .important-note p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+
+  /* ============ RODAPÉ ============ */
+  .footer {
+    background: var(--paper-deep);
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+  }
+
+  .footer-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 22px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+
+  .footer small {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 0.32em;
+    color: var(--ink-muted);
+    text-transform: uppercase;
+  }
+
+  /* ============ RESPONSIVO ============ */
+  @media (max-width: 980px) {
+    .page { padding: 0 28px; }
+    .masthead { padding: 40px 28px 32px; }
+    .masthead-inner { flex-direction: column; align-items: flex-start; gap: 30px; }
+    .docmeta { text-align: left; }
+    .intro-grid { grid-template-columns: repeat(2, 1fr); }
+    .intro-stat:nth-child(2) { border-right: none; }
+    .intro-stat:nth-child(1), .intro-stat:nth-child(2) { border-bottom: 1px solid var(--line); }
+    .islands { grid-template-columns: 1fr; }
+    .chegar-grid { grid-template-columns: 1fr; gap: 30px; }
+    .hotel-header { grid-template-columns: 1fr; }
+    .hotel-header img { height: 280px; }
+    .hotel-header-text, .hotel-info { padding: 30px 28px; }
+    .room-options { grid-template-columns: 1fr; }
+    .hotel-bottom { grid-template-columns: 1fr; gap: 24px; }
+    .exp-row, .servico-row { grid-template-columns: 40px 1fr; gap: 12px; }
+    .exp-duration, .exp-price, .servico-price { grid-column: 2; text-align: left; padding-top: 10px; border: none; }
+    .exp-duration { display: inline-block; padding: 6px 12px; border: 1px solid var(--line); width: auto; }
+    .total-wrapper { grid-template-columns: 1fr; }
+    .total-breakdown { border-right: none; border-bottom: 1px solid rgba(217, 185, 122, 0.25); }
+    .cond-grid { grid-template-columns: 1fr; gap: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ CABEÇALHO ============ -->
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="brandblock">
+      <span class="mark">Redoma</span>
+      <span class="tagline">Orçamento Comercial</span>
+    </div>
+    <div class="docmeta">
+      <div><strong>Destino:</strong> Havaí · Oahu, Maui e Big Island</div>
+      <div><strong>Período:</strong> 01 a 12 de Junho de 2026</div>
+      <div><strong>Hóspedes:</strong> 2 adultos</div>
+      <div><strong>Emissão:</strong> Maio de 2026</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ABERTURA ============ -->
+<section class="intro">
+  <div class="page">
+    <div class="doc-label">Orçamento Personalizado</div>
+    <h1>Havaí, <em>em três ilhas</em><br>do Pacífico.</h1>
+    <p class="intro-text">Doze dias percorrendo três faces distintas do arquipélago: a vida urbana e a praia mais célebre do Pacífico em Oahu, as paisagens naturais e a estrada cênica de Maui, e os contrastes vulcânicos de Big Island. Documento estruturado reunindo hospedagens, experiências, traslados e o desenho do investimento total.</p>
+
+    <div class="intro-grid">
+      <div class="intro-stat">
+        <div class="label">Duração</div>
+        <div class="value">12 dias · 11 noites</div>
+      </div>
+      <div class="intro-stat">
+        <div class="label">Ilhas</div>
+        <div class="value">Oahu · Maui · Big Island</div>
+      </div>
+      <div class="intro-stat">
+        <div class="label">Hospedagens</div>
+        <div class="value">3 hotéis selecionados</div>
+      </div>
+      <div class="intro-stat">
+        <div class="label">Experiências</div>
+        <div class="value">11 atividades curadas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DESTINO ============ -->
+<section class="destino">
+  <div class="page">
+    <div class="section-head">
+      <div class="doc-label">Bloco 01</div>
+      <h2>Três ilhas, <em>três atmosferas</em></h2>
+      <p>O Havaí se revela em camadas. Cada ilha conserva personalidade própria, ditando o ritmo do tempo passado nela e a natureza das descobertas possíveis.</p>
+    </div>
+
+    <div class="islands">
+
+      <div class="island-card">
+        <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=1200&q=80" alt="Honolulu, Oahu">
+        <div class="island-body">
+          <div class="island-eyebrow">Capital do arquipélago</div>
+          <h3>Oahu · Honolulu</h3>
+          <p>Principal porta de entrada do arquipélago, combina a vida urbana cosmopolita com a praia mais célebre do Pacífico. Mantém o pulso da modernidade ao lado de marcos históricos profundos, em uma capital tropical onde clima ameno e infraestrutura coexistem o ano inteiro.</p>
+          <div class="island-highlights">
+            <strong>Imperdíveis</strong>
+            Waikiki · Pearl Harbor · Diamond Head<br>
+            Iolani Palace · Ala Moana · Hanauma Bay
+          </div>
+        </div>
+      </div>
+
+      <div class="island-card">
+        <img src="https://images.unsplash.com/photo-1507876466758-bc54f384809c?auto=format&fit=crop&w=1200&q=80" alt="Maui">
+        <div class="island-body">
+          <div class="island-eyebrow">Natureza em sua plenitude</div>
+          <h3>Maui</h3>
+          <p>Conhecida pela diversidade de cenários reunidos em uma única ilha: praias paradisíacas, montanhas, vulcões e florestas tropicais. A célebre estrada para Hana, com suas curvas cênicas, cachoeiras e mirantes, e o Parque Nacional Haleakalā oferecem alguns dos espetáculos naturais mais marcantes do Pacífico.</p>
+          <div class="island-highlights">
+            <strong>Imperdíveis</strong>
+            Road to Hana · Haleakalā ao amanhecer<br>
+            Kaanapali · Observação de baleias
+          </div>
+        </div>
+      </div>
+
+      <div class="island-card">
+        <img src="https://images.unsplash.com/photo-1505852679233-d9fd70aff56d?auto=format&fit=crop&w=1200&q=80" alt="Big Island">
+        <div class="island-body">
+          <div class="island-eyebrow">A maior ilha do arquipélago</div>
+          <h3>Big Island · Ilha do Havaí</h3>
+          <p>Reúne vulcões ativos, praias de areia preta e verde, florestas tropicais, cachoeiras e regiões desérticas em um único território. O Mauna Kea oferece um dos melhores céus do planeta para observação de estrelas, e o Parque Nacional dos Vulcões revela formações geológicas únicas.</p>
+          <div class="island-highlights">
+            <strong>Imperdíveis</strong>
+            Parque Nacional dos Vulcões · Mauna Kea<br>
+            Kailua-Kona · Praias de areia preta
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMO CHEGAR ============ -->
+<section class="como-chegar">
+  <div class="page">
+    <div class="section-head" style="margin-bottom: 30px;">
+      <div class="doc-label">Logística</div>
+      <h2 style="font-size: 38px;">Como <em>chegar</em></h2>
+    </div>
+
+    <div class="chegar-grid">
+
+      <div class="chegar-block">
+        <h4>Via aérea · São Paulo</h4>
+        <div class="route">GRU <span class="arrow">→</span> LAX <span class="arrow">→</span> HNL</div>
+        <p>Conexão padrão a partir do Brasil via Los Angeles, com destino final ao Aeroporto Internacional de Honolulu, em Oahu.</p>
+      </div>
+
+      <div class="chegar-block">
+        <h4>Outras capitais</h4>
+        <p>Conexões alternativas disponíveis via Dallas, Houston, Miami ou San Francisco, conforme companhia aérea escolhida.</p>
+      </div>
+
+      <div class="chegar-block">
+        <h4>Clima &amp; atmosfera</h4>
+        <p>Clima tropical estável durante o ano inteiro, com temperaturas entre 24°C e 31°C. Verão mais seco e ensolarado; ventos alísios mantêm o ambiente fresco nas áreas costeiras.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOSPEDAGENS ============ -->
+<section class="hospedagens">
+  <div class="page">
+    <div class="section-head">
+      <div class="doc-label">Bloco 02</div>
+      <h2>Hospedagens <em>selecionadas</em></h2>
+      <p>Um hotel por ilha, com duas opções de quarto para escolha em cada hospedagem. Valores em dólar americano para duas pessoas no período integral indicado. Os três hotéis fazem parte do roteiro completo.</p>
+    </div>
+
+    <!-- Hotel 1: Ka La'i Waikiki -->
+    <div class="hotel-block">
+      <div class="hotel-header">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1400&q=80" alt="Ka La'i Waikiki Beach">
+        <div class="hotel-header-text">
+          <div class="hotel-number">i. Hospedagem em Oahu</div>
+          <div class="hotel-island">Honolulu · Waikiki</div>
+          <h3>Ka La'i Waikiki Beach</h3>
+          <p>Hotel de luxo posicionado em frente à praia de Waikiki, em Honolulu. Reúne suítes amplas com decoração contemporânea, vistas panorâmicas do Pacífico e da cidade, e padrão de atendimento elevado. A localização privilegiada oferece acesso imediato às principais atrações de Honolulu, em ambiente exclusivo e infraestrutura completa.</p>
+        </div>
+      </div>
+
+      <div class="hotel-info">
+        <div class="hotel-period">
+          <div>
+            <div class="lbl">Período</div>
+            <div class="val">01 a 05 de Junho de 2026</div>
+          </div>
+          <div>
+            <div class="lbl">Estadia</div>
+            <div class="val">04 noites · 2 adultos</div>
+          </div>
+        </div>
+
+        <div class="room-options">
+          <div class="room-option">
+            <div class="opt-label">Opção A</div>
+            <h4>Deluxe · vista parcial para o mar</h4>
+            <div class="room-size">46 m²</div>
+            <div class="room-price">
+              <span class="pl">Total da estadia</span>
+              <span class="pv"><small>USD</small>3.958</span>
+            </div>
+          </div>
+
+          <div class="room-option">
+            <div class="opt-label">Opção B</div>
+            <h4>Deluxe · vista para o mar</h4>
+            <div class="room-size">50 m²</div>
+            <div class="room-price">
+              <span class="pl">Total da estadia</span>
+              <span class="pv"><small>USD</small>4.673</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-bottom">
+          <div class="item">
+            <h5>Serviços inclusos</h5>
+            <p>Café da manhã diariamente, acesso às áreas de bem-estar do hotel e Wi-Fi.</p>
+          </div>
+          <div class="item">
+            <h5>Taxas pagas no local</h5>
+            <p>Taxa de resort de aproximadamente USD 40 por noite, não inclusa nas tarifas, paga diretamente ao hotel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel 2: The Whaler Resort -->
+    <div class="hotel-block">
+      <div class="hotel-header">
+        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1400&q=80" alt="The Whaler Resort">
+        <div class="hotel-header-text">
+          <div class="hotel-number">ii. Hospedagem em Maui</div>
+          <div class="hotel-island">Kaanapali Beach</div>
+          <h3>The Whaler Resort</h3>
+          <p>Resort em frente à praia de Kaanapali, em Maui, com acomodações em formato apartamento. Suítes amplas equipadas com cozinha completa, sala de estar e varandas com vista para o mar ou para os jardins. Combina conforto, privacidade e autonomia para estadias mais longas, com piscina, academia e acesso direto à praia.</p>
+        </div>
+      </div>
+
+      <div class="hotel-info">
+        <div class="hotel-period">
+          <div>
+            <div class="lbl">Período</div>
+            <div class="val">05 a 09 de Junho de 2026</div>
+          </div>
+          <div>
+            <div class="lbl">Estadia</div>
+            <div class="val">04 noites · 2 adultos</div>
+          </div>
+        </div>
+
+        <div class="room-options">
+          <div class="room-option">
+            <div class="opt-label">Opção A</div>
+            <h4>Premium Garden View Studio</h4>
+            <div class="room-size">50 m²</div>
+            <div class="room-price">
+              <span class="pl">Total da estadia</span>
+              <span class="pv"><small>USD</small>1.392</span>
+            </div>
+          </div>
+
+          <div class="room-option">
+            <div class="opt-label">Opção B</div>
+            <h4>Ocean View Studio</h4>
+            <div class="room-size">50 m²</div>
+            <div class="room-price">
+              <span class="pl">Total da estadia</span>
+              <span class="pv"><small>USD</small>1.430</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-bottom">
+          <div class="item">
+            <h5>Serviços inclusos</h5>
+            <p>Somente hospedagem, acesso às áreas de bem-estar do hotel e Wi-Fi.</p>
+          </div>
+          <div class="item">
+            <h5>Taxas pagas no local</h5>
+            <p>Taxa de resort de aproximadamente USD 42 por noite, não inclusa nas tarifas, paga diretamente ao hotel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hotel 3: Aston Kona by the Sea -->
+    <div class="hotel-block">
+      <div class="hotel-header">
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1400&q=80" alt="Aston Kona by the Sea">
+        <div class="hotel-header-text">
+          <div class="hotel-number">iii. Hospedagem em Big Island</div>
+          <div class="hotel-island">Kailua-Kona</div>
+          <h3>Aston Kona by the Sea</h3>
+          <p>Condomínio-hotel à beira-mar na região de Kailua-Kona, na Ilha Grande do Havaí. Apartamentos amplos em estilo residencial, com cozinha equipada, sala de estar e varanda (lanai), muitos com vista para o Pacífico. Procurado por viajantes que buscam autonomia, com piscina, jacuzzi, área de churrasqueira e acesso direto ao mar.</p>
+        </div>
+      </div>
+
+      <div class="hotel-info">
+        <div class="hotel-period">
+          <div>
+            <div class="lbl">Período</div>
+            <div class="val">09 a 12 de Junho de 2026</div>
+          </div>
+          <div>
+            <div class="lbl">Estadia</div>
+            <div class="val">03 noites · 2 adultos</div>
+          </div>
+        </div>
+
+        <div class="room-options">
+          <div class="room-option">
+            <div class="opt-label">Opção A</div>
+            <h4>1 Bedroom Oceanfront · 01 quarto</h4>
+            <div class="room-size">85 m²</div>
+            <div class="room-price">
+              <span class="pl">Total da estadia</span>
+              <span class="pv"><small>USD</small>1.184</span>
+            </div>
+          </div>
+
+          <div class="room-option">
+            <div class="opt-label">Opção B</div>
+            <h4>1 Bedroom Ocean View · 02 quartos</h4>
+            <div class="room-size">117 m²</div>
+            <div class="room-price">
+              <span class="pl">Total da estadia</span>
+              <span class="pv"><small>USD</small>1.572</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hotel-bottom">
+          <div class="item">
+            <h5>Serviços inclusos</h5>
+            <p>Somente hospedagem, acesso às áreas de bem-estar do hotel e Wi-Fi.</p>
+          </div>
+          <div class="item">
+            <h5>Taxas pagas no local</h5>
+            <p>Taxa de resort de aproximadamente USD 34 por noite, não inclusa nas tarifas, paga diretamente ao hotel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ EXPERIÊNCIAS & PASSEIOS ============ -->
+<section class="experiencias">
+  <div class="page">
+    <div class="section-head">
+      <div class="doc-label">Bloco 03</div>
+      <h2>Experiências &amp; <em>passeios</em></h2>
+      <p>Conjunto curado de onze experiências que percorrem as três ilhas: sobrevoos, navegação, mergulhos, cultura havaiana e os marcos históricos de Pearl Harbor. Valores apresentados na moeda em que foram cotados.</p>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">i</div>
+      <div class="exp-main">
+        <h3>Parque Nacional dos Vulcões do Havaí · saindo de Oahu</h3>
+        <p>Passeio de um dia que parte de Oahu rumo à Ilha Grande do Havaí para conhecer o vulcão mais ativo do mundo. Inclui passagem aérea de ida e volta entre as ilhas e visita ao Parque Nacional dos Vulcões, com observação das formações geológicas únicas da região.</p>
+        <div class="tags">Bestseller · Cancelamento grátis · Qualidade excelente</div>
+      </div>
+      <div class="exp-duration">12 horas</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">2.996,18</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">ii</div>
+      <div class="exp-main">
+        <h3>Sobrevoo de helicóptero em Oahu</h3>
+        <p>Passeio aéreo de 45 minutos sobre os cenários mais emblemáticos de Oahu. O assento posicionado junto à janela proporciona vistas privilegiadas do Diamond Head, da Cachoeira Sagrada e da Baía de Hanauma, com a opção de portas abertas ou fechadas conforme preferência.</p>
+        <div class="tags">Bestseller · Cancelamento grátis · Passeios de helicóptero</div>
+      </div>
+      <div class="exp-duration">45 min</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">2.488,38</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">iii</div>
+      <div class="exp-main">
+        <h3>Tour Privado Personalizado em Oahu</h3>
+        <p>Experiência completa por Oahu pelos olhos de um local, totalmente personalizável, com duração entre 6 e 8 horas. O roteiro é definido em conjunto com o guia. Entre as possibilidades: Diamond Head, Sandy Beach Park, Templo Byodo-In na costa leste, Baía de Waimea, Sunset Beach na North Shore, Hale'iwa e Dole Plantation.</p>
+        <div class="tags">Tour completamente personalizável · Guia local</div>
+      </div>
+      <div class="exp-duration">6 a 8h</div>
+      <div class="exp-price">
+        <span class="currency">USD</span>
+        <span class="amount">1.175</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">iv</div>
+      <div class="exp-main">
+        <h3>Nadar com Golfinhos · costa oeste de Oahu</h3>
+        <p>Cruzeiro a bordo de um catamarã espaçoso para até 42 passageiros na costa oeste de Oahu. A embarcação de casca dupla oferece navegação estável e vistas panorâmicas do oceano, em busca de encontros com os golfinhos que habitam a região.</p>
+        <div class="tags">Bestseller · Cancelamento grátis · Qualidade excelente</div>
+      </div>
+      <div class="exp-duration">4 horas</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">989,89</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">v</div>
+      <div class="exp-main">
+        <h3>Memorial do Arizona, Batalha Naval do Missouri e Honolulu</h3>
+        <p>Itinerário de um dia que combina a visita ao Memorial Nacional de Pearl Harbor, atração turística mais visitada do Havaí, com a histórica Batalha Naval do Missouri e um tour pela cidade de Honolulu, em formato completo.</p>
+        <div class="tags">1 dia inteiro · Marcos históricos</div>
+      </div>
+      <div class="exp-duration">1 dia</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">821,06</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">vi</div>
+      <div class="exp-main">
+        <h3>Atlantis Submarine Adventure em Waikiki</h3>
+        <p>Imersão a mais de 30 metros sob a superfície a bordo de um submarino climatizado, ecológico e alimentado por baterias. A experiência permite explorar os mistérios marinhos de Waikiki e, na superfície, contemplar a costa pelo trajeto até o ponto de mergulho.</p>
+        <div class="tags">Bestseller · Cancelamento grátis · Excursões submarinas</div>
+      </div>
+      <div class="exp-duration">2 horas</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">766,86</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">vii</div>
+      <div class="exp-main">
+        <h3>Oahu Circle Island Snorkeling Tour</h3>
+        <p>Excursão completa pelo entorno de Oahu, combinando snorkel nos pontos mais célebres da ilha com paradas em marcos turísticos como Dole Plantation e Pali Lookout. Roteiro de circuito completo, em ritmo ativo, com guias experientes nas áreas de mergulho.</p>
+        <div class="tags">Bestseller · Cancelamento grátis · Qualidade excelente</div>
+      </div>
+      <div class="exp-duration">10 a 12h</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">567,71</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">viii</div>
+      <div class="exp-main">
+        <h3>Buffet Waikiki Luau com Show Rock-A-Hula</h3>
+        <p>Noite havaiana com buffet temático no coração de Waikiki. A experiência abre com o tradicional Mai Tai de boas-vindas, seguido por jantar de porco luau assado e cortes de carne bovina, ao som da música havaiana ao vivo. Ingresso opcional para o show Rock-A-Hula.</p>
+        <div class="tags">Bestseller · Cancelamento grátis · Jantar com show</div>
+      </div>
+      <div class="exp-duration">3h30</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">512,85</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">ix</div>
+      <div class="exp-main">
+        <h3>Tour pela Ilha de Oahu · Circle Island</h3>
+        <p>Excursão clássica de circuito completo por Oahu, reunindo história, cultura e a beleza natural da ilha em um único dia. Inclui passagem pelos marcos icônicos da costa, com começo e fim em transporte confortável.</p>
+        <div class="tags">1 dia inteiro · Tour completo</div>
+      </div>
+      <div class="exp-duration">1 dia</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">474,53</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">x</div>
+      <div class="exp-main">
+        <h3>Snorkel Noturno com Mantas em Kona</h3>
+        <p>Experiência em grupo reduzido, com capacidade máxima de 12 passageiros, que permite uma observação mais íntima das arraias-manta em comparação aos barcos maiores e mais cheios de Kona. O guia de mergulho conduz o grupo até as áreas mais ativas, enquanto os participantes seguram uma prancha iluminada. Caso todas as 12 vagas sejam reservadas em uma mesma saída, o passeio se torna um charter privativo.</p>
+        <div class="tags">Big Island · Grupo pequeno</div>
+      </div>
+      <div class="exp-duration">Noturno</div>
+      <div class="exp-price">
+        <span class="currency">USD</span>
+        <span class="amount">385</span>
+      </div>
+    </div>
+
+    <div class="exp-row">
+      <div class="exp-num">xi</div>
+      <div class="exp-main">
+        <h3>Pearl Harbor, Arizona Memorial e Diamond Head</h3>
+        <p>Tour de luxo em grupo pequeno que percorre o local histórico mais visitado do Havaí, o USS Arizona Memorial no Pearl Harbor National Memorial, com extensão para o mirante do Diamond Head ou Punchbowl, conforme preferência do grupo.</p>
+        <div class="tags">1 dia inteiro · Grupo pequeno</div>
+      </div>
+      <div class="exp-duration">1 dia</div>
+      <div class="exp-price">
+        <span class="currency">BRL</span>
+        <span class="amount">374,55</span>
+      </div>
+    </div>
+
+    <div class="exp-note">
+      <strong>Observação sobre experiências em Oahu</strong>
+      Os itens iii, v, vii, ix e xi abrangem percursos diferentes pela ilha de Oahu, com sobreposições parciais entre o Circle Island Tour, o Tour Privado Personalizado e os roteiros de Pearl Harbor. A seleção definitiva pode ser refinada conforme o ritmo desejado para os dias na ilha, evitando duplicação de atrações.
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ SERVIÇOS ADICIONAIS ============ -->
+<section class="servicos">
+  <div class="page">
+    <div class="section-head">
+      <div class="doc-label">Bloco 04</div>
+      <h2>Serviços <em>adicionais</em></h2>
+      <p>Traslados privativos entre os aeroportos e os hotéis selecionados em cada ilha. Valores em dólar americano por trecho, para duas pessoas.</p>
+    </div>
+
+    <div class="servico-row">
+      <div class="servico-num">i</div>
+      <div class="servico-main">
+        <h3>Traslado privativo · Aeroporto de Honolulu</h3>
+        <p>Translado privativo entre o Aeroporto de Honolulu e o hotel Ka La'i Waikiki Beach, em Oahu. Os SUVs acomodam até 5 passageiros e 5 peças de bagagem.</p>
+      </div>
+      <div class="servico-price">
+        <span class="currency">USD</span>
+        <span class="amount">330</span>
+        <span class="per">por trecho</span>
+      </div>
+    </div>
+
+    <div class="servico-row">
+      <div class="servico-num">ii</div>
+      <div class="servico-main">
+        <h3>Traslado privativo · Aeroporto de Kahului</h3>
+        <p>Translado privativo entre o Aeroporto de Kahului, em Maui, e o The Whaler Resort em Kaanapali Beach. Os SUVs acomodam até 5 passageiros e 5 peças de bagagem.</p>
+      </div>
+      <div class="servico-price">
+        <span class="currency">USD</span>
+        <span class="amount">415</span>
+        <span class="per">por trecho</span>
+      </div>
+    </div>
+
+    <div class="servico-row">
+      <div class="servico-num">iii</div>
+      <div class="servico-main">
+        <h3>Traslado privativo · Aeroporto de Kona</h3>
+        <p>Translado privativo entre o Aeroporto de Kona, em Big Island, e o hotel Aston Kona by the Sea. Os SUVs acomodam até 5 passageiros e 5 peças de bagagem.</p>
+      </div>
+      <div class="servico-price">
+        <span class="currency">USD</span>
+        <span class="amount">285</span>
+        <span class="per">por trecho</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ INVESTIMENTO TOTAL ============ -->
+<section class="investimento">
+  <div class="page">
+    <div class="section-head">
+      <div class="doc-label">Bloco 05</div>
+      <h2>Investimento <em>total</em></h2>
+      <p>Soma de todas as hospedagens, experiências e traslados deste orçamento. O total apresentado considera a categoria de entrada (Opção A) em cada um dos hotéis. Taxas de resort pagas no local não estão computadas.</p>
+    </div>
+
+    <div class="total-wrapper">
+
+      <div class="total-breakdown">
+        <h3>Composição do investimento</h3>
+
+        <div class="breakdown-row">
+          <div class="desc">
+            Hospedagens (Opção A)
+            <small>3 hotéis · 11 noites</small>
+          </div>
+          <div class="val"><small>USD</small>6.534</div>
+        </div>
+
+        <div class="breakdown-row">
+          <div class="desc">
+            Experiências cotadas em USD
+            <small>Tour privado Oahu + Snorkel Mantas</small>
+          </div>
+          <div class="val"><small>USD</small>1.560</div>
+        </div>
+
+        <div class="breakdown-row">
+          <div class="desc">
+            Traslados privativos
+            <small>Honolulu + Kahului + Kona</small>
+          </div>
+          <div class="val"><small>USD</small>1.030</div>
+        </div>
+
+        <div class="breakdown-row">
+          <div class="desc">
+            Experiências cotadas em BRL
+            <small>9 atividades pelo Viator</small>
+          </div>
+          <div class="val"><small>BRL</small>10.992,01</div>
+        </div>
+      </div>
+
+      <div class="total-final">
+        <div class="label">Investimento total</div>
+
+        <div class="currency-line">
+          <span class="cur">USD</span>
+          <span class="num">9.124</span>
+        </div>
+
+        <div class="currency-line">
+          <span class="cur">BRL</span>
+          <span class="num">10.992,01</span>
+        </div>
+
+        <div class="equivalent">
+          <div class="ltl">Equivalente estimado em real</div>
+          <div class="big"><small>BRL</small>61.174,01</div>
+        </div>
+
+        <div class="total-cotacao">
+          Cotação de referência<br>USD 1,00 = BRL 5,50
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONDIÇÕES ============ -->
+<section class="condicoes">
+  <div class="page">
+    <div class="section-head">
+      <div class="doc-label">Bloco 06</div>
+      <h2>Condições <em>gerais</em></h2>
+    </div>
+
+    <div class="cond-grid">
+
+      <div class="cond-block">
+        <h4>Forma de pagamento</h4>
+        <div class="cond-pay">
+          <div class="cond-pay-row">
+            <span class="l">Entrada (PIX, link de pagamento)</span>
+            <span class="r">25% do total</span>
+          </div>
+          <div class="cond-pay-row">
+            <span class="l">Saldo no cartão de crédito</span>
+            <span class="r">até 8x sem juros</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cond-block">
+        <h4>Política de cancelamento</h4>
+        <ul class="cond-list">
+          <li>Antes de 30 dias da chegada: multa de 50% do valor total da reserva</li>
+          <li>Entre 29 e 15 dias da chegada: multa de 75% do valor total da reserva</li>
+          <li>Menos de 15 dias da chegada: multa de 100% do valor total da reserva</li>
+        </ul>
+      </div>
+
+      <div class="cond-block">
+        <h4>Serviços não incluídos</h4>
+        <ul class="cond-list">
+          <li>Check-in antecipado e check-out tardio nos hotéis</li>
+          <li>Documentação pessoal, passaportes e vistos consulares</li>
+          <li>Carregadores de malas em hotéis, aeroportos e estações</li>
+          <li>Despesas pessoais como bebidas, lavanderia, telefonemas e minibar</li>
+          <li>Gorjetas a guias, motoristas e demais prestadores de serviço</li>
+          <li>Seguro viagem (altamente recomendado)</li>
+          <li>Taxas bancárias, cambiais e de remessa, incluindo IOF e IRRF</li>
+        </ul>
+      </div>
+
+      <div class="cond-block">
+        <h4>Sobre os valores e moedas</h4>
+        <p>O orçamento mistura cotações em dólar americano (hospedagens, traslados, dois passeios) e em real brasileiro (nove experiências contratadas pela plataforma Viator). Cada item é apresentado na moeda original em que foi cotado.</p>
+        <p>O total estimado em real considera cotação de referência de USD 1,00 = BRL 5,50, sujeita a variação na data efetiva do pagamento. As taxas de resort de cada hotel são pagas diretamente no local e não estão computadas nos totais.</p>
+      </div>
+
+    </div>
+
+    <div class="important-note">
+      <h4>Importante</h4>
+      <p>Caso o serviço contratado não possa ser concluído em razão de força maior, tais como guerra, greves, catástrofes naturais, situações de perigo iminente, variações anormais no nível do mar ou de rios, ou obstrução de canais por onde haja passagem de água, o cliente e a operadora terão o direito de rescindir o contrato. Nessas hipóteses, a operadora poderá requisitar compensação razoável pelos serviços, provisões e despesas efetivamente incorridas até o momento, proporcionalmente ao valor total do contrato. O cliente não terá direito a qualquer tipo de compensação adicional.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ RODAPÉ ============ -->
+<footer class="footer">
+  <div class="footer-mark">Redoma</div>
+  <small>Orçamento Comercial · Documento não vinculante</small>
+</footer>
+
+</body>
+</html>
