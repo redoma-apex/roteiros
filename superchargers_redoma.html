@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tesla Superchargers — Orlando · Redoma</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+
+  :root{
+    --black:#0d0d0d;
+    --white:#ffffff;
+    --off-white:#f7f6f4;
+    --gold:#b8942a;
+    --gold-light:#d4af37;
+    --gold-pale:rgba(184,148,42,0.10);
+    --gray-100:#f0eeea;
+    --gray-200:#e2dfd9;
+    --gray-400:#9c9690;
+    --gray-600:#5c5955;
+    --gray-800:#2e2c2a;
+    --blue:#2563eb;
+    --blue-pale:rgba(37,99,235,0.08);
+    --red-pale:rgba(220,38,38,0.08);
+    --red:#dc2626;
+    --green:#166534;
+    --green-pale:rgba(22,101,52,0.08);
+  }
+
+  body{
+    font-family:'DM Sans',sans-serif;
+    background:var(--white);
+    color:var(--gray-800);
+    padding:32px 24px 48px;
+    max-width:720px;
+    margin:0 auto;
+  }
+
+  /* HEADER */
+  .header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:32px;
+    padding-bottom:24px;
+    border-bottom:1px solid var(--gray-200);
+  }
+  .logo-block{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .logo-diamond-wrap{
+    width:30px;height:30px;
+    background:var(--black);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .logo-diamond{
+    width:13px;height:13px;
+    background:var(--white);
+    transform:rotate(45deg);
+  }
+  .logo-name{
+    font-family:'DM Sans',sans-serif;
+    font-weight:600;
+    font-size:12px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:var(--black);
+  }
+  .tesla-pill{
+    background:var(--black);
+    color:var(--white);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:1.5px;
+    padding:5px 12px;
+    text-transform:uppercase;
+  }
+
+  /* TITLE BLOCK */
+  .title-block{margin-bottom:28px;}
+  .title-block h1{
+    font-family:'Cormorant Garamond',serif;
+    font-size:28px;
+    font-weight:600;
+    color:var(--black);
+    line-height:1.15;
+    margin-bottom:6px;
+  }
+  .subtitle{
+    font-size:11px;
+    color:var(--gray-400);
+    letter-spacing:.8px;
+    text-transform:uppercase;
+  }
+
+  /* SECTION LABEL */
+  .section-label{
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin:24px 0 10px;
+    padding-left:1px;
+  }
+
+  /* CARDS */
+  .card{
+    background:var(--white);
+    border:1px solid var(--gray-200);
+    border-left:3px solid var(--gray-200);
+    border-radius:2px;
+    padding:16px 18px;
+    margin-bottom:10px;
+    position:relative;
+    transition:box-shadow .2s;
+  }
+  .card:hover{box-shadow:0 2px 16px rgba(0,0,0,0.07);}
+  .card.priority{border-left-color:var(--gold);}
+  .card.hotel{border-left-color:var(--blue);}
+  .card.other{border-left-color:var(--gray-200);}
+  .card.warn{border-left-color:var(--red);}
+
+  .card-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:10px;
+    margin-bottom:10px;
+  }
+  .card-meta{flex:1;}
+  .card-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:15px;
+    font-weight:600;
+    color:var(--black);
+    line-height:1.3;
+    margin-bottom:3px;
+  }
+  .card-address{
+    font-size:10px;
+    color:var(--gray-400);
+    line-height:1.4;
+  }
+  .card-top-right{
+    display:flex;
+    flex-direction:column;
+    align-items:flex-end;
+    gap:6px;
+    flex-shrink:0;
+  }
+  .rating{
+    font-size:10px;
+    font-weight:600;
+    color:var(--gray-800);
+    background:var(--gray-100);
+    padding:3px 8px;
+    border-radius:2px;
+    white-space:nowrap;
+  }
+  .maps-link{
+    display:inline-flex;
+    align-items:center;
+    gap:4px;
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:.8px;
+    text-transform:uppercase;
+    color:var(--gold);
+    text-decoration:none;
+    border:1px solid var(--gold);
+    padding:3px 8px;
+    border-radius:2px;
+    white-space:nowrap;
+    transition:background .15s,color .15s;
+  }
+  .maps-link:hover{background:var(--gold);color:var(--white);}
+  .maps-link svg{width:8px;height:8px;}
+
+  /* STATS GRID */
+  .card-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:6px;
+    margin-bottom:10px;
+  }
+  .stat{
+    background:var(--off-white);
+    border-radius:2px;
+    padding:8px 10px;
+  }
+  .stat-label{
+    font-size:8px;
+    color:var(--gray-400);
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-bottom:3px;
+  }
+  .stat-value{
+    font-size:11px;
+    font-weight:600;
+    color:var(--gray-800);
+  }
+  .stat-value.gold{color:var(--gold);}
+  .stat-value.blue{color:var(--blue);}
+  .stat-value.red{color:var(--red);}
+
+  /* CHARGE BAR */
+  .charge-bar{margin-bottom:10px;}
+  .charge-label{
+    font-size:8px;
+    color:var(--gray-400);
+    text-transform:uppercase;
+    letter-spacing:.8px;
+    margin-bottom:5px;
+  }
+  .bar-row{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:4px;
+  }
+  .bar-percent{
+    font-size:9px;
+    color:var(--gray-400);
+    min-width:78px;
+  }
+  .bar-bg{
+    flex:1;
+    height:4px;
+    background:var(--gray-200);
+    border-radius:10px;
+    overflow:hidden;
+  }
+  .bar-fill{
+    height:100%;
+    border-radius:10px;
+    background:linear-gradient(90deg,var(--gold),var(--gold-light));
+  }
+  .bar-fill.slow{
+    background:linear-gradient(90deg,#c2863a,#e0a54a);
+  }
+  .bar-time{
+    font-size:9px;
+    color:var(--gray-400);
+    white-space:nowrap;
+    min-width:70px;
+    text-align:right;
+  }
+
+  /* BADGES */
+  .badge-row{
+    display:flex;
+    gap:5px;
+    flex-wrap:wrap;
+    margin-bottom:10px;
+  }
+  .badge{
+    font-size:8px;
+    padding:2px 7px;
+    border-radius:2px;
+    font-weight:600;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+  }
+  .badge-v4{background:var(--gold-pale);color:var(--gold);}
+  .badge-v3{background:var(--blue-pale);color:var(--blue);}
+  .badge-v2{background:var(--gray-100);color:var(--gray-600);}
+  .badge-24h{background:var(--green-pale);color:var(--green);}
+  .badge-wawa{background:rgba(234,88,12,.07);color:#c2440c;}
+  .badge-shop{background:var(--gray-100);color:var(--gray-600);}
+  .badge-slow{background:var(--red-pale);color:var(--red);}
+
+  /* NOTE */
+  .note{
+    font-size:10px;
+    color:var(--gray-600);
+    line-height:1.6;
+    padding-top:10px;
+    border-top:1px solid var(--gray-100);
+  }
+  .note strong{color:var(--black);font-weight:600;}
+
+  /* TIP BOX */
+  .tip-box{
+    background:var(--off-white);
+    border:1px solid var(--gray-200);
+    border-left:3px solid var(--gold);
+    border-radius:2px;
+    padding:16px 18px;
+    margin-top:24px;
+  }
+  .tip-title{
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:8px;
+  }
+  .tip-text{
+    font-size:11px;
+    color:var(--gray-600);
+    line-height:1.7;
+  }
+  .tip-text b{color:var(--gray-800);}
+
+  /* FOOTER */
+  .footer{
+    margin-top:32px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:16px;
+    border-top:1px solid var(--gray-200);
+  }
+  .footer-note{
+    font-size:9px;
+    color:var(--gray-400);
+    letter-spacing:.5px;
+  }
+  .footer-logo{display:flex;align-items:center;gap:7px;}
+  .footer-diamond-wrap{
+    width:18px;height:18px;
+    background:var(--black);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .footer-diamond{
+    width:7px;height:7px;
+    background:var(--white);
+    transform:rotate(45deg);
+  }
+  .footer-brand{
+    font-size:9px;
+    font-weight:600;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--gray-400);
+  }
+
+  @media(max-width:480px){
+    .card-grid{grid-template-columns:1fr 1fr;}
+    .card-top{flex-direction:column;}
+    .card-top-right{flex-direction:row;align-items:center;}
+    body{padding:20px 16px 40px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-block">
+    <div class="logo-diamond-wrap"><div class="logo-diamond"></div></div>
+    <div class="logo-name">Redoma</div>
+  </div>
+  <div class="tesla-pill">Tesla Model Y</div>
+</div>
+
+<!-- TITLE -->
+<div class="title-block">
+  <h1>Superchargers — Orlando</h1>
+  <div class="subtitle">Guia de carregamento · Juan &amp; Sofia · Mai–Jun 2026 · Todos abertos 24h</div>
+</div>
+
+<!-- AEROPORTO -->
+<div class="section-label">Mais próximo do Aeroporto MCO</div>
+
+<div class="card priority">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">1. Florida Mall — S Orange Blossom Trail</div>
+      <div class="card-address">8001 S Orange Blossom Trail, Orlando FL 32809</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.6</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+8001+S+Orange+Blossom+Trail+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do MCO</div><div class="stat-value gold">~15 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">16</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value blue">250 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div><span class="bar-time">~25–35 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div><span class="bar-time">~60–75 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v3">V3</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-shop">Florida Mall ao lado</span>
+  </div>
+  <div class="note"><strong>Ideal para chegada e saída:</strong> a 15 min do MCO, no estacionamento do Florida Mall. Ótimo para carregar enquanto almoça antes de entregar o carro.</div>
+</div>
+
+<!-- HOTEL -->
+<div class="section-label">Mais próximo do Hilton Orlando</div>
+
+<div class="card hotel">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">2. West Sand Lake Road — Plaza Venezia</div>
+      <div class="card-address">7826 W Sand Lake Rd, Orlando FL 32819</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.6</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+7826+W+Sand+Lake+Rd+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value blue">~3,5 km / 5 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">8</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value">150 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill slow" style="width:55%"></div></div><span class="bar-time">~40–50 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill slow" style="width:90%"></div></div><span class="bar-time">~80–100 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v2">V2</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-wawa">Wawa 24h</span>
+    <span class="badge badge-shop">Panera Bread</span>
+  </div>
+  <div class="note">Exatamente na I-Drive. Ao voltar de qualquer passeio na International Drive, é possível carregar sem desviar da rota.</div>
+</div>
+
+<!-- DEMAIS -->
+<div class="section-label">Outros postos na região</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">3. Palm Parkway V4 — Mais rápido da região</div>
+      <div class="card-address">7105 Palm Pkwy, Orlando FL 32836</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.7</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+7105+Palm+Pkwy+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~9 km / 12 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">8</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value gold">250 kW V4</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill" style="width:30%"></div></div><span class="bar-time">~25–30 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill" style="width:65%"></div></div><span class="bar-time">~55–70 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v4">V4 — Mais rápido</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-shop">Starbucks · Raising Cane's</span>
+  </div>
+  <div class="note"><strong>Melhor opção para carga rápida.</strong> Próximo à Disney e SeaWorld. Ideal quando estiver visitando os parques da região.</div>
+</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">4. Millenia Plaza Way — Target</div>
+      <div class="card-address">4750 Millenia Plaza Way, Orlando FL 32839</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.8</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+4750+Millenia+Plaza+Way+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~10 km / 12 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">12</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value blue">250 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div><span class="bar-time">~25–35 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div><span class="bar-time">~60–75 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v3">V3</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-shop">Target · Chipotle · McDonald's</span>
+  </div>
+  <div class="note">Melhor avaliado da cidade (4.8). Perto do Mall at Millenia — ótimo para combinar com compras.</div>
+</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">5. Central Florida Pkwy — Wawa</div>
+      <div class="card-address">5910 Central Florida Pkwy, Orlando FL 32821</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">3.6</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+5910+Central+Florida+Pkwy+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~9 km / 12 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">8</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value blue">250 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div><span class="bar-time">~25–35 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div><span class="bar-time">~60–75 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v3">V3</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-wawa">Wawa 24h</span>
+  </div>
+  <div class="note">Próximo a SeaWorld e Discovery Cove. Avaliação mais baixa por relatos de velocidade variável — use stalls da fileira 2D para melhor desempenho.</div>
+</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">6. N Alafaya Trail — Waterford Lakes</div>
+      <div class="card-address">413 N Alafaya Trail, Orlando FL 32828</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.4</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+413+N+Alafaya+Trail+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~28 km / 28 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">14</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value">150 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill slow" style="width:55%"></div></div><span class="bar-time">~40–50 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill slow" style="width:90%"></div></div><span class="bar-time">~80–100 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v2">V2</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-shop">Grande shopping ao lado</span>
+  </div>
+  <div class="note">Maior número de stalls de Orlando (14). Leste da cidade, útil para dias no Kennedy Space Center ou praias do Atlântico.</div>
+</div>
+
+<div class="card warn">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">7. E Colonial Drive — Wawa</div>
+      <div class="card-address">8049 E Colonial Dr, Orlando FL 32807</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">3.0</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+8049+E+Colonial+Dr+Orlando+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~23 km / 22 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">8</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value red">até 250 kW*</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill slow" style="width:55%"></div></div><span class="bar-time">~40–55 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill slow" style="width:90%"></div></div><span class="bar-time">~85–110 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v3">V3*</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-wawa">Wawa 24h</span>
+    <span class="badge badge-slow">Carga lenta relatada</span>
+  </div>
+  <div class="note"><strong>Atenção:</strong> avaliação mais baixa da lista. Usuários relatam carga lenta (85kW real) e cabos curtos. Use apenas se não houver alternativa no leste de Orlando.</div>
+</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">8. Kissimmee — W Irlo Bronson Hwy</div>
+      <div class="card-address">7940 W Irlo Bronson Memorial Hwy, Kissimmee FL 34747</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.4</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+7940+W+Irlo+Bronson+Memorial+Hwy+Kissimmee+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~32 km / 30 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">8</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value">150 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill slow" style="width:60%"></div></div><span class="bar-time">~45–55 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill slow" style="width:95%"></div></div><span class="bar-time">~90–110 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v2">V2</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-wawa">Wawa · Krispy Kreme</span>
+    <span class="badge badge-slow">Carga lenta relatada</span>
+  </div>
+  <div class="note">A 5 km da Disney. Prático para dias nos parques, mas usuários relatam carga real de apenas 60–70 kW. Considere o Palm Pkwy (V4) como alternativa mais rápida na mesma região.</div>
+</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">9. Altamonte Springs</div>
+      <div class="card-address">355 E Altamonte Dr, Altamonte Springs FL 32701</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.5</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+355+E+Altamonte+Dr+Altamonte+Springs+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~34 km / 30 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">8</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value">150 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill slow" style="width:55%"></div></div><span class="bar-time">~40–50 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill slow" style="width:90%"></div></div><span class="bar-time">~80–100 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v2">V2</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-shop">Altamonte Mall · Whole Foods · Starbucks</span>
+  </div>
+  <div class="note">Norte de Orlando. Útil para dias em Winter Park ou passeios ao norte da cidade.</div>
+</div>
+
+<div class="card other">
+  <div class="card-top">
+    <div class="card-meta">
+      <div class="card-name">10. Sanford — WP Ball Boulevard</div>
+      <div class="card-address">1201 WP Ball Blvd, Sanford FL 32771</div>
+    </div>
+    <div class="card-top-right">
+      <div class="rating">4.9</div>
+      <a class="maps-link" href="https://www.google.com/maps/search/?api=1&query=Tesla+Supercharger+1201+WP+Ball+Blvd+Sanford+FL" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        Maps
+      </a>
+    </div>
+  </div>
+  <div class="card-grid">
+    <div class="stat"><div class="stat-label">Do hotel</div><div class="stat-value">~48 km / 40 min</div></div>
+    <div class="stat"><div class="stat-label">Stalls</div><div class="stat-value">12</div></div>
+    <div class="stat"><div class="stat-label">Potência</div><div class="stat-value gold">250 kW</div></div>
+  </div>
+  <div class="charge-bar">
+    <div class="charge-label">Tempo de carga — Tesla Model Y</div>
+    <div class="bar-row"><span class="bar-percent">10% → 80%</span><div class="bar-bg"><div class="bar-fill" style="width:35%"></div></div><span class="bar-time">~25–35 min</span></div>
+    <div class="bar-row"><span class="bar-percent">0% → 100%</span><div class="bar-bg"><div class="bar-fill" style="width:70%"></div></div><span class="bar-time">~60–75 min</span></div>
+  </div>
+  <div class="badge-row">
+    <span class="badge badge-v3">V3</span>
+    <span class="badge badge-24h">24h</span>
+    <span class="badge badge-shop">Target · Restaurantes ao lado</span>
+  </div>
+  <div class="note"><strong>Melhor avaliado da região (4.9).</strong> Limite do raio de 50km. Útil para visitas ao Blue Spring State Park ou trajetos ao norte.</div>
+</div>
+
+<!-- TIP BOX -->
+<div class="tip-box">
+  <div class="tip-title">Dica de uso — Tesla Model Y</div>
+  <div class="tip-text">
+    O próprio carro sugere o Supercharger ideal na rota ao programar o destino no GPS — basta navegar normalmente e o Tesla indica quando e onde parar.<br><br>
+    A carga de 10% a 80% é sempre a mais rápida. Os últimos 20% (80% → 100%) demoram tanto quanto os 70% anteriores. Para o dia a dia em Orlando, manter entre 20% e 80% é o mais eficiente e poupa tempo.<br><br>
+    Todos os Superchargers deste guia estão inclusos no contrato da locadora (Florida Rental Car · Reserva nº 40316).
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-note">Redoma · Roteiro Juan &amp; Sofia · Mai–Jun 2026</div>
+  <div class="footer-logo">
+    <div class="footer-diamond-wrap"><div class="footer-diamond"></div></div>
+    <div class="footer-brand">Redoma</div>
+  </div>
+</div>
+
+</body>
+</html>
